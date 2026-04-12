@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jeric Semeniego | QA & Business Systems Portfolio</title>
+  <style>
+    :root {
+      --bg: #f4f7fb;
+      --surface: #ffffff;
+      --ink: #1e2a44;
+      --muted: #5f6c83;
+      --accent: #2b5cff;
+      --line: #dde5f1;
+      --soft: #eef3ff;
+      --good: #0a7a57;
+      --shadow: 0 14px 40px rgba(31, 45, 85, 0.08);
+      --radius: 18px;
+      --max: 1100px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: radial-gradient(circle at top left, rgba(43,92,255,0.08), transparent 24%), var(--bg);
+      color: var(--ink);
+      line-height: 1.6;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    .container { width: min(var(--max), calc(100% - 48px)); margin: 0 auto; }
+    .topbar {
+      position: sticky; top: 0; z-index: 20;
+      background: rgba(244,247,251,0.92); backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+    }
+    .topbar .inner { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 14px 0; }
+    .brand { font-weight: 700; }
+    .nav { display: flex; gap: 14px; flex-wrap: wrap; font-size: 14px; }
+    .nav a { color: var(--muted); }
+    .hero { padding: 50px 0 30px; }
+    .hero-grid { display: grid; grid-template-columns: 1.3fr 0.8fr; gap: 24px; }
+    .card {
+      background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow);
+    }
+    .hero-main { padding: 34px; }
+    .eyebrow {
+      display: inline-block; padding: 7px 12px; border-radius: 999px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; font-weight: 700;
+      color: var(--accent); background: var(--soft); margin-bottom: 14px;
+    }
+    h1 { font-size: 42px; line-height: 1.05; margin: 0 0 10px; letter-spacing: -0.03em; }
+    .subtitle { color: #2f4771; font-weight: 700; font-size: 20px; margin-bottom: 14px; }
+    .lead { color: var(--muted); font-size: 16px; margin: 0 0 18px; max-width: 70ch; }
+    .pill-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 18px; }
+    .pill {
+      background: #edf2ff; border: 1px solid #d9e3ff; color: #29438a; padding: 8px 12px; border-radius: 999px; font-size: 13px; font-weight: 700;
+    }
+    .hero-side { padding: 22px; display: grid; gap: 14px; align-content: start; }
+    .mini { padding: 16px; border: 1px solid var(--line); border-radius: 14px; background: linear-gradient(180deg, #fff, #f8faff); }
+    .mini strong { display: block; font-size: 18px; margin-bottom: 4px; }
+    .mini span { color: var(--muted); font-size: 14px; }
+    .section { padding: 18px 0; }
+    .section h2 { font-size: 28px; margin: 0 0 8px; letter-spacing: -0.02em; }
+    .section-intro { color: var(--muted); margin: 0 0 18px; max-width: 75ch; }
+    .roles-grid, .skills-grid, .sample-grid, .exp-grid, .deliver-grid { display: grid; gap: 18px; }
+    .roles-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .skills-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .sample-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .exp-grid { grid-template-columns: 1fr 1fr; }
+    .deliver-grid { grid-template-columns: 1fr 1fr; }
+    .panel { padding: 22px; }
+    .panel h3 { margin: 0 0 10px; font-size: 18px; }
+    .panel p { margin: 0; color: var(--muted); }
+    .tag-list { display: flex; flex-wrap: wrap; gap: 9px; }
+    .tag {
+      background: #f7f9fd; border: 1px solid #dce4f2; border-radius: 999px; padding: 7px 11px; font-size: 13px; color: #32415d;
+    }
+    .exp-card { padding: 22px; }
+    .exp-card h3 { margin: 0 0 5px; font-size: 18px; }
+    .meta { color: var(--muted); font-size: 14px; margin-bottom: 10px; }
+    ul { margin: 0; padding-left: 18px; }
+    li { margin-bottom: 7px; }
+    .label {
+      display: inline-block; width: fit-content; padding: 6px 10px; border-radius: 999px; font-size: 12px; font-weight: 700;
+      color: var(--good); background: #eaf7f1; border: 1px solid #d4efe2; margin-bottom: 10px;
+    }
+    .sample { padding: 22px; }
+    .sample h3 { margin: 0 0 8px; font-size: 20px; line-height: 1.2; }
+    .sample p { color: var(--muted); margin: 0 0 10px; }
+    .sample .callout {
+      margin-top: 10px; padding: 12px 14px; background: #f8faff; border-left: 4px solid var(--accent); border-radius: 10px; color: #36425b;
+      font-size: 14px;
+    }
+    .contact {
+      margin: 22px 0 42px; padding: 26px 28px; border-radius: 24px;
+      color: white; background: linear-gradient(135deg, #203675, #2b5cff); box-shadow: 0 18px 44px rgba(43,92,255,0.24);
+      display: flex; justify-content: space-between; align-items: center; gap: 18px; flex-wrap: wrap;
+    }
+    .contact h2 { margin: 0 0 6px; font-size: 28px; }
+    .contact p { margin: 0; color: rgba(255,255,255,.84); }
+    .contact .details { display: grid; gap: 7px; font-weight: 700; }
+    .contact a { color: #fff; }
+    footer { text-align: center; color: var(--muted); font-size: 13px; padding-bottom: 28px; }
+    @media (max-width: 980px) {
+      .hero-grid, .roles-grid, .skills-grid, .sample-grid, .exp-grid, .deliver-grid { grid-template-columns: 1fr; }
+      h1 { font-size: 34px; }
+    }
+    @media print {
+      @page { size: A4; margin: 12mm; }
+      body { background: #fff; }
+      .topbar { display: none !important; }
+      .hero { padding-top: 0; }
+      .card, .contact { box-shadow: none; }
+      .hero-main, .hero-side, .panel, .sample, .exp-card { padding: 16px; }
+      .section { padding: 10px 0; }
+      .sample, .panel, .exp-card, .mini, .hero-main, .hero-side { break-inside: avoid; }
+      .contact { background: #2b5cff !important; }
+      .page-break { break-before: auto; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container inner">
+      <div class="brand">Jeric Semeniego | QA & Business Systems Portfolio</div>
+      <nav class="nav">
+        <a href="#roles">Target Roles</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#samples">Case Studies</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </div>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-grid">
+        <div class="card hero-main">
+          <div class="eyebrow">Portfolio</div>
+          <h1>Jeric Semeniego</h1>
+          <div class="subtitle">Manual QA Analyst | QA Tester | Business Process Support</div>
+          <p class="lead">
+            QA-focused IT professional with hands-on experience in manual testing, SaaS support, incident validation,
+            defect documentation, and business workflow coordination. My background combines testing, ticket-driven support,
+            root-cause-oriented documentation, and stakeholder communication across ServiceNow, Jira, and enterprise-process work.
+          </p>
+          <div class="pill-row">
+            <span class="pill">Manual Testing</span>
+            <span class="pill">Regression & Post-Release Checks</span>
+            <span class="pill">Incident Validation</span>
+            <span class="pill">ServiceNow & Jira</span>
+            <span class="pill">SAP SD UAT</span>
+            <span class="pill">Process Documentation</span>
+          </div>
+        </div>
+        <div class="card hero-side">
+          <div class="mini"><strong>What I do well</strong><span>Execute tests, verify fixes, document issues clearly, and keep stakeholders updated under pressure.</span></div>
+          <div class="mini"><strong>Where I fit best</strong><span>Manual QA, QA Analyst, QA support, business-systems testing, and BA support roles.</span></div>
+          <div class="mini"><strong>Why this matters</strong><span>I can connect testing work with business impact, user workflows, and operational reliability.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="roles">
+      <h2>Best-Fit Roles</h2>
+      <p class="section-intro">This portfolio is built to support applications for roles where testing, documentation, stakeholder coordination, and process validation matter.</p>
+      <div class="roles-grid">
+        <div class="card panel">
+          <h3>Manual QA / QA Tester</h3>
+          <p>Strongest fit based on hands-on testing, verification, defect documentation, support coordination, and regression-ready thinking.</p>
+        </div>
+        <div class="card panel">
+          <h3>QA Analyst</h3>
+          <p>Well suited for structured test execution, issue tracking, release support, root-cause-oriented notes, and business workflow validation.</p>
+        </div>
+        <div class="card panel">
+          <h3>BA Support / Junior BA</h3>
+          <p>Good fit for process documentation, stakeholder communication, meeting-based issue clarification, workflow understanding, and requirement support.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="skills">
+      <h2>Core Skills</h2>
+      <div class="skills-grid">
+        <div class="card panel">
+          <h3>Testing & QA</h3>
+          <div class="tag-list">
+            <span class="tag">Manual Testing</span><span class="tag">Functional Testing</span><span class="tag">Regression Testing</span><span class="tag">System Testing</span><span class="tag">Post-Release Validation</span><span class="tag">UAT Support</span><span class="tag">Defect Tracking</span><span class="tag">Fix Verification</span><span class="tag">Test Case Execution</span>
+          </div>
+        </div>
+        <div class="card panel">
+          <h3>Support & Operations</h3>
+          <div class="tag-list">
+            <span class="tag">Incident Management</span><span class="tag">Ticket Lifecycle Management</span><span class="tag">SLA Compliance</span><span class="tag">Production Support</span><span class="tag">Troubleshooting</span><span class="tag">RCA Support</span><span class="tag">Release Readiness</span>
+          </div>
+        </div>
+        <div class="card panel">
+          <h3>Tools & Data</h3>
+          <div class="tag-list">
+            <span class="tag">ServiceNow</span><span class="tag">Jira</span><span class="tag">Azure DevOps</span><span class="tag">Postman</span><span class="tag">SQL</span><span class="tag">Git</span><span class="tag">Confluence</span><span class="tag">SAP SD</span><span class="tag">SAP S/4HANA Cloud</span>
+          </div>
+        </div>
+        <div class="card panel">
+          <h3>Business Process Support</h3>
+          <div class="tag-list">
+            <span class="tag">Stakeholder Communication</span><span class="tag">Process Documentation</span><span class="tag">Meeting Notes</span><span class="tag">Issue Replication</span><span class="tag">Workflow Validation</span><span class="tag">Priority Tracking</span><span class="tag">Cross-Functional Collaboration</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section page-break" id="experience">
+      <h2>Professional Experience Snapshot</h2>
+      <p class="section-intro">The strongest pattern across my roles is consistent: test, verify, document, coordinate, and close the loop.</p>
+      <div class="exp-grid">
+        <div class="card exp-card">
+          <h3>Accenture</h3>
+          <div class="meta">Associate Software Engineer, Business Architecture | Mar 2024 - Oct 2025</div>
+          <ul>
+            <li>Executed functional, regression, and post-release testing for ServiceNow-based changes, upgrades, and production incidents.</li>
+            <li>Validated fixes across quality-controlled and production environments and documented replication and resolution steps.</li>
+            <li>Coordinated with production teams, stakeholders, and developers for issue triage, workflow clarification, and release readiness.</li>
+            <li>Resolved 10+ daily incidents within SLA while keeping priorities visible and communication clear.</li>
+          </ul>
+        </div>
+        <div class="card exp-card">
+          <h3>TCL Online Services Inc.</h3>
+          <div class="meta">QA Trainee / Technical Support Representative | Feb 2023 - Dec 2023</div>
+          <ul>
+            <li>Performed manual testing and SaaS workflow validation while handling 20+ daily ServiceNow tickets.</li>
+            <li>Verified fixes, documented defects, and helped stabilize recurring data-input and workflow issues.</li>
+            <li>Built a web-based simulator using HTML, CSS, and JavaScript to support testing and training flows.</li>
+          </ul>
+        </div>
+        <div class="card exp-card">
+          <h3>HCL Technologies Philippines Inc.</h3>
+          <div class="meta">Senior Analyst Trainee | Oct 2025 - Dec 2025</div>
+          <ul>
+            <li>Coordinated Jira ticket workflows including prioritization, assignment, escalation, and closure.</li>
+            <li>Investigated reported concerns through structured validation, documentation, and follow-up.</li>
+          </ul>
+        </div>
+        <div class="card exp-card">
+          <h3>iQor Sta. Rosa</h3>
+          <div class="meta">Account Management Specialist (Seasonal) | Jan 2024 - Mar 2024</div>
+          <ul>
+            <li>Managed 30+ daily Jira support cases with accurate documentation and timely escalation.</li>
+            <li>Strengthened issue triage, follow-up discipline, and fast-paced coordination.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="samples">
+      <h2>Case Studies & QA Samples</h2>
+      <p class="section-intro">These samples show how I think through testing, business-process risks, and documentation quality.</p>
+      <div class="sample-grid">
+        <article class="card sample">
+          <span class="label">Real-Work Pattern</span>
+          <h3>Incident Validation & Release Support</h3>
+          <p>Weekly work often involved multiple incidents requiring validation in both controlled and production environments, sometimes while another system reset or urgent issue was ongoing.</p>
+          <ul>
+            <li>Tested reported incidents and verified whether issues were resolved or still reproducible.</li>
+            <li>Documented step-by-step replication paths, actions taken, and final outcomes for RCA support.</li>
+            <li>Updated stakeholders and production teams with status, impact, and timestamps during high-pressure work.</li>
+          </ul>
+          <div class="callout"><strong>What this proves:</strong> calm prioritization, issue ownership, traceable documentation, and strong execution in pressure-driven environments.</div>
+        </article>
+
+        <article class="card sample">
+          <span class="label">Business SaaS QA</span>
+          <h3>Customer Order Repository & Status Management</h3>
+          <p>Sample business-system test suite focused on repository behavior, search and filters, detail-page accuracy, status changes, exports, and data consistency.</p>
+          <ul>
+            <li>Validated list view, sorting, pagination, filters, and export results.</li>
+            <li>Checked that detail-page data matched repository values and that status updates carried across views.</li>
+            <li>Captured a sample defect where the detail page updated but the repository list showed stale status until refresh.</li>
+          </ul>
+          <div class="callout"><strong>Why it matters:</strong> shows understanding of business-facing workflows, stale data risks, and reporting impact.</div>
+        </article>
+
+        <article class="card sample">
+          <span class="label">Workflow Validation</span>
+          <h3>Purchase Request to Approval</h3>
+          <p>Sample workflow covering request creation, validation, approval routing, rejection flow, audit trail, and final document generation.</p>
+          <ul>
+            <li>Tested required fields, status transitions, approval behavior, and locked states after final approval.</li>
+            <li>Included a defect scenario where an approved request remained editable by the requester.</li>
+            <li>Connected workflow testing to business-control and compliance risk.</li>
+          </ul>
+          <div class="callout"><strong>Why it matters:</strong> supports QA Analyst and BA-support applications because it shows business-rule thinking, not just UI checking.</div>
+        </article>
+
+        <article class="card sample">
+          <span class="label">Enterprise UAT</span>
+          <h3>SAP SD Order-to-Invoice</h3>
+          <p>Reusable UAT test case and execution script covering VA01, VA02, VL01N, VL02N, and VF01.</p>
+          <ul>
+            <li>Validated pricing, quantity propagation, PGI completion, billing accuracy, and full document flow.</li>
+            <li>Tracked common enterprise risks such as delivery mismatch, PGI failure, and invoice inconsistencies.</li>
+            <li>Framed the work as end-to-end business-process testing, not just step execution.</li>
+          </ul>
+          <div class="callout"><strong>Why it matters:</strong> adds stronger enterprise-process credibility for QA and BA-adjacent roles.</div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section page-break">
+      <div class="deliver-grid">
+        <div class="card panel">
+          <h3>Deliverables I Can Own</h3>
+          <ul>
+            <li>Test cases, validation scenarios, and execution notes</li>
+            <li>Bug reports with expected vs actual results</li>
+            <li>Incident documentation and RCA-ready replication steps</li>
+            <li>Meeting notes, issue summaries, and status updates</li>
+            <li>Business workflow checks and UAT support materials</li>
+            <li>Traceability-friendly Jira / ServiceNow issue writeups</li>
+          </ul>
+        </div>
+        <div class="card panel">
+          <h3>Education & Selected Training</h3>
+          <ul>
+            <li><strong>STI College San Pablo</strong> - Bachelor of Science in Information Technology (BSIT), 2023</li>
+            <li>Agile Testing and Quality Engineering</li>
+            <li>SAP S/4HANA Cloud and SAP SD</li>
+            <li>AWS Fundamentals, Salesforce, and Azure exposure</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div>
+        <h2>Contact</h2>
+        <p>Open to Manual QA, QA Analyst, QA Support, and BA support opportunities in the Philippines.</p>
+      </div>
+      <div class="details">
+        <div>Email: <a href="mailto:jeric.semeniego.work@gmail.com">jeric.semeniego.work@gmail.com</a></div>
+        <div>Phone: <a href="tel:+639618711368">+63 961 871 1368</a></div>
+        <div>Portfolio URL: <a href="https://jericsemeniegowork-boop.github.io/qa-portfolio/">jericsemeniegowork-boop.github.io/qa-portfolio/</a></div>
+      </div>
+    </section>
+
+    <footer>Jeric Semeniego - QA & Business Systems Portfolio</footer>
+  </main>
+</body>
+</html>
