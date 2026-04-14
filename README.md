@@ -1,4 +1,4 @@
-# QA Portfolio - Jeric Semeniego
+# My Portfolio - Jeric Semeniego
 
 This repository contains my QA portfolio.
 
