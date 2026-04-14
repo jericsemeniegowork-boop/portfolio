@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Purchase Request Test Cases | Jeric QA Portfolio</title>
+<style>
+:root{
+  --bg:#f6f9ff;--panel:#ffffff;--text:#18253e;--muted:#60708d;--line:#d8e4f5;
+  --accent:#356edc;--accent2:#1f7a62;--soft:#edf4ff;--soft2:#eaf8f4;--radius:22px;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;background:linear-gradient(180deg,#f7fbff,#eef5ff);color:var(--text);line-height:1.65}
+.container{width:min(960px,calc(100% - 32px));margin:0 auto;padding:32px 0 48px}
+.top{display:flex;justify-content:space-between;gap:14px;align-items:center;margin-bottom:18px;flex-wrap:wrap}
+.back{display:inline-flex;text-decoration:none;color:#214f9e;background:white;border:1px solid var(--line);padding:10px 14px;border-radius:999px;font-weight:800;box-shadow:0 8px 20px rgba(48,84,150,.08)}
+.badge{display:inline-flex;padding:8px 12px;border-radius:999px;background:#dfeafe;color:#244fa8;border:1px solid #c8dcff;font-size:12px;font-weight:900;letter-spacing:.06em;text-transform:uppercase}
+.hero{background:linear-gradient(135deg,#ffffff,#edf4ff);border:1px solid var(--line);border-radius:var(--radius);padding:28px;box-shadow:0 18px 40px rgba(48,84,150,.12);margin-bottom:18px}
+h1{margin:10px 0 10px;font-size:clamp(30px,5vw,48px);line-height:1.03;letter-spacing:-.04em}
+.lead{font-size:17px;color:var(--muted);max-width:760px;margin:0}
+.quick{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}
+.tile{background:white;border:1px solid var(--line);border-radius:18px;padding:16px}
+.tile strong{display:block;font-size:13px;text-transform:uppercase;letter-spacing:.05em;color:#244fa8;margin-bottom:5px}
+.tile span{font-weight:700;color:var(--text)}
+.card{background:white;border:1px solid var(--line);border-radius:var(--radius);padding:26px;box-shadow:0 12px 28px rgba(48,84,150,.08);margin-bottom:16px}
+h2{margin:0 0 12px;font-size:26px;letter-spacing:-.03em}
+h3{margin:22px 0 8px;color:#1e3e79}
+p{margin:0 0 12px}
+ul,ol{padding-left:22px;margin:8px 0 14px}
+li{margin-bottom:6px}
+table{width:100%;border-collapse:separate;border-spacing:0;margin:14px 0;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:white}
+th,td{padding:12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:#edf4ff;text-align:left;color:#244fa8}
+tr:last-child td{border-bottom:0}
+code{background:#eef4ff;color:#244fa8;border:1px solid #d6e5ff;padding:2px 6px;border-radius:8px;font-size:.92em}
+pre{white-space:pre-wrap;word-break:break-word;background:#13213b;color:#eef5ff;padding:18px;border-radius:18px;border:1px solid rgba(255,255,255,.08);overflow:auto;line-height:1.55}
+pre code{background:transparent;border:0;color:inherit;padding:0}
+.meta{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}
+.note{background:#fffdf2;border:1px solid #f1e5b7;color:#5f4b17;border-radius:18px;padding:16px;margin-top:16px}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.btn{display:inline-flex;text-decoration:none;background:#356edc;color:white;padding:10px 14px;border-radius:999px;font-weight:900}
+.btn.secondary{background:white;color:#214f9e;border:1px solid var(--line)}
+@media(max-width:760px){.quick,.meta{grid-template-columns:1fr}.hero,.card{padding:20px}}
+</style>
+</head>
+<body>
+<main class="container">
+  <div class="top"><a class="back" href="../../index.html">← Back to Portfolio</a><span class="badge">Test Cases</span></div>
+  <section class="hero">
+    <span class="badge">Test Cases</span>
+    <h1>Purchase Request Test Cases</h1>
+    <p class="lead">Core test cases for login, request creation, submission, approval, rejection, read-only behavior, repository checks, and edge cases.</p>
+    <div class="quick"><div class="tile"><strong>Coverage</strong><span>20 scenarios</span></div><div class="tile"><strong>Focus</strong><span>Business workflow</span></div><div class="tile"><strong>Use</strong><span>Execution and regression</span></div></div>
+  </section>
+  <section class="card">
+    <h1>Purchase Request &amp; Approval System — Test Cases</h1>
+<h3>TC-01 Login with valid credentials</h3>
+<p><strong>Module:</strong> Authentication<br />
+<strong>Precondition:</strong> Active requester account exists<br />
+<strong>Steps:</strong></p>
+<ol>
+<li>Open login page</li>
+<li>Enter valid username and password</li>
+<li>Click Sign In</li>
+</ol>
+<p><strong>Expected Result:</strong> User logs in successfully and lands on dashboard.</p>
+<hr />
+<h3>TC-02 Login with invalid password</h3>
+<p><strong>Module:</strong> Authentication<br />
+<strong>Steps:</strong></p>
+<ol>
+<li>Open login page</li>
+<li>Enter valid username and wrong password</li>
+<li>Click Sign In</li>
+</ol>
+<p><strong>Expected Result:</strong> Login is blocked and a clear validation message is shown.</p>
+<hr />
+<h3>TC-03 Create request with valid required data</h3>
+<p><strong>Module:</strong> Purchase Request Form<br />
+<strong>Steps:</strong></p>
+<ol>
+<li>Open request form</li>
+<li>Enter valid supplier, category, amount, cost center, and justification</li>
+<li>Click Save Draft</li>
+</ol>
+<p><strong>Expected Result:</strong> Draft request is saved successfully and a request ID is generated.</p>
+<hr />
+<h3>TC-04 Create request with blank required fields</h3>
+<p><strong>Module:</strong> Purchase Request Form<br />
+<strong>Steps:</strong></p>
+<ol>
+<li>Open request form</li>
+<li>Leave required fields blank</li>
+<li>Click Save Draft or Submit</li>
+</ol>
+<p><strong>Expected Result:</strong> System blocks save/submit and shows required-field messages.</p>
+<hr />
+<h3>TC-05 Amount field rejects invalid format</h3>
+<p><strong>Module:</strong> Purchase Request Form<br />
+<strong>Steps:</strong></p>
+<ol>
+<li>Enter letters or invalid characters in amount</li>
+<li>Attempt to save</li>
+</ol>
+<p><strong>Expected Result:</strong> System rejects invalid amount input.</p>
+<hr />
+<h3>TC-06 Submit request for approval</h3>
+<p><strong>Module:</strong> Workflow<br />
+<strong>Precondition:</strong> Valid draft exists<br />
+<strong>Steps:</strong></p>
+<ol>
+<li>Open valid draft</li>
+<li>Click Submit</li>
+<li>Confirm submission</li>
+</ol>
+<p><strong>Expected Result:</strong> Request moves to Pending Approval and correct approver is assigned.</p>
+<hr />
+<h3>TC-07 Double-click submit does not create duplicate request</h3>
+<p><strong>Module:</strong> Workflow / Reliability<br />
+<strong>Steps:</strong></p>
+<ol>
+<li>Open valid draft</li>
+<li>Double-click Submit quickly</li>
+</ol>
+<p><strong>Expected Result:</strong> Only one submission is created and no duplicate workflow entry appears.</p>
+<hr />
+<h3>TC-08 Reject request without mandatory reason</h3>
+<p><strong>Module:</strong> Approval<br />
+<strong>Precondition:</strong> Approver opens pending request<br />
+<strong>Steps:</strong></p>
+<ol>
+<li>Click Reject</li>
+<li>Leave rejection reason blank</li>
+<li>Confirm</li>
+</ol>
+<p><strong>Expected Result:</strong> System blocks rejection and requires a reason.</p>
+<hr />
+<h3>TC-09 Approve request</h3>
+<p><strong>Module:</strong> Approval<br />
+<strong>Steps:</strong></p>
+<ol>
+<li>Open pending request as approver</li>
+<li>Click Approve</li>
+</ol>
+<p><strong>Expected Result:</strong> Status changes to Approved and action is recorded in audit history.</p>
+<hr />
+<h3>TC-10 Approved request becomes read-only</h3>
+<p><strong>Module:</strong> Role / Workflow Integrity<br />
+<strong>Precondition:</strong> Request already approved<br />
+<strong>Steps:</strong></p>
+<ol>
+<li>Open approved request as requester</li>
+<li>Try editing protected fields</li>
+</ol>
+<p><strong>Expected Result:</strong> Protected fields are read-only and save is blocked.</p>
+<hr />
+<h3>TC-11 Repository search by request ID</h3>
+<p><strong>Module:</strong> Repository<br />
+<strong>Steps:</strong></p>
+<ol>
+<li>Go to repository page</li>
+<li>Search by exact request ID</li>
+</ol>
+<p><strong>Expected Result:</strong> Correct record is returned.</p>
+<hr />
+<h3>TC-12 Filter repository by status</h3>
+<p><strong>Module:</strong> Repository<br />
+<strong>Steps:</strong></p>
+<ol>
+<li>Apply filter = Approved</li>
+<li>Review results</li>
+</ol>
+<p><strong>Expected Result:</strong> Only approved requests are shown.</p>
+<hr />
+<h3>TC-13 Sort repository by date</h3>
+<p><strong>Module:</strong> Repository<br />
+<strong>Steps:</strong></p>
+<ol>
+<li>Sort by created date ascending</li>
+<li>Sort by created date descending</li>
+</ol>
+<p><strong>Expected Result:</strong> Records sort correctly both ways.</p>
+<hr />
+<h3>TC-14 Export filtered repository results</h3>
+<p><strong>Module:</strong> Repository / Export<br />
+<strong>Steps:</strong></p>
+<ol>
+<li>Apply status filter</li>
+<li>Click Export</li>
+</ol>
+<p><strong>Expected Result:</strong> Exported file contains only filtered results and correct columns.</p>
+<hr />
+<h3>TC-15 Repository and detail view show same status</h3>
+<p><strong>Module:</strong> Data Consistency<br />
+<strong>Steps:</strong></p>
+<ol>
+<li>Open repository</li>
+<li>Note request status</li>
+<li>Open detail page</li>
+</ol>
+<p><strong>Expected Result:</strong> Status matches in both views.</p>
+<hr />
+<h3>TC-16 Audit trail records approval action</h3>
+<p><strong>Module:</strong> Audit Trail<br />
+<strong>Steps:</strong></p>
+<ol>
+<li>Approve a pending request</li>
+<li>Open audit history</li>
+</ol>
+<p><strong>Expected Result:</strong> Audit history shows action, actor, and timestamp.</p>
+<hr />
+<h3>TC-17 Session timeout while editing draft</h3>
+<p><strong>Module:</strong> Session Handling<br />
+<strong>Steps:</strong></p>
+<ol>
+<li>Open draft</li>
+<li>Leave page idle until session expires</li>
+<li>Try saving</li>
+</ol>
+<p><strong>Expected Result:</strong> User is redirected or prompted safely, and no silent data corruption occurs.</p>
+<hr />
+<h3>TC-18 Unauthorized user cannot approve request</h3>
+<p><strong>Module:</strong> Access Control<br />
+<strong>Steps:</strong></p>
+<ol>
+<li>Login as requester</li>
+<li>Open request awaiting approval</li>
+<li>Attempt to approve</li>
+</ol>
+<p><strong>Expected Result:</strong> Approval action is not available or access is blocked.</p>
+<hr />
+<h3>TC-19 Large remarks field at max boundary</h3>
+<p><strong>Module:</strong> Validation / Edge Case<br />
+<strong>Steps:</strong></p>
+<ol>
+<li>Enter remarks at maximum allowed character length</li>
+<li>Save request</li>
+</ol>
+<p><strong>Expected Result:</strong> Save succeeds if within limit and fails cleanly if exceeded.</p>
+<hr />
+<h3>TC-20 Upload unsupported attachment type</h3>
+<p><strong>Module:</strong> Attachment Validation<br />
+<strong>Steps:</strong></p>
+<ol>
+<li>Attach unsupported file type</li>
+<li>Submit</li>
+</ol>
+<p><strong>Expected Result:</strong> Upload is blocked with a clear error message.</p>
+<hr />
+
+  </section>
+  <section class="note">
+    <strong>Portfolio note:</strong> This is a representative, non-confidential QA sample created to demonstrate testing process, documentation style, and validation thinking.
+  </section>
+  <div class="actions"><a class="btn" href="../../index.html">Back to Portfolio</a><a class="btn secondary" href="purchase_request_approval_test_cases.md">View Raw File</a></div>
+</main>
+</body>
+</html>
