@@ -1,9 +1,0 @@
-Requirement ID,Requirement,Scenario ID,Test Case ID,Status
-REQ-001,Requester can create purchase request,TS-001,TC-001,Covered
-REQ-002,Required fields are validated,TS-002,TC-002,Covered
-REQ-003,Requester can submit request,TS-003,TC-003,Covered
-REQ-004,Approver can approve request,TS-004,TC-004,Covered
-REQ-005,Rejection requires reason,"TS-005, TS-006",TC-005,Covered
-REQ-006,Approved request becomes read-only,TS-009,TC-006,Covered
-REQ-007,Status is consistent,TS-008,TC-007,Covered
-REQ-010,Regression confirms impacted flows,TS-011,TC-008,Covered
