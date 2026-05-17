@@ -39,6 +39,114 @@
       .section h2{font-size:23px}
     }
 
+  
+    /* Skimmable artifacts layout */
+    .artifact-overview-grid{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:12px;
+      margin-bottom:18px;
+    }
+    .artifact-summary-card{
+      background:var(--surface-soft);
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:16px;
+    }
+    .artifact-summary-card strong{
+      display:block;
+      color:var(--text);
+      font-size:15px;
+      margin-bottom:5px;
+    }
+    .artifact-summary-card span{
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.55;
+    }
+    .artifact-panel-wrap{
+      min-width:0;
+    }
+    .artifact-quick-card{
+      background:var(--surface-soft);
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:22px;
+      min-height:340px;
+    }
+    .artifact-topline{
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+      align-items:center;
+      margin-bottom:12px;
+    }
+    .artifact-tag{
+      display:inline-flex;
+      background:var(--accent-soft);
+      color:var(--accent);
+      border:1px solid var(--accent-line);
+      border-radius:999px;
+      padding:6px 10px;
+      font-size:12px;
+      font-weight:900;
+    }
+    .artifact-file{
+      color:var(--muted);
+      font-size:12px;
+      font-weight:700;
+      overflow-wrap:anywhere;
+    }
+    .artifact-quick-card h3{
+      margin:0 0 16px;
+      color:var(--text);
+      font-size:24px;
+      letter-spacing:-.025em;
+    }
+    .artifact-quick-card h4{
+      margin:0 0 6px;
+      color:var(--text);
+      font-size:14px;
+      text-transform:uppercase;
+      letter-spacing:.04em;
+    }
+    .artifact-quick-card p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.65;
+    }
+    .artifact-columns{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+      margin-bottom:14px;
+    }
+    .artifact-columns > div,
+    .skim-box{
+      background:var(--surface);
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:15px;
+    }
+    .skim-box ul{
+      margin:0;
+      padding-left:18px;
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:4px 18px;
+    }
+    .skim-box li{
+      color:var(--muted);
+      margin:3px 0;
+      line-height:1.5;
+    }
+    @media(max-width:920px){
+      .artifact-overview-grid,.artifact-columns{grid-template-columns:1fr}
+      .skim-box ul{grid-template-columns:1fr}
+      .artifact-quick-card{min-height:auto}
+    }
+
   </style>
 </head>
 <body>
@@ -52,11 +160,378 @@
       <div class="step"><div class="num">1</div><div><h3>Requirement Analysis</h3><p>Review requirements, clarify scope, identify risks.</p></div></div><div class="step"><div class="num">2</div><div><h3>Test Planning</h3><p>Define scope, environment, entry and exit criteria.</p></div></div><div class="step"><div class="num">3</div><div><h3>Test Design</h3><p>Create scenarios, test cases, expected results, and RTM.</p></div></div><div class="step"><div class="num">4</div><div><h3>Test Data</h3><p>Prepare valid, invalid, boundary, and role-based data.</p></div></div><div class="step"><div class="num">5</div><div><h3>Environment Check</h3><p>Confirm QA/staging readiness through smoke checks.</p></div></div><div class="step"><div class="num">6</div><div><h3>Execution</h3><p>Run test cases and record actual results.</p></div></div><div class="step"><div class="num">7</div><div><h3>Defect Management</h3><p>Log issues with steps, expected vs actual, severity, priority, and evidence.</p></div></div><div class="step"><div class="num">8</div><div><h3>Retesting</h3><p>Retest fixed defects using original reproduction steps.</p></div></div><div class="step"><div class="num">9</div><div><h3>Regression</h3><p>Confirm existing features still work after changes.</p></div></div><div class="step"><div class="num">10</div><div><h3>Reporting</h3><p>Summarize results, defects, risks, and release recommendation.</p></div></div>
     </div></div></section>
     <section id="cases" class="page"><div class="section"><h2>Case Studies</h2><p class="section-intro">Three representative QA examples showing how the same fundamentals apply across business, banking, and game QA domains.</p><div class="grid three"><div class="card"><h3>Purchase Request</h3><p>Approval workflow, user roles, status updates, audit history, required fields, and release validation.</p></div><div class="card"><h3>Banking QA</h3><p>Login/MFA, account balance, masking, session behavior, negative balance, API response checks, and cross-channel validation.</p></div><div class="card"><h3>Game QA</h3><p>Patch regression, reward integrity, reconnect/session change, crash/stability, privacy settings, and evidence-based bug reporting.</p></div></div></div><div class="section"><h2>Projects</h2><div class="grid two"><div class="card"><h3>CSE Review Studio</h3><p>Mobile-first exam review web app with 1,100+ questions, mock exams, topic drills, LocalStorage progress, notes, and mistake logs.</p></div><div class="card"><h3>Scale AI / Outlier</h3><p>Freelance technical evaluation exposure involving PRD review, rubric-based assessment, schema compliance, golden path review, and AI output quality checks.</p></div></div></div></section>
-    <section id="artifacts" class="page"><div class="section"><h2>Artifacts</h2><p class="section-intro">Key QA artifacts are available below. Source files are included in the repository.</p><div class="artifact-layout"><aside class="artifact-menu">
-      <button class="artifact-tab active" data-artifact="a0">Requirement Analysis</button><button class="artifact-tab " data-artifact="a1">Test Plan</button><button class="artifact-tab " data-artifact="a2">Test Scenarios</button><button class="artifact-tab " data-artifact="a3">Manual Test Cases</button><button class="artifact-tab " data-artifact="a4">RTM</button><button class="artifact-tab " data-artifact="a5">Test Data</button><button class="artifact-tab " data-artifact="a6">Defect Reports</button><button class="artifact-tab " data-artifact="a7">Regression Checklist</button><button class="artifact-tab " data-artifact="a8">UAT Checklist</button><button class="artifact-tab " data-artifact="a9">Test Summary</button><button class="artifact-tab " data-artifact="a10">Game QA Case</button><button class="artifact-tab " data-artifact="a11">Banking QA Case</button><button class="artifact-tab " data-artifact="a12">Coverage Matrix</button><button class="artifact-tab " data-artifact="a13">Tools Matrix</button>
-      </aside><div>
-      <div id="a0" class="artifact-panel active"><div class="file-links"><a class="file-link" href="qa-test-artifacts/01_Requirement_Analysis.md" target="_blank">Open artifact file</a></div><div class="preview"><h3>Requirement Analysis</h3><p>Identifies testable requirements, risks, and clarification questions.</p></div></div><div id="a1" class="artifact-panel "><div class="file-links"><a class="file-link" href="qa-test-artifacts/02_Test_Plan.md" target="_blank">Open artifact file</a></div><div class="preview"><h3>Test Plan</h3><p>Defines scope, test types, entry/exit criteria, and release readiness.</p></div></div><div id="a2" class="artifact-panel "><div class="file-links"><a class="file-link" href="qa-test-artifacts/03_Test_Scenarios.md" target="_blank">Open artifact file</a></div><div class="preview"><h3>Test Scenarios</h3><p>High-level workflows and conditions for validation.</p></div></div><div id="a3" class="artifact-panel "><div class="file-links"><a class="file-link" href="qa-test-artifacts/04_Manual_Test_Cases.csv" target="_blank">Open artifact file</a></div><div class="preview"><h3>Manual Test Cases</h3><p>Step-by-step test cases with test data and expected results.</p></div></div><div id="a4" class="artifact-panel "><div class="file-links"><a class="file-link" href="qa-test-artifacts/05_RTM.csv" target="_blank">Open artifact file</a></div><div class="preview"><h3>Requirement Traceability Matrix</h3><p>Maps requirements to scenarios and test cases.</p></div></div><div id="a5" class="artifact-panel "><div class="file-links"><a class="file-link" href="qa-test-artifacts/06_Test_Data.csv" target="_blank">Open artifact file</a></div><div class="preview"><h3>Test Data</h3><p>Reusable valid, invalid, boundary, and role-based data.</p></div></div><div id="a6" class="artifact-panel "><div class="file-links"><a class="file-link" href="qa-test-artifacts/07_Defect_Report_Samples.md" target="_blank">Open artifact file</a></div><div class="preview"><h3>Defect Reports</h3><p>Sample bugs with steps, expected vs actual result, severity, priority, and impact.</p></div></div><div id="a7" class="artifact-panel "><div class="file-links"><a class="file-link" href="qa-test-artifacts/08_Regression_Checklist.md" target="_blank">Open artifact file</a></div><div class="preview"><h3>Regression Checklist</h3><p>Impacted workflows to retest after fixes or deployment.</p></div></div><div id="a8" class="artifact-panel "><div class="file-links"><a class="file-link" href="qa-test-artifacts/09_UAT_Checklist.md" target="_blank">Open artifact file</a></div><div class="preview"><h3>UAT Checklist</h3><p>Business-user validation checklist for acceptance testing.</p></div></div><div id="a9" class="artifact-panel "><div class="file-links"><a class="file-link" href="qa-test-artifacts/11_Test_Summary_Report.md" target="_blank">Open artifact file</a></div><div class="preview"><h3>Test Summary</h3><p>Testing result summary, risks, defects, and release recommendation.</p></div></div><div id="a10" class="artifact-panel "><div class="file-links"><a class="file-link" href="qa-test-artifacts/13_Game_QA_Frostwater_Lake_Case.md" target="_blank">Open artifact file</a></div><div class="preview"><h3>Game QA Case</h3><p>Live-service game patch/reward integrity QA sample.</p></div></div><div id="a11" class="artifact-panel "><div class="file-links"><a class="file-link" href="qa-test-artifacts/14_Banking_QA_Account_Balance_Case.md" target="_blank">Open artifact file</a></div><div class="preview"><h3>Banking QA Case</h3><p>Banking account balance, security-aware, privacy, and API validation sample.</p></div></div><div id="a12" class="artifact-panel "><div class="file-links"><a class="file-link" href="qa-test-artifacts/15_Testing_Type_Coverage_Matrix.md" target="_blank">Open artifact file</a></div><div class="preview"><h3>Coverage Matrix</h3><p>Testing type coverage across purchase, game, and banking case studies.</p></div></div><div id="a13" class="artifact-panel "><div class="file-links"><a class="file-link" href="qa-test-artifacts/16_QA_Tools_Matrix.md" target="_blank">Open artifact file</a></div><div class="preview"><h3>QA Tools Matrix</h3><p>Shows how QA tools were applied to sample test cases.</p></div></div>
-    </div></div></div></section>
+    
+<section id="artifacts" class="page">
+  <div class="section">
+    <h2>Artifacts</h2>
+    <p class="section-intro">Each artifact is summarized on the page for quick review. The actual source files are still included in the repository, but recruiters can skim the purpose, proof, and key checks without opening every file.</p>
+
+    <div class="artifact-overview-grid">
+      <div class="artifact-summary-card"><strong>Planning</strong><span>Requirements, test plan, scenarios, RTM, and test data.</span></div>
+      <div class="artifact-summary-card"><strong>Execution</strong><span>Manual test cases, execution tracking, defects, and retesting.</span></div>
+      <div class="artifact-summary-card"><strong>Validation</strong><span>Regression, UAT, release summary, and case study coverage.</span></div>
+    </div>
+
+    <div class="artifact-layout">
+      <aside class="artifact-menu">
+        <button class="artifact-tab active" data-artifact="a0">Requirement Analysis</button>
+<button class="artifact-tab " data-artifact="a1">Test Plan</button>
+<button class="artifact-tab " data-artifact="a2">Test Scenarios</button>
+<button class="artifact-tab " data-artifact="a3">Manual Test Cases</button>
+<button class="artifact-tab " data-artifact="a4">RTM</button>
+<button class="artifact-tab " data-artifact="a5">Test Data</button>
+<button class="artifact-tab " data-artifact="a6">Defect Reports</button>
+<button class="artifact-tab " data-artifact="a7">Regression Checklist</button>
+<button class="artifact-tab " data-artifact="a8">UAT Checklist</button>
+<button class="artifact-tab " data-artifact="a9">Test Summary</button>
+<button class="artifact-tab " data-artifact="a10">Game QA Case</button>
+<button class="artifact-tab " data-artifact="a11">Banking QA Case</button>
+<button class="artifact-tab " data-artifact="a12">Coverage Matrix</button>
+<button class="artifact-tab " data-artifact="a13">Tools Matrix</button>
+      </aside>
+      <div class="artifact-panel-wrap">
+        
+      <div id="a0" class="artifact-panel active">
+        <div class="artifact-quick-card">
+          <div class="artifact-topline">
+            <span class="artifact-tag">Requirement review</span>
+            <span class="artifact-file">qa-test-artifacts/01_Requirement_Analysis.md</span>
+          </div>
+          <h3>Requirement Analysis</h3>
+          <div class="artifact-columns">
+            <div>
+              <h4>Purpose</h4>
+              <p>Identifies what needs to be tested before writing test cases.</p>
+            </div>
+            <div>
+              <h4>What it proves</h4>
+              <p>Shows that I can convert requirements into testable conditions, risks, assumptions, and clarification questions.</p>
+            </div>
+          </div>
+          <div class="skim-box">
+            <h4>Skim this for</h4>
+            <ul><li>Testable requirements</li><li>Risks and dependencies</li><li>Clarification questions</li><li>Business rule coverage</li></ul>
+          </div>
+        </div>
+      </div>
+
+      <div id="a1" class="artifact-panel ">
+        <div class="artifact-quick-card">
+          <div class="artifact-topline">
+            <span class="artifact-tag">Planning</span>
+            <span class="artifact-file">qa-test-artifacts/02_Test_Plan.md</span>
+          </div>
+          <h3>Test Plan</h3>
+          <div class="artifact-columns">
+            <div>
+              <h4>Purpose</h4>
+              <p>Defines the scope, test approach, entry criteria, exit criteria, and release decision basis.</p>
+            </div>
+            <div>
+              <h4>What it proves</h4>
+              <p>Shows that I can organize QA work before execution instead of testing randomly.</p>
+            </div>
+          </div>
+          <div class="skim-box">
+            <h4>Skim this for</h4>
+            <ul><li>In-scope and out-of-scope items</li><li>Test types</li><li>Environment needs</li><li>Entry and exit criteria</li></ul>
+          </div>
+        </div>
+      </div>
+
+      <div id="a2" class="artifact-panel ">
+        <div class="artifact-quick-card">
+          <div class="artifact-topline">
+            <span class="artifact-tag">Scenario design</span>
+            <span class="artifact-file">qa-test-artifacts/03_Test_Scenarios.md</span>
+          </div>
+          <h3>Test Scenarios</h3>
+          <div class="artifact-columns">
+            <div>
+              <h4>Purpose</h4>
+              <p>Lists the main workflows and conditions to validate.</p>
+            </div>
+            <div>
+              <h4>What it proves</h4>
+              <p>Shows that I understand what user paths and business rules need coverage.</p>
+            </div>
+          </div>
+          <div class="skim-box">
+            <h4>Skim this for</h4>
+            <ul><li>Create request</li><li>Submit for approval</li><li>Approve/reject</li><li>Status and read-only behavior</li></ul>
+          </div>
+        </div>
+      </div>
+
+      <div id="a3" class="artifact-panel ">
+        <div class="artifact-quick-card">
+          <div class="artifact-topline">
+            <span class="artifact-tag">Execution-ready</span>
+            <span class="artifact-file">qa-test-artifacts/04_Manual_Test_Cases.csv</span>
+          </div>
+          <h3>Manual Test Cases</h3>
+          <div class="artifact-columns">
+            <div>
+              <h4>Purpose</h4>
+              <p>Provides step-by-step manual tests with expected results.</p>
+            </div>
+            <div>
+              <h4>What it proves</h4>
+              <p>Shows that I can write test cases another tester can follow and repeat.</p>
+            </div>
+          </div>
+          <div class="skim-box">
+            <h4>Skim this for</h4>
+            <ul><li>Preconditions</li><li>Test data</li><li>Steps</li><li>Expected result</li></ul>
+          </div>
+        </div>
+      </div>
+
+      <div id="a4" class="artifact-panel ">
+        <div class="artifact-quick-card">
+          <div class="artifact-topline">
+            <span class="artifact-tag">Coverage</span>
+            <span class="artifact-file">qa-test-artifacts/05_RTM.csv</span>
+          </div>
+          <h3>Requirement Traceability Matrix</h3>
+          <div class="artifact-columns">
+            <div>
+              <h4>Purpose</h4>
+              <p>Maps requirements to test scenarios and test cases.</p>
+            </div>
+            <div>
+              <h4>What it proves</h4>
+              <p>Shows that I can track test coverage and avoid missing important requirements.</p>
+            </div>
+          </div>
+          <div class="skim-box">
+            <h4>Skim this for</h4>
+            <ul><li>Requirement ID</li><li>Scenario mapping</li><li>Test case mapping</li><li>Coverage status</li></ul>
+          </div>
+        </div>
+      </div>
+
+      <div id="a5" class="artifact-panel ">
+        <div class="artifact-quick-card">
+          <div class="artifact-topline">
+            <span class="artifact-tag">Data preparation</span>
+            <span class="artifact-file">qa-test-artifacts/06_Test_Data.csv</span>
+          </div>
+          <h3>Test Data</h3>
+          <div class="artifact-columns">
+            <div>
+              <h4>Purpose</h4>
+              <p>Defines reusable data for valid, invalid, boundary, and role-based tests.</p>
+            </div>
+            <div>
+              <h4>What it proves</h4>
+              <p>Shows that I prepare test data intentionally instead of guessing during execution.</p>
+            </div>
+          </div>
+          <div class="skim-box">
+            <h4>Skim this for</h4>
+            <ul><li>Valid values</li><li>Invalid values</li><li>Boundary values</li><li>User roles</li></ul>
+          </div>
+        </div>
+      </div>
+
+      <div id="a6" class="artifact-panel ">
+        <div class="artifact-quick-card">
+          <div class="artifact-topline">
+            <span class="artifact-tag">Bug documentation</span>
+            <span class="artifact-file">qa-test-artifacts/07_Defect_Report_Samples.md</span>
+          </div>
+          <h3>Defect Reports</h3>
+          <div class="artifact-columns">
+            <div>
+              <h4>Purpose</h4>
+              <p>Documents failed behavior clearly enough for developers to reproduce.</p>
+            </div>
+            <div>
+              <h4>What it proves</h4>
+              <p>Shows that I can report issues with expected vs actual result, severity, priority, and impact.</p>
+            </div>
+          </div>
+          <div class="skim-box">
+            <h4>Skim this for</h4>
+            <ul><li>Steps to reproduce</li><li>Expected vs actual</li><li>Severity and priority</li><li>Impact and evidence</li></ul>
+          </div>
+        </div>
+      </div>
+
+      <div id="a7" class="artifact-panel ">
+        <div class="artifact-quick-card">
+          <div class="artifact-topline">
+            <span class="artifact-tag">Impact testing</span>
+            <span class="artifact-file">qa-test-artifacts/08_Regression_Checklist.md</span>
+          </div>
+          <h3>Regression Checklist</h3>
+          <div class="artifact-columns">
+            <div>
+              <h4>Purpose</h4>
+              <p>Lists workflows to retest after fixes, patches, or deployment.</p>
+            </div>
+            <div>
+              <h4>What it proves</h4>
+              <p>Shows that I understand how changes can break existing functionality.</p>
+            </div>
+          </div>
+          <div class="skim-box">
+            <h4>Skim this for</h4>
+            <ul><li>Impacted areas</li><li>Related workflows</li><li>Retest scope</li><li>Release confidence</li></ul>
+          </div>
+        </div>
+      </div>
+
+      <div id="a8" class="artifact-panel ">
+        <div class="artifact-quick-card">
+          <div class="artifact-topline">
+            <span class="artifact-tag">Business validation</span>
+            <span class="artifact-file">qa-test-artifacts/09_UAT_Checklist.md</span>
+          </div>
+          <h3>UAT Checklist</h3>
+          <div class="artifact-columns">
+            <div>
+              <h4>Purpose</h4>
+              <p>Helps business users confirm that the system meets real workflow needs.</p>
+            </div>
+            <div>
+              <h4>What it proves</h4>
+              <p>Shows that I understand QA support during user acceptance testing.</p>
+            </div>
+          </div>
+          <div class="skim-box">
+            <h4>Skim this for</h4>
+            <ul><li>Business scenarios</li><li>User confirmation</li><li>Feedback tracking</li><li>Acceptance readiness</li></ul>
+          </div>
+        </div>
+      </div>
+
+      <div id="a9" class="artifact-panel ">
+        <div class="artifact-quick-card">
+          <div class="artifact-topline">
+            <span class="artifact-tag">Reporting</span>
+            <span class="artifact-file">qa-test-artifacts/11_Test_Summary_Report.md</span>
+          </div>
+          <h3>Test Summary</h3>
+          <div class="artifact-columns">
+            <div>
+              <h4>Purpose</h4>
+              <p>Summarizes execution status, defects, risks, and release recommendation.</p>
+            </div>
+            <div>
+              <h4>What it proves</h4>
+              <p>Shows that I can communicate test results clearly to stakeholders.</p>
+            </div>
+          </div>
+          <div class="skim-box">
+            <h4>Skim this for</h4>
+            <ul><li>Pass/fail status</li><li>Open defects</li><li>Risks</li><li>Release recommendation</li></ul>
+          </div>
+        </div>
+      </div>
+
+      <div id="a10" class="artifact-panel ">
+        <div class="artifact-quick-card">
+          <div class="artifact-topline">
+            <span class="artifact-tag">Game testing</span>
+            <span class="artifact-file">qa-test-artifacts/13_Game_QA_Frostwater_Lake_Case.md</span>
+          </div>
+          <h3>Game QA Case</h3>
+          <div class="artifact-columns">
+            <div>
+              <h4>Purpose</h4>
+              <p>Shows a fictional live-service game patch QA sample focused on reward integrity.</p>
+            </div>
+            <div>
+              <h4>What it proves</h4>
+              <p>Shows that I can apply QA thinking to patch regression, duplicate reward prevention, and evidence collection.</p>
+            </div>
+          </div>
+          <div class="skim-box">
+            <h4>Skim this for</h4>
+            <ul><li>Reward claim validation</li><li>Reconnect/session behavior</li><li>Regression after patch</li><li>Incident escalation</li></ul>
+          </div>
+        </div>
+      </div>
+
+      <div id="a11" class="artifact-panel ">
+        <div class="artifact-quick-card">
+          <div class="artifact-topline">
+            <span class="artifact-tag">Banking QA</span>
+            <span class="artifact-file">qa-test-artifacts/14_Banking_QA_Account_Balance_Case.md</span>
+          </div>
+          <h3>Banking QA Case</h3>
+          <div class="artifact-columns">
+            <div>
+              <h4>Purpose</h4>
+              <p>Shows a banking account overview and balance visibility QA sample.</p>
+            </div>
+            <div>
+              <h4>What it proves</h4>
+              <p>Shows that I can test accuracy, masking, session behavior, security-aware flows, and cross-device consistency.</p>
+            </div>
+          </div>
+          <div class="skim-box">
+            <h4>Skim this for</h4>
+            <ul><li>Login/MFA</li><li>Balance display</li><li>Masked account number</li><li>Logout/session behavior</li></ul>
+          </div>
+        </div>
+      </div>
+
+      <div id="a12" class="artifact-panel ">
+        <div class="artifact-quick-card">
+          <div class="artifact-topline">
+            <span class="artifact-tag">Coverage map</span>
+            <span class="artifact-file">qa-test-artifacts/15_Testing_Type_Coverage_Matrix.md</span>
+          </div>
+          <h3>Testing Type Coverage Matrix</h3>
+          <div class="artifact-columns">
+            <div>
+              <h4>Purpose</h4>
+              <p>Maps testing types across purchase request, banking, and game QA case studies.</p>
+            </div>
+            <div>
+              <h4>What it proves</h4>
+              <p>Shows that I understand how the same QA fundamentals apply across different domains.</p>
+            </div>
+          </div>
+          <div class="skim-box">
+            <h4>Skim this for</h4>
+            <ul><li>Functional</li><li>Security/privacy</li><li>Accessibility</li><li>Regression and automation priority</li></ul>
+          </div>
+        </div>
+      </div>
+
+      <div id="a13" class="artifact-panel ">
+        <div class="artifact-quick-card">
+          <div class="artifact-topline">
+            <span class="artifact-tag">Tool usage</span>
+            <span class="artifact-file">qa-test-artifacts/16_QA_Tools_Matrix.md</span>
+          </div>
+          <h3>QA Tools Matrix</h3>
+          <div class="artifact-columns">
+            <div>
+              <h4>Purpose</h4>
+              <p>Explains how manual and automation-related tools support the sample test cases.</p>
+            </div>
+            <div>
+              <h4>What it proves</h4>
+              <p>Shows practical tool awareness without overclaiming expert-level automation.</p>
+            </div>
+          </div>
+          <div class="skim-box">
+            <h4>Skim this for</h4>
+            <ul><li>Test management</li><li>Bug tracking</li><li>Postman/API</li><li>Browser/device checks</li></ul>
+          </div>
+        </div>
+      </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
     <section id="tools" class="page"><div class="section"><h2>Tools & Technical Awareness</h2><p class="section-intro">Grouped by practical QA use and supporting exposure.</p><div class="grid three"><div class="card"><h3>Documentation</h3><p>Excel, Google Sheets, SharePoint, test cases, RTM, execution reports, test summaries.</p></div><div class="card"><h3>Tracking</h3><p>ServiceNow, Jira-style workflows, bug reports, escalation notes, retest evidence.</p></div><div class="card"><h3>Technical Checks</h3><p>SAP tools, SQL, Selenium basics, Postman/API awareness, Browser DevTools, GitHub, Vercel.</p></div></div></div></section>
     <section id="experience" class="page"><div class="section"><h2>Experience</h2><div class="grid two"><div class="card"><h3>Accenture</h3><p>SAP S/4HANA support, ServiceNow tickets, regression/UAT, SQL/Selenium-supported checks, incident validation, client coordination.</p></div><div class="card"><h3>TCL Online Services</h3><p>QA internship, process research, web tool assistance, documentation, technical support, 30 issues/day, escalation handling.</p></div><div class="card"><h3>iQor Philippines</h3><p>Customer account support, issue documentation, account verification, process compliance, and escalation handling.</p></div><div class="card"><h3>Freelance / Projects</h3><p>Scale AI / Outlier freelance technical evaluation exposure, QA portfolio, and CSE Review Studio web app.</p></div></div></div></section>
     <section id="contact" class="page"><div class="contact-layout"><div class="contact-main"><h2>Contact</h2><p>Open to QA, UAT, Application Support, IT Support, and technical QA opportunities.</p><div class="email-box"><div class="label">Primary Email</div><a href="mailto:jeric.semeniego.work@gmail.com">jeric.semeniego.work@gmail.com</a></div><div class="actions"><a class="btn" href="mailto:jeric.semeniego.work@gmail.com">Send email</a><a class="btn secondary" href="resume/Jeric_Semeniego_Final_Harvard_QA_Resume.pdf" target="_blank">Open resume</a></div></div><div class="contact-details"><div class="contact-bubble"><strong>Phone</strong><span>+63 961 871 1368</span></div><div class="contact-bubble"><strong>Location</strong><span>Pasig City, Metro Manila, Philippines</span></div><div class="contact-bubble"><strong>GitHub</strong><a href="https://github.com/jericsemeniegowork-boop" target="_blank">github.com/jericsemeniegowork-boop</a></div><div class="contact-bubble"><strong>Portfolio</strong><a href="https://jericsemeniegowork-boop.github.io/portfolio/" target="_blank">Live Portfolio</a></div></div></div></section>
