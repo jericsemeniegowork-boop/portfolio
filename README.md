@@ -2,68 +2,103 @@
 
 Live Portfolio: https://jericsemeniegowork-boop.github.io/portfolio/
 
-This is my QA portfolio for manual testing, UAT support, regression testing, defect reporting, issue validation, and release validation.
+This is my QA portfolio for manual testing, UAT support, regression testing, defect reporting, ticket handling, QMS/process documentation, and workflow validation.
 
-I made this portfolio to show how I approach QA work in a practical way: I review requirements, prepare test cases, check workflows, document issues, validate fixes, and summarize results clearly.
+I made this portfolio to show how I approach QA work in a practical way: understand the flow, list what needs to be tested, execute the checks, document issues, retest when needed, and summarize the result.
 
 ## What’s Included
 
-- Manual QA case studies
-- Test plans and test scenarios
-- Manual test cases
-- Requirement Traceability Matrix
-- Test data samples
-- Defect report samples
-- Regression and UAT checklists
-- Test execution and summary reports
-- QA tools matrix
-- Banking QA and Game QA samples
+- Testing process
+- Internal service filing workflow case study
+- Sample test case set
+- Back button navigation defect sample
+- QA documents with readable previews
+- Tools used and QA activity mapping
+- QMS / process documentation support
+- Banking QA and Game QA supporting samples
 - CSE Review Studio web app project
+- Resume
 
-## Case Studies
+## Main Case Study
 
-### Purchase Request and Approval System
+### Internal Service Filing Workflow
 
-A business workflow sample focused on request creation, approval/rejection, status updates, role-based access, audit/history checks, and regression testing.
+A neutral, non-confidential workflow sample focused on filing and record management.
 
-### Banking QA Case Study
+Covered areas:
 
-A banking sample focused on account balance display, login/MFA, masked account numbers, session behavior, cross-device checks, and basic API response awareness.
+- UI and navigation checks
+- Forms and data entry
+- Record management
+- Data integrity
+- End-to-end workflow
+- Generated document checks
+- JIRA issue tracking
 
-### Game QA Case Study
+## Defect Sample
 
-A fictional game QA sample focused on patch regression, reward validation, duplicate reward prevention, reconnect/session behavior, stability checks, and bug evidence.
+### Back Button Navigation Redirects to Incorrect Page
 
-### CSE Review Studio
+A cleaned and anonymized defect sample showing how I document:
 
-A mobile-first Civil Service Exam review web app built with HTML, CSS, JavaScript, LocalStorage, and Vercel. It includes practice questions, mock exams, topic drills, saved progress, notes, and mistake logs.
+- issue description
+- affected workflow
+- replication steps
+- expected result
+- actual result
+- impact
+- severity
+- possible shared navigation handling concern
 
-## Tools and Skills Shown
+## QA Documents
 
-- Manual Testing
-- Functional Testing
-- Regression Testing
-- UAT Support
-- Defect Reporting
-- Issue Validation
+The `qa-test-artifacts/` folder includes:
+
+- Requirement Analysis
+- Test Plan
+- Test Scenarios
+- Manual Test Cases
+- Requirement Traceability Matrix
+- Test Data
+- Defect Report Samples
+- Regression Checklist
+- UAT Checklist
+- Test Execution Report
+- Test Summary Report
+- Release Validation Checklist
+- Banking QA and Game QA samples
+- Testing Type Coverage Matrix
+- QA Tools Matrix
+
+## Tools
+
+Tools and exposure shown in this portfolio:
+
 - ServiceNow
-- SAP tools
+- SAP S/4HANA / SAP tools
 - Excel / Google Sheets
 - SharePoint
+- QMS / process documentation
 - SQL checks
-- Postman/API awareness
+- Postman / API checks
 - Selenium basics
 - Browser DevTools
 - GitHub
-- Vercel
+- Jira-style tracking
+
+## Education
+
+Bachelor of Science in Information Technology  
+STI College San Pablo | 2023
 
 ## Resume
 
-My resume is included in the resume/ folder.
+My resume is included in the `resume/` folder.
 
 ## Contact
 
 **Email:** jeric.semeniego.work@gmail.com  
+**Phone:** +63 961 871 1368  
 **Location:** Pasig City, Metro Manila, Philippines  
 **GitHub:** https://github.com/jericsemeniegowork-boop  
 **Portfolio:** https://jericsemeniegowork-boop.github.io/portfolio/
@@ -71,3 +106,7 @@ My resume is included in the resume/ folder.
 ## Note
 
 All samples are representative and non-confidential. They were created to show my QA process, documentation style, testing mindset, and ability to explain my work clearly.
+
+## QMS update
+
+Added QMS / process documentation support to reflect quality documentation, process references, workflow notes, and compliance-related support evidence.
