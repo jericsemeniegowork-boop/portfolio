@@ -2405,6 +2405,79 @@
       }
     }
 
+  
+    /* Rebuild 08: interactive supporting case studies */
+    .supporting-samples-section .section-intro{
+      max-width:900px;
+    }
+    .interactive-cases{
+      align-items:start;
+    }
+    .interactive-case{
+      cursor:pointer;
+      transition:transform .16s ease, box-shadow .16s ease, border-color .16s ease;
+    }
+    .interactive-case:hover{
+      transform:translateY(-2px);
+      border-color:#9ec5e8;
+      box-shadow:0 16px 34px rgba(15,23,42,.08);
+    }
+    .case-card-top{
+      display:grid;
+      gap:12px;
+    }
+    .case-toggle{
+      justify-self:start;
+      border:1px solid #c7dff1;
+      background:#eef5fb;
+      color:#1f4e79;
+      border-radius:999px;
+      padding:8px 12px;
+      font-weight:950;
+      cursor:pointer;
+      font-size:13px;
+    }
+    .case-toggle:hover{
+      background:#dbeafe;
+    }
+    .case-details{
+      display:none;
+      margin-top:16px;
+      padding-top:16px;
+      border-top:1px solid var(--line);
+      grid-template-columns:1fr;
+      gap:12px;
+    }
+    .interactive-case.open .case-details{
+      display:grid;
+    }
+    .interactive-case.open{
+      border-color:#9ec5e8;
+      box-shadow:0 16px 34px rgba(15,23,42,.08);
+    }
+    .interactive-case.open .case-toggle{
+      background:#1f4e79;
+      border-color:#1f4e79;
+      color:#ffffff;
+    }
+    .case-details h4{
+      margin:0 0 8px;
+      color:#0f172a;
+      font-size:15px;
+    }
+    .case-details ul{
+      margin:0;
+      padding-left:18px;
+      color:#334155;
+      line-height:1.58;
+    }
+    .case-details div{
+      background:#f8fafc;
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:14px;
+    }
+
   </style>
 </head>
 <body>
@@ -2787,45 +2860,125 @@
         </div>
       </div>
 
-      <div class="section">
-        <h2>Other case studies</h2>
-        <p class="section-intro">These additional samples show that I can apply the same QA thinking to other domains.</p>
+      
+      <div class="section supporting-samples-section">
+        <h2>Supporting QA Samples</h2>
+        <p class="section-intro">These are smaller samples that show how I apply the same testing approach to banking, game QA, and a web app project. Click a card to expand the details.</p>
 
-        <div class="supporting-case-grid">
-          <div class="supporting-case">
-            <h3>Banking QA Case Study</h3>
-            <p>Account overview and balance visibility sample covering login, MFA, balance display, masking, session behavior, cross-device checks, and API response awareness.</p>
+        <div class="supporting-case-grid interactive-cases">
+          <article class="supporting-case interactive-case" data-case="banking">
+            <div class="case-card-top">
+              <div>
+                <h3>Banking QA Case Study</h3>
+                <p>Account overview and balance visibility sample covering login, MFA, balance display, masking, session behavior, cross-device checks, and API response awareness.</p>
+              </div>
+              <button class="case-toggle" type="button">View details</button>
+            </div>
             <div class="tag-row">
               <span class="tag">Banking QA</span>
               <span class="tag">Security-aware</span>
               <span class="tag">API awareness</span>
             </div>
-          </div>
+            <div class="case-details">
+              <div>
+                <h4>What I would test</h4>
+                <ul>
+                  <li>Login and MFA behavior</li>
+                  <li>Available vs ledger balance display</li>
+                  <li>Masked account number and privacy checks</li>
+                  <li>Logout and session expiration</li>
+                  <li>Cross-device consistency</li>
+                </ul>
+              </div>
+              <div>
+                <h4>What this shows</h4>
+                <ul>
+                  <li>Accuracy testing</li>
+                  <li>Security-aware thinking</li>
+                  <li>API response awareness</li>
+                  <li>Careful validation of sensitive data</li>
+                </ul>
+              </div>
+            </div>
+          </article>
 
-          <div class="supporting-case">
-            <h3>Game QA Case Study</h3>
-            <p>Fictional live-service game sample covering patch regression, reward validation, duplicate prevention, reconnect/session behavior, stability, and evidence collection.</p>
+          <article class="supporting-case interactive-case" data-case="game">
+            <div class="case-card-top">
+              <div>
+                <h3>Game QA Case Study</h3>
+                <p>Fictional live-service game sample covering patch regression, reward validation, duplicate prevention, reconnect/session behavior, stability, and evidence collection.</p>
+              </div>
+              <button class="case-toggle" type="button">View details</button>
+            </div>
             <div class="tag-row">
               <span class="tag">Game QA</span>
               <span class="tag">Regression</span>
               <span class="tag">Stability checks</span>
             </div>
-          </div>
+            <div class="case-details">
+              <div>
+                <h4>What I would test</h4>
+                <ul>
+                  <li>Reward claim flow after patch</li>
+                  <li>Duplicate reward prevention</li>
+                  <li>Reconnect and session-change behavior</li>
+                  <li>Crash or freeze observation</li>
+                  <li>Regression around affected flows</li>
+                </ul>
+              </div>
+              <div>
+                <h4>What this shows</h4>
+                <ul>
+                  <li>Patch regression mindset</li>
+                  <li>Edge-case testing</li>
+                  <li>Evidence collection</li>
+                  <li>Risk-based QA thinking</li>
+                </ul>
+              </div>
+            </div>
+          </article>
 
-          <div class="supporting-case">
-            <h3>CSE Review Studio</h3>
-            <p>Mobile-first exam review web app with practice questions, mock exams, topic drills, saved progress, notes, mistake logs, and UI/usability checks.</p>
+          <article class="supporting-case interactive-case" data-case="cse">
+            <div class="case-card-top">
+              <div>
+                <h3>CSE Review Studio</h3>
+                <p>Mobile-first exam review web app with practice questions, mock exams, topic drills, saved progress, notes, mistake logs, and UI/usability checks.</p>
+              </div>
+              <button class="case-toggle" type="button">View details</button>
+            </div>
             <div class="tag-row">
               <span class="tag">HTML/CSS/JS</span>
-              <span class="tag">LocalStorage</span>
+              <span class="tag">Browser Browser LocalStorage</span>
               <span class="tag">Vercel</span>
             </div>
-          </div>
+            <div class="case-details">
+              <div>
+                <h4>What I built and tested</h4>
+                <ul>
+                  <li>Mobile-first review app layout</li>
+                  <li>Practice questions and mock exams</li>
+                  <li>Saved progress, notes, and mistake logs</li>
+                  <li>Topic drills and formula lessons</li>
+                  <li>Basic UI, usability, and responsive checks</li>
+                </ul>
+              </div>
+              <div>
+                <h4>What this shows</h4>
+                <ul>
+                  <li>Web app testing awareness</li>
+                  <li>Frontend project experience</li>
+                  <li>Browser storage usage</li>
+                  <li>User-flow and mobile usability thinking</li>
+                </ul>
+              </div>
+            </div>
+          </article>
         </div>
       </div>
     </section>
 
 
+    
     <section id="capabilities" class="page">
       <div class="section capability-hero">
         <span class="eyebrow small">Capability map</span>
@@ -4373,6 +4526,20 @@
         const panel = document.getElementById(btn.dataset.doc);
         if (panel) panel.classList.add('active');
       });
+    });
+
+  
+    document.querySelectorAll('.interactive-case').forEach(card => {
+      const toggle = card.querySelector('.case-toggle');
+      const setLabel = () => {
+        if (toggle) toggle.textContent = card.classList.contains('open') ? 'Hide details' : 'View details';
+      };
+      card.addEventListener('click', (event) => {
+        if (event.target.closest('a')) return;
+        card.classList.toggle('open');
+        setLabel();
+      });
+      setLabel();
     });
 
   </script>
