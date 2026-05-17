@@ -71,11 +71,3 @@ My resume is included in the resume/ folder.
 ## Note
 
 All samples are representative and non-confidential. They were created to show my QA process, documentation style, testing mindset, and ability to explain my work clearly.
-
-## Latest Update
-
-Added a Capabilities page and cleaned up the experience section layout so the portfolio feels more polished and easier to skim.
-
-## Latest Update
-
-Color and visual system updated for a more polished portfolio: deep navy for trust, blue for QA action, teal for validation, and amber for risk/attention.
