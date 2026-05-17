@@ -2,103 +2,89 @@
 
 Live Portfolio: https://jericsemeniegowork-boop.github.io/portfolio/
 
-This repository contains my QA portfolio with sample manual testing artifacts, testing type reviewers, QA tools usage, and case studies covering business workflow, banking QA, and game QA scenarios.
+This repository contains a polished QA portfolio focused on manual testing, UAT support, regression testing, defect documentation, issue validation, and release readiness.
 
-## About This Portfolio
+## Positioning
 
-This portfolio was created to demonstrate my manual QA process, documentation style, and understanding of software testing workflows.
+I am positioning this portfolio for QA Tester, Manual QA Analyst, UAT Support, Application Support, and IT Support roles.
 
-It includes sample QA artifacts such as test cases, defect reports, regression checklists, UAT support documents, test execution reports, release validation reports, testing coverage matrices, and tools usage notes.
+My strongest area is manual QA and support work: reviewing requirements, creating and executing test cases, documenting defects, validating fixes, running regression checks, supporting UAT, and reporting release readiness.
 
-## Focus Areas
+## Portfolio Sections
 
-- Manual QA Testing
-- Functional Testing
-- Regression Testing
-- UAT Support
-- Issue Replication
-- Defect Documentation
-- Test Execution Reporting
-- Release Validation
-- Banking QA fundamentals
-- Game QA fundamentals
-- Basic API, SQL, Browser DevTools, and Selenium/Python awareness
+- **Overview** — recruiter-friendly summary of my QA focus and tools
+- **QA Process** — requirement review to release validation workflow
+- **Case Studies** — purchase request, banking QA, game QA, and project examples
+- **Artifacts** — test plans, test cases, RTM, test data, defect reports, checklists, and summaries
+- **Tools** — practical QA tool awareness and how tools support testing
+- **Experience** — QA, support, SAP S/4HANA, ServiceNow, and project background
+- **Contact** — email, phone, location, resume, GitHub, and portfolio link
 
-## Case Studies
+## Main Case Studies
 
-### 1. Purchase Request and Approval Management System
+### Purchase Request and Approval Management System
 
-A business workflow case study focused on request creation, approval rules, status updates, audit history, role-based access, and regression validation.
+Business workflow sample covering:
 
-Sample workflow:
+- request creation
+- required-field validation
+- approval/rejection behavior
+- status updates
+- role-based access
+- audit/history checks
+- defect reporting
+- regression and UAT validation
 
-```text
-Requester creates a purchase request
-→ Requester submits it for approval
-→ Approver approves or rejects the request
-→ System updates the status
-→ Request history is recorded
-→ Approved requests become read-only
-→ Regression checks confirm related workflows still work
-```
+### Banking QA: Account Balance and Cross-Channel Validation
 
-### 2. Game QA Case Study
+Banking sample covering:
 
-A game QA case study focused on live-service patch validation, reward integrity, privacy checks, abuse-risk validation, platform coverage, and regression testing.
+- login and MFA
+- account balance display
+- available vs ledger balance
+- masking and privacy checks
+- session/logout behavior
+- cross-device consistency
+- security-aware QA checks
+- API response awareness
 
-Sample areas covered:
+### Game QA: Patch Regression and Reward Integrity
 
-```text
-Game launch and online session entry
-Reward claim validation
-Duplicate reward prevention
-Reconnect and session change behavior
-Stable / mount regression checks
-Mission launch validation
-Privacy setting validation
-Crash, performance, and compatibility checks
-Bug evidence and escalation
-```
+Game QA sample covering:
 
-Primary artifact:
+- patch regression
+- reward integrity
+- duplicate reward prevention
+- reconnect/session change behavior
+- crash/stability observation
+- evidence collection
+- incident escalation
+- anti-abuse validation in a safe, fictional QA context
 
-```text
-qa-test-artifacts/13_Game_QA_Frostwater_Lake_Case.md
-```
+### CSE Review Studio
 
-Additional alternate sample:
+Mobile-first exam review web app project covering:
 
-```text
-qa-test-artifacts/13B_Game_QA_Lake_Isabella_Case.md
-```
+- HTML, CSS, JavaScript, LocalStorage, and Vercel
+- 1,100+ practice questions
+- mock exams and topic drills
+- per-topic notes and mistake logs
+- manual UI and usability checks
 
-### 3. Banking QA Case Study
-
-A banking QA case study focused on account overview, balance visibility, security-aware checks, privacy, accessibility, localization, performance observation, cross-channel behavior, and API awareness.
-
-Sample areas covered:
+## Folder Structure
 
 ```text
-Login and authentication
-MFA validation
-Account balance display
-Available vs ledger balance
-Negative balance display
-Pending transactions
-Masked account number
-Session timeout
-Logout behavior
-Cross-device consistency
-API response checks
+index.html
+README.md
+VALIDATION_REPORT.md
+GITHUB_UPLOAD_GUIDE.md
+resume/
+qa-test-artifacts/
+projects/
+study-reviewer/
 ```
 
-Primary artifact:
-
-```text
-qa-test-artifacts/14_Banking_QA_Account_Balance_Case.md
-```
-
-## QA Artifacts Included
+## QA Artifacts
 
 The `qa-test-artifacts/` folder includes:
 
@@ -120,66 +106,25 @@ The `qa-test-artifacts/` folder includes:
 - `15_Testing_Type_Coverage_Matrix.md`
 - `16_QA_Tools_Matrix.md`
 
-## Testing Types Covered
-
-The portfolio includes a reviewer and applied coverage for:
-
-- Functional Testing
-- Non-Functional Testing
-- Manual Testing
-- Automation Testing
-- Black Box Testing
-- White Box Testing
-- Gray Box Testing
-- Regression Testing
-- Smoke Testing
-- Sanity Testing
-- Exploratory Testing
-- Alpha and Beta Testing
-- UI / Visual Testing
-- Security / Access Control Checks
-- Privacy Checks
-- Internationalization and Localization Awareness
-- Accessibility Checks
-- Performance Observation
-- Cross-Browser / Cross-Device Compatibility
-- Negative and Boundary Testing
-
-It also includes testing level explanations for:
-
-- Unit Tests
-- Integration Tests
-- Functional Tests
-- End-to-End Tests
-- Acceptance Testing
-- Performance Testing
-- Smoke Testing
-
 ## Tools and Technical Awareness
 
 - ServiceNow
-- Jira-style ticket tracking
-- TestRail / Zephyr-style test management
+- SAP tools
 - Excel / Google Sheets
-- Browser DevTools
-- Postman / API response checks
+- SharePoint
 - SQL validation checks
-- BrowserStack-style cross-browser/device checks
+- Postman/API response awareness
+- Selenium basics
+- Browser DevTools
 - GitHub
-- Selenium / Python basics
-- Playwright / Cypress awareness
-- Appium awareness
-- JMeter / LoadRunner awareness
-
-## Portfolio Positioning
-
-My strongest area is manual QA: reviewing requirements, creating and executing test cases, validating workflows, documenting defects, supporting UAT, retesting fixes, running regression checks, and reporting release readiness.
-
-I also have supporting technical awareness in API testing, SQL validation, Browser DevTools, cross-browser/device validation, and basic automation concepts.
+- Vercel
+- TestRail / Zephyr-style test management awareness
+- BrowserStack-style compatibility awareness
+- JMeter/LoadRunner performance awareness
 
 ## Resume
 
-My latest resume is available in the `resume/` folder.
+The latest resume is included in the `resume/` folder.
 
 ## Contact
 
@@ -190,4 +135,4 @@ My latest resume is available in the `resume/` folder.
 
 ## Note
 
-All samples in this repository are representative and non-confidential. They were created to demonstrate my QA process, documentation style, and testing mindset.
+All samples are representative and non-confidential. They were created to demonstrate QA thinking, documentation style, issue validation, testing coverage, and release-focused judgment.

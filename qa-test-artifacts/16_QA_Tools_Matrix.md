@@ -1,10 +1,10 @@
 # QA Tools Utilized in Test Cases
 
-This artifact explains how I utilized manual testing tools and automation testing tools inside the sample portfolio test cases. The goal is to show applied QA workflow, not just list tool names.
+This artifact explains how manual testing tools and automation testing tools are applied inside the sample portfolio test cases. The goal is to show applied QA workflow while keeping the tool usage representative and non-confidential.
 
 ## Manual Testing Tools Utilized
 
-| Tool Category | Tools | How I Utilized It in Test Cases | Sample Output |
+| Tool Category | Tools | How It Supports the Sample Test Cases | Sample Output |
 |---|---|---|---|
 | Test Management | TestRail, Zephyr, Excel/Google Sheets | Created test cases, grouped them by module, assigned priority, recorded expected result, actual result, execution status, and retest result. | Test run record, pass/fail count, execution summary |
 | Bug Tracking | Jira, Bugzilla, Mantis, ServiceNow-style tickets | Logged defects from failed test cases with reproduction steps, severity, priority, environment, screenshots/video, and retest notes. | Defect report, escalation ticket, retest evidence |
@@ -13,7 +13,7 @@ This artifact explains how I utilized manual testing tools and automation testin
 
 ## Automation Testing Tools Utilized
 
-| Tool Category | Tools | How I Utilized It in Test Cases | Best Candidate Tests |
+| Tool Category | Tools | How It Supports the Sample Test Cases | Best Candidate Tests |
 |---|---|---|---|
 | Web Automation | Selenium, Cypress, Playwright | Identified stable UI flows that should be automated after manual validation. | Login smoke, submit request, account overview, read-only validation |
 | Mobile Automation | Appium | Planned mobile regression coverage for banking app flows after requirements are stable. | Mobile login, balance display, session timeout, cross-app sync |
@@ -22,7 +22,7 @@ This artifact explains how I utilized manual testing tools and automation testin
 
 ## Tool Utilization by Sample Test Case
 
-| Sample Test Case | Tools Utilized | How I Applied the Tool | Output / Evidence |
+| Sample Test Case | Tools Utilized | How the Tool Supports the Test | Output / Evidence |
 |---|---|---|---|
 | TC-PR-001: Create purchase request with valid data | TestRail/Zephyr, Excel/Sheets | Documented steps, test data, expected result, actual result, and pass/fail status. | Executed test case record and test summary count |
 | TC-PR-006: Approved request becomes read-only | Jira-style bug tracker, Selenium/Playwright candidate | Logged defect if approved request remained editable; marked as regression automation candidate after fix. | Bug report with severity, screenshots, and retest status |

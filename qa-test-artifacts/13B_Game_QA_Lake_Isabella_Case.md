@@ -1,7 +1,7 @@
-# Extra Game QA Case Study: Frostwater Lake Reward Integrity Investigation
+# Optional Game QA Case Study: Lake Isabella Reward Integrity Investigation
 
 ## Purpose
-This is a non-confidential QA portfolio sample for a live-service game economy incident. It covers patch testing, manual test cases, incident escalation, and abuse-risk validation for a suspected treasure reward duplication issue.
+This is an optional non-confidential QA portfolio sample for a live-service game economy incident. It covers patch testing, manual test cases, incident escalation, and abuse-risk validation for a suspected treasure reward duplication issue.
 
 ## Incident Summary
 - **Incident ID:** INC-ECO-LAKE-001
@@ -47,9 +47,9 @@ P0 investigation opened for a suspected reward integrity issue. Risk includes du
 
 # Added Patch Regression Context: Latest / Recent FTO-Style Coverage
 
-## Official Patch Context Used for This Sample
+## Fictional Patch Context Used for This Sample
 
-- Frontier Trails Online Patch v1.8.0 is used as the latest official title-update reference for this portfolio sample.
+- Frontier Trails Online Patch v1.8.0 is used as the sample fictional title-update reference for this portfolio sample.
 - Current Frontier Trails Online live-service context is represented by the Seasonal Wildlife Research bonus rotation.
 - In a real QA role, the exact build number, environment, and release notes must be confirmed before testing.
 

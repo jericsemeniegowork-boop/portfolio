@@ -47,9 +47,9 @@ P0 investigation opened for a suspected reward integrity issue. Risk includes du
 
 # Added Patch Regression Context: Latest / Recent FTO-Style Coverage
 
-## Official Patch Context Used for This Sample
+## Fictional Patch Context Used for This Sample
 
-- Frontier Trails Online Patch v1.8.0 is used as the latest fictional patch-note reference for this portfolio sample.
+- Frontier Trails Online Patch v1.8.0 is used as the sample fictional patch-note reference for this portfolio sample.
 - Current Frontier Trails Online live-service context is represented by the Seasonal Wildlife Research bonus rotation.
 - In a real QA role, the exact build number, environment, and release notes must be confirmed before testing.
 
