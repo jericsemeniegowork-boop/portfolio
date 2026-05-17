@@ -106,7 +106,3 @@ My resume is included in the `resume/` folder.
 ## Note
 
 All samples are representative and non-confidential. They were created to show my QA process, documentation style, testing mindset, and ability to explain my work clearly.
-
-## QMS update
-
-Added QMS / process documentation support to reflect quality documentation, process references, workflow notes, and compliance-related support evidence.
