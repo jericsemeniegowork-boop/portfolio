@@ -2,129 +2,77 @@
 
 Live Portfolio: https://jericsemeniegowork-boop.github.io/portfolio/
 
-This repository contains a polished QA portfolio focused on manual testing, UAT support, regression testing, defect documentation, issue validation, and release readiness.
+This is my QA portfolio for manual testing, UAT support, regression testing, defect reporting, issue validation, and release validation.
 
-## Positioning
+I made this portfolio to show how I approach QA work in a practical way: I review requirements, prepare test cases, check workflows, document issues, validate fixes, and summarize results clearly.
 
-I am positioning this portfolio for QA Tester, Manual QA Analyst, UAT Support, Application Support, and IT Support roles.
+## What’s Included
 
-My strongest area is manual QA and support work: reviewing requirements, creating and executing test cases, documenting defects, validating fixes, running regression checks, supporting UAT, and reporting release readiness.
+- Manual QA case studies
+- Test plans and test scenarios
+- Manual test cases
+- Requirement Traceability Matrix
+- Test data samples
+- Defect report samples
+- Regression and UAT checklists
+- Test execution and summary reports
+- QA tools matrix
+- Banking QA and Game QA samples
+- CSE Review Studio web app project
 
-## Portfolio Sections
+## Case Studies
 
-- **Overview** — recruiter-friendly summary of my QA focus and tools
-- **QA Process** — requirement review to release validation workflow
-- **Case Studies** — purchase request, banking QA, game QA, and project examples
-- **Artifacts** — skimmable previews of test plans, test cases, RTM, test data, defect reports, checklists, and summaries
-- **Tools** — practical QA tool awareness and how tools support testing
-- **Experience** — QA, support, SAP S/4HANA, ServiceNow, and project background
-- **Contact** — email, phone, location, resume, GitHub, and portfolio link
+### Purchase Request and Approval System
 
-## Main Case Studies
+A business workflow sample focused on request creation, approval/rejection, status updates, role-based access, audit/history checks, and regression testing.
 
-### Purchase Request and Approval Management System
+### Banking QA Case Study
 
-Business workflow sample covering:
+A banking sample focused on account balance display, login/MFA, masked account numbers, session behavior, cross-device checks, and basic API response awareness.
 
-- request creation
-- required-field validation
-- approval/rejection behavior
-- status updates
-- role-based access
-- audit/history checks
-- defect reporting
-- regression and UAT validation
+### Game QA Case Study
 
-### Banking QA: Account Balance and Cross-Channel Validation
-
-Banking sample covering:
-
-- login and MFA
-- account balance display
-- available vs ledger balance
-- masking and privacy checks
-- session/logout behavior
-- cross-device consistency
-- security-aware QA checks
-- API response awareness
-
-### Game QA: Patch Regression and Reward Integrity
-
-Game QA sample covering:
-
-- patch regression
-- reward integrity
-- duplicate reward prevention
-- reconnect/session change behavior
-- crash/stability observation
-- evidence collection
-- incident escalation
-- anti-abuse validation in a safe, fictional QA context
+A fictional game QA sample focused on patch regression, reward validation, duplicate reward prevention, reconnect/session behavior, stability checks, and bug evidence.
 
 ### CSE Review Studio
 
-Mobile-first exam review web app project covering:
+A mobile-first Civil Service Exam review web app built with HTML, CSS, JavaScript, LocalStorage, and Vercel. It includes practice questions, mock exams, topic drills, saved progress, notes, and mistake logs.
 
-- HTML, CSS, JavaScript, LocalStorage, and Vercel
-- 1,100+ practice questions
-- mock exams and topic drills
-- per-topic notes and mistake logs
-- manual UI and usability checks
+## Tools and Skills Shown
 
-## Folder Structure
-
-```text
-index.html
-README.md
-VALIDATION_REPORT.md
-GITHUB_UPLOAD_GUIDE.md
-resume/
-qa-test-artifacts/
-projects/
-study-reviewer/
-```
-
-## QA Artifacts
-
-The `qa-test-artifacts/` folder includes:
-
-- `01_Requirement_Analysis.md`
-- `02_Test_Plan.md`
-- `03_Test_Scenarios.md`
-- `04_Manual_Test_Cases.csv`
-- `05_RTM.csv`
-- `06_Test_Data.csv`
-- `07_Defect_Report_Samples.md`
-- `08_Regression_Checklist.md`
-- `09_UAT_Checklist.md`
-- `10_Test_Execution_Report.csv`
-- `11_Test_Summary_Report.md`
-- `12_Release_Validation_Checklist.md`
-- `13_Game_QA_Frostwater_Lake_Case.md`
-- `13B_Game_QA_Lake_Isabella_Case.md`
-- `14_Banking_QA_Account_Balance_Case.md`
-- `15_Testing_Type_Coverage_Matrix.md`
-- `16_QA_Tools_Matrix.md`
-
-## Tools and Technical Awareness
-
+- Manual Testing
+- Functional Testing
+- Regression Testing
+- UAT Support
+- Defect Reporting
+- Issue Validation
 - ServiceNow
 - SAP tools
 - Excel / Google Sheets
 - SharePoint
-- SQL validation checks
-- Postman/API response awareness
+- SQL checks
+- Postman/API awareness
 - Selenium basics
 - Browser DevTools
 - GitHub
 - Vercel
-- TestRail / Zephyr-style test management awareness
-- BrowserStack-style compatibility awareness
-- JMeter/LoadRunner performance awareness
+
+## Folder Guide
+
+```text
+index.html
+README.md
+resume/
+qa-test-artifacts/
+projects/
+study-reviewer/
+VALIDATION_REPORT.md
+GITHUB_UPLOAD_GUIDE.md
+```
 
 ## Resume
 
-The latest resume is included in the `resume/` folder.
+My resume is included in the `resume/` folder.
 
 ## Contact
 
@@ -135,8 +83,4 @@ The latest resume is included in the `resume/` folder.
 
 ## Note
 
-All samples are representative and non-confidential. They were created to demonstrate QA thinking, documentation style, issue validation, testing coverage, and release-focused judgment.
-
-## Latest Portfolio Update
-
-Artifacts are summarized directly on the portfolio page so recruiters can skim each document without opening every source file.
+All samples are representative and non-confidential. They were created to show my QA process, documentation style, testing mindset, and ability to explain my work clearly.

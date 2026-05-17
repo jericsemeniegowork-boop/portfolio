@@ -1,7 +1,7 @@
 # Extra Game QA Case Study: Frostwater Lake Reward Integrity Investigation
 
 ## Purpose
-This is a non-confidential QA portfolio sample for a live-service game economy incident. It covers patch testing, manual test cases, incident escalation, and abuse-risk validation for a suspected treasure reward duplication issue.
+I created this as a non-confidential QA portfolio sample for a live-service game economy incident. It covers patch testing, manual test cases, incident escalation, and abuse-risk validation for a suspected treasure reward duplication issue.
 
 ## Incident Summary
 - **Incident ID:** INC-ECO-FROST-001

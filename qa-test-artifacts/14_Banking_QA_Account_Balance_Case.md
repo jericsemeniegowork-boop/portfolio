@@ -4,7 +4,7 @@
 Manual QA / Banking Application Test Case / Requirement Gap Analysis / Automation Prioritization
 
 ## Case Study Scope
-This is a non-confidential banking QA sample for a fictional online banking platform called **SecureBank**. The focus is an **Account Overview and Balance Visibility** feature across web and mobile.
+I created this non-confidential banking QA sample for a fictional online banking platform called **SecureBank**. The focus is an **Account Overview and Balance Visibility** feature across web and mobile.
 
 The sample intentionally avoids assuming complete system behavior. It starts with questions a QA analyst should ask before finalizing test coverage.
 

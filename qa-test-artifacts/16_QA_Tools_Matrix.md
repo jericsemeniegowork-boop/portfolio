@@ -1,6 +1,6 @@
 # QA Tools Utilized in Test Cases
 
-This artifact explains how manual testing tools and automation testing tools are applied inside the sample portfolio test cases. The goal is to show applied QA workflow while keeping the tool usage representative and non-confidential.
+I created this artifact to explain how manual testing tools and automation testing tools are applied inside the sample portfolio test cases. The goal is to show applied QA workflow while keeping the tool usage representative and non-confidential.
 
 ## Manual Testing Tools Utilized
 

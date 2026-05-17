@@ -1,7 +1,7 @@
 # Optional Game QA Case Study: Lake Isabella Reward Integrity Investigation
 
 ## Purpose
-This is an optional non-confidential QA portfolio sample for a live-service game economy incident. It covers patch testing, manual test cases, incident escalation, and abuse-risk validation for a suspected treasure reward duplication issue.
+I created this as an optional non-confidential QA portfolio sample for a live-service game economy incident. It covers patch testing, manual test cases, incident escalation, and abuse-risk validation for a suspected treasure reward duplication issue.
 
 ## Incident Summary
 - **Incident ID:** INC-ECO-LAKE-001

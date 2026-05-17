@@ -1,6 +1,6 @@
 # Testing Type Coverage Matrix Across Portfolio Case Studies
 
-This artifact maps common QA testing types across three representative case studies: Purchase Request workflow, fictional online western game patch testing, and Banking account balance validation.
+I created this artifact to map common QA testing types across three representative case studies: Purchase Request workflow, fictional online western game patch testing, and Banking account balance validation.
 
 | Testing Type | Purchase Request Case | Fictional Game Patch Case | Banking Case |
 |---|---|---|---|
