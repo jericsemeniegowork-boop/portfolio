@@ -2478,6 +2478,112 @@
       padding:14px;
     }
 
+  
+    /* Rebuild 09: show all case source files */
+    .case-source-links{
+      grid-column:1 / -1;
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      background:transparent !important;
+      border:0 !important;
+      padding:0 !important;
+      margin-top:2px;
+    }
+    .case-source-links a{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:8px 11px;
+      border-radius:999px;
+      background:#eef5fb;
+      border:1px solid #c7dff1;
+      color:#1f4e79 !important;
+      -webkit-text-fill-color:#1f4e79 !important;
+      font-size:13px;
+      font-weight:950;
+      text-decoration:none;
+    }
+    .case-source-links a:hover{
+      background:#dbeafe;
+      text-decoration:none;
+    }
+    .additional-docs-block{
+      background:#ffffff;
+      border:1px solid var(--line);
+      border-radius:22px;
+      padding:20px;
+      margin:0 0 18px;
+      box-shadow:0 10px 24px rgba(15,23,42,.04);
+    }
+    .additional-docs-heading{
+      margin-bottom:14px;
+    }
+    .additional-docs-heading h3{
+      margin:0 0 6px;
+      color:#0f172a;
+      font-size:20px;
+      letter-spacing:-.02em;
+    }
+    .additional-docs-heading p{
+      margin:0;
+      color:#334155;
+      line-height:1.55;
+    }
+    .additional-docs-grid{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:12px;
+    }
+    .additional-doc-card{
+      display:block;
+      background:#f8fafc;
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:16px;
+      text-decoration:none;
+      color:#0f172a !important;
+      -webkit-text-fill-color:initial !important;
+      transition:transform .15s ease, border-color .15s ease, box-shadow .15s ease;
+    }
+    .additional-doc-card:hover{
+      transform:translateY(-2px);
+      border-color:#9ec5e8;
+      box-shadow:0 12px 26px rgba(15,23,42,.08);
+      text-decoration:none;
+    }
+    .additional-doc-card span{
+      display:inline-flex;
+      padding:5px 8px;
+      border-radius:999px;
+      background:#eef5fb;
+      border:1px solid #c7dff1;
+      color:#1f4e79;
+      -webkit-text-fill-color:#1f4e79;
+      font-size:11px;
+      font-weight:950;
+      margin-bottom:9px;
+    }
+    .additional-doc-card strong{
+      display:block;
+      color:#0f172a;
+      -webkit-text-fill-color:#0f172a;
+      margin-bottom:6px;
+      font-size:16px;
+    }
+    .additional-doc-card small{
+      display:block;
+      color:#334155;
+      -webkit-text-fill-color:#334155;
+      line-height:1.45;
+      font-size:13px;
+    }
+    @media(max-width:980px){
+      .additional-docs-grid{
+        grid-template-columns:1fr;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -2899,6 +3005,9 @@
                   <li>Careful validation of sensitive data</li>
                 </ul>
               </div>
+              <div class="case-source-links">
+                <a href="qa-test-artifacts/14_Banking_QA_Account_Balance_Case.md" target="_blank">Open Banking QA source document</a>
+              </div>
             </div>
           </article>
 
@@ -2934,6 +3043,10 @@
                   <li>Evidence collection</li>
                   <li>Risk-based QA thinking</li>
                 </ul>
+              </div>
+              <div class="case-source-links">
+                <a href="qa-test-artifacts/13_Game_QA_Frostwater_Lake_Case.md" target="_blank">Open Frostwater game QA source document</a>
+                <a href="qa-test-artifacts/13B_Game_QA_Lake_Isabella_Case.md" target="_blank">Open Lake Isabella game QA source document</a>
               </div>
             </div>
           </article>
@@ -3151,6 +3264,46 @@
           <div><strong>Execute</strong><span>Manual test cases, execution report, defect reports</span></div>
           <div><strong>Validate</strong><span>Regression checklist, UAT checklist, summary, release checklist</span></div>
         </div>
+
+        <div class="additional-docs-block">
+          <div class="additional-docs-heading">
+            <h3>Additional case study source files</h3>
+            <p>These files are included in the repository and are now linked here so they are visible from the portfolio, not only from GitHub.</p>
+          </div>
+
+          <div class="additional-docs-grid">
+            <a class="additional-doc-card" href="qa-test-artifacts/13_Game_QA_Frostwater_Lake_Case.md" target="_blank">
+              <span>Game QA</span>
+              <strong>Frostwater Lake Case</strong>
+              <small>Patch regression, reward integrity, reconnect behavior, and evidence collection.</small>
+            </a>
+
+            <a class="additional-doc-card" href="qa-test-artifacts/13B_Game_QA_Lake_Isabella_Case.md" target="_blank">
+              <span>Game QA</span>
+              <strong>Lake Isabella Case</strong>
+              <small>Optional supporting game QA case focused on reward integrity investigation.</small>
+            </a>
+
+            <a class="additional-doc-card" href="qa-test-artifacts/14_Banking_QA_Account_Balance_Case.md" target="_blank">
+              <span>Banking QA</span>
+              <strong>Account Balance Case</strong>
+              <small>Account overview, balance visibility, masking, session behavior, and API awareness.</small>
+            </a>
+
+            <a class="additional-doc-card" href="qa-test-artifacts/15_Testing_Type_Coverage_Matrix.md" target="_blank">
+              <span>Coverage</span>
+              <strong>Testing Type Coverage Matrix</strong>
+              <small>Maps functional, regression, security/privacy, accessibility, and automation-priority checks.</small>
+            </a>
+
+            <a class="additional-doc-card" href="qa-test-artifacts/16_QA_Tools_Matrix.md" target="_blank">
+              <span>Tools</span>
+              <strong>QA Tools Matrix</strong>
+              <small>Explains how QA tools support planning, execution, defect reporting, and validation.</small>
+            </a>
+          </div>
+        </div>
+
 
         <div class="qa-docs-layout">
           <aside class="doc-menu">
