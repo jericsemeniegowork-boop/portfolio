@@ -8,16 +8,16 @@ I made this portfolio to show how I approach QA work in a practical way: underst
 
 ## What’s Included
 
-- Testing process
-- Internal service filing workflow case study
-- Sample test case set
-- Back button navigation defect sample
-- QA documents with readable previews
-- Tools used and QA activity mapping
-- QMS / process documentation support
-- Banking QA and Game QA supporting samples
-- CSE Review Studio web app project
-- Resume
+* Testing process
+* Internal service filing workflow case study
+* Sample test case set
+* Back button navigation defect sample
+* QA documents with readable previews
+* Tools used and QA activity mapping
+* QMS / process documentation support
+* Banking QA and Game QA supporting samples
+* CSE Review Studio web app project
+* Resume
 
 ## Main Case Study
 
@@ -27,13 +27,13 @@ A neutral, non-confidential workflow sample focused on filing and record managem
 
 Covered areas:
 
-- UI and navigation checks
-- Forms and data entry
-- Record management
-- Data integrity
-- End-to-end workflow
-- Generated document checks
-- JIRA issue tracking
+* UI and navigation checks
+* Forms and data entry
+* Record management
+* Data integrity
+* End-to-end workflow
+* Generated document checks
+* JIRA issue tracking
 
 ## Defect Sample
 
@@ -41,50 +41,50 @@ Covered areas:
 
 A cleaned and anonymized defect sample showing how I document:
 
-- issue description
-- affected workflow
-- replication steps
-- expected result
-- actual result
-- impact
-- severity
-- possible shared navigation handling concern
+* issue description
+* affected workflow
+* replication steps
+* expected result
+* actual result
+* impact
+* severity
+* possible shared navigation handling concern
 
 ## QA Documents
 
 The `qa-test-artifacts/` folder includes:
 
-- Requirement Analysis
-- Test Plan
-- Test Scenarios
-- Manual Test Cases
-- Requirement Traceability Matrix
-- Test Data
-- Defect Report Samples
-- Regression Checklist
-- UAT Checklist
-- Test Execution Report
-- Test Summary Report
-- Release Validation Checklist
-- Banking QA and Game QA samples
-- Testing Type Coverage Matrix
-- QA Tools Matrix
+* Requirement Analysis
+* Test Plan
+* Test Scenarios
+* Manual Test Cases
+* Requirement Traceability Matrix
+* Test Data
+* Defect Report Samples
+* Regression Checklist
+* UAT Checklist
+* Test Execution Report
+* Test Summary Report
+* Release Validation Checklist
+* Banking QA and Game QA samples
+* Testing Type Coverage Matrix
+* QA Tools Matrix
 
 ## Tools
 
 Tools and exposure shown in this portfolio:
 
-- ServiceNow
-- SAP S/4HANA / SAP tools
-- Excel / Google Sheets
-- SharePoint
-- QMS / process documentation
-- SQL checks
-- Postman / API checks
-- Selenium basics
-- Browser DevTools
-- GitHub
-- Jira-style tracking
+* ServiceNow
+* SAP S/4HANA / SAP tools
+* Excel / Google Sheets
+* SharePoint
+* QMS / process documentation
+* SQL checks
+* Postman / API checks
+* Selenium basics
+* Browser DevTools
+* GitHub
+* Jira-style tracking
 
 ## Education
 
@@ -106,3 +106,6 @@ My resume is included in the `resume/` folder.
 ## Note
 
 All samples are representative and non-confidential. They were created to show my QA process, documentation style, testing mindset, and ability to explain my work clearly.
+
+## 
+

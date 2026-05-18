@@ -2606,6 +2606,26 @@
       display:grid !important;
     }
 
+  
+    /* Resume filename and references update */
+    .reference-box{
+      background:#f8fafc;
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:18px;
+      margin-top:14px;
+    }
+    .reference-box h4{
+      margin:0 0 6px;
+      color:#0f172a;
+      font-size:16px;
+    }
+    .reference-box p{
+      margin:0;
+      color:#334155;
+      font-weight:850;
+    }
+
   </style>
 </head>
 <body>
@@ -2653,7 +2673,7 @@
           <div class="actions">
             <button class="btn" onclick="showPage('artifacts')">View QA Documents</button>
             <button class="btn secondary" onclick="showPage('cases')">View Case Studies</button>
-            <a class="btn secondary" href="resume/Jeric_Semeniego_Final_Harvard_QA_Resume.pdf" target="_blank">Open Resume</a>
+            <a class="btn secondary" href="resume/Jeric_Semeniego_Resume.pdf" target="_blank">Open Resume</a>
           </div>
         </div>
 
@@ -4604,7 +4624,7 @@
 
             <div class="contact-actions-clean">
               <a class="btn" href="mailto:jeric.semeniego.work@gmail.com">Email Me</a>
-              <a class="btn secondary" href="resume/Jeric_Semeniego_Final_Harvard_QA_Resume.pdf" target="_blank">Open Resume</a>
+              <a class="btn secondary" href="resume/Jeric_Semeniego_Resume.pdf" target="_blank">Open Resume</a>
               <a class="btn secondary" href="https://github.com/jericsemeniegowork-boop" target="_blank">GitHub</a>
             </div>
 
@@ -4620,6 +4640,12 @@
                 <li>Back button navigation defect sample</li>
               </ul>
             </div>
+
+            <div class="reference-box">
+              <h4>References</h4>
+              <p>Available upon request.</p>
+            </div>
+
           </div>
 
           <div class="contact-info-card">
@@ -4658,7 +4684,11 @@
       document.querySelectorAll('.page').forEach(page => page.classList.remove('active'));
       const target = document.getElementById(pageId);
       if (target) target.classList.add('active');
-      document.querySelectorAll('.navbtn').forEach(btn => btn.classList.toggle('active', btn.dataset.page === pageId));
+
+      document.querySelectorAll('.navbtn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.page === pageId);
+      });
+
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
@@ -4676,16 +4706,6 @@
       });
     });
 
-    const root = document.documentElement;
-    const toggle = document.getElementById('themeToggle');
-    function applyTheme(theme) {
-      root.setAttribute('data-theme', theme);
-      toggle.textContent = theme === 'dark' ? 'Light mode' : 'Dark mode';
-      localStorage.setItem('portfolio-theme', theme);
-    }
-    applyTheme(localStorage.getItem('portfolio-theme') || 'light');
-    toggle.addEventListener('click', () => applyTheme(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark'));
-  
     document.querySelectorAll('.doc-tab').forEach(btn => {
       btn.addEventListener('click', () => {
         document.querySelectorAll('.doc-tab').forEach(tab => tab.classList.remove('active'));
@@ -4695,25 +4715,44 @@
         if (panel) panel.classList.add('active');
       });
     });
+
     document.querySelectorAll('.interactive-case').forEach(card => {
       const toggle = card.querySelector('.case-toggle');
       const setLabel = () => {
         if (toggle) toggle.textContent = card.classList.contains('open') ? 'Hide details' : 'View details';
       };
+
       card.classList.remove('open');
+
       if (toggle) {
-        toggle.addEventListener('click', (event) => {
+        toggle.addEventListener('click', event => {
           event.preventDefault();
           event.stopPropagation();
           card.classList.toggle('open');
           setLabel();
         });
       }
+
       setLabel();
     });
-setLabel();
-    });
 
+    const root = document.documentElement;
+    const toggle = document.getElementById('themeToggle');
+
+    function applyTheme(theme) {
+      root.setAttribute('data-theme', theme);
+      if (toggle) toggle.textContent = theme === 'dark' ? 'Light mode' : 'Dark mode';
+      localStorage.setItem('portfolio-theme', theme);
+    }
+
+    applyTheme(localStorage.getItem('portfolio-theme') || 'light');
+
+    if (toggle) {
+      toggle.addEventListener('click', () => {
+        applyTheme(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+      });
+    }
   </script>
+
 </body>
 </html>
