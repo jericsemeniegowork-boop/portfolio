@@ -2626,6 +2626,55 @@
       font-weight:850;
     }
 
+  
+    /* Static no-JS stability fix */
+    html { scroll-behavior:smooth; }
+    .page, .page.active {
+      display:block !important;
+      padding:34px 0 !important;
+      scroll-margin-top:92px;
+    }
+    .nav { display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end; }
+    .navlink {
+      border:1px solid transparent;
+      background:transparent;
+      color:var(--muted) !important;
+      -webkit-text-fill-color:var(--muted) !important;
+      border-radius:999px;
+      padding:8px 11px;
+      font-weight:850;
+      font-size:12px;
+      text-decoration:none;
+    }
+    .navlink:hover {
+      color:var(--text) !important;
+      -webkit-text-fill-color:var(--text) !important;
+      background:var(--surface-2);
+      border-color:var(--line);
+      text-decoration:none;
+    }
+    .theme-toggle, .navbtn, .artifact-tab, .doc-tab, .case-toggle { display:none !important; }
+    .doc-menu, .artifact-menu { display:none !important; }
+    .qa-docs-layout, .artifact-layout { display:block !important; }
+    .doc-panel, .doc-panel.active, .artifact-panel, .artifact-panel.active {
+      display:block !important;
+      margin-bottom:18px;
+    }
+    .interactive-case .case-details, .interactive-case.open .case-details {
+      display:grid !important;
+    }
+    .case-source-links { display:flex !important; }
+    .reference-box {
+      background:#f8fafc;
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:18px;
+      margin-top:14px;
+    }
+    .reference-box h4 { margin:0 0 6px; color:#0f172a; font-size:16px; }
+    .reference-box p { margin:0; color:#334155; font-weight:850; }
+    @media(max-width:980px){ .nav { justify-content:flex-start; } }
+
   </style>
 </head>
 <body>
@@ -2633,15 +2682,14 @@
     <div class="container navwrap">
       <a class="brand" href="#" onclick="showPage('overview')">Jeric Semeniego</a>
       <nav class="nav">
-        <button class="navbtn active" data-page="overview">Overview</button>
-        <button class="navbtn" data-page="cycle">Testing Process</button>
-        <button class="navbtn" data-page="cases">Case Studies</button>
-        <button class="navbtn" data-page="artifacts">QA Documents</button>
-        <button class="navbtn" data-page="tools">Tools Used</button>
-        <button class="navbtn" data-page="experience">Experience</button>
-        <button class="navbtn" data-page="education">Education</button>
-        <button class="navbtn" data-page="contact">Contact</button>
-        <button class="theme-toggle" id="themeToggle" type="button">Dark mode</button>
+        <a class="navlink" href="#overview">Overview</a>
+        <a class="navlink" href="#cycle">Testing Process</a>
+        <a class="navlink" href="#cases">Case Studies</a>
+        <a class="navlink" href="#artifacts">QA Documents</a>
+        <a class="navlink" href="#tools">Tools Used</a>
+        <a class="navlink" href="#experience">Experience</a>
+        <a class="navlink" href="#education">Education</a>
+        <a class="navlink" href="#contact">Contact</a>
       </nav>
     </div>
   </header>
@@ -4678,81 +4726,6 @@
     </main>
 
   <footer><div class="container">© 2026 Jeric Semeniego • QA Portfolio • Representative, non-confidential samples</div></footer>
-
-  <script>
-    function showPage(pageId) {
-      document.querySelectorAll('.page').forEach(page => page.classList.remove('active'));
-      const target = document.getElementById(pageId);
-      if (target) target.classList.add('active');
-
-      document.querySelectorAll('.navbtn').forEach(btn => {
-        btn.classList.toggle('active', btn.dataset.page === pageId);
-      });
-
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-
-    document.querySelectorAll('.navbtn').forEach(btn => {
-      btn.addEventListener('click', () => showPage(btn.dataset.page));
-    });
-
-    document.querySelectorAll('.artifact-tab').forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.querySelectorAll('.artifact-tab').forEach(tab => tab.classList.remove('active'));
-        document.querySelectorAll('.artifact-panel').forEach(panel => panel.classList.remove('active'));
-        btn.classList.add('active');
-        const panel = document.getElementById(btn.dataset.artifact);
-        if (panel) panel.classList.add('active');
-      });
-    });
-
-    document.querySelectorAll('.doc-tab').forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.querySelectorAll('.doc-tab').forEach(tab => tab.classList.remove('active'));
-        document.querySelectorAll('.doc-panel').forEach(panel => panel.classList.remove('active'));
-        btn.classList.add('active');
-        const panel = document.getElementById(btn.dataset.doc);
-        if (panel) panel.classList.add('active');
-      });
-    });
-
-    document.querySelectorAll('.interactive-case').forEach(card => {
-      const toggle = card.querySelector('.case-toggle');
-      const setLabel = () => {
-        if (toggle) toggle.textContent = card.classList.contains('open') ? 'Hide details' : 'View details';
-      };
-
-      card.classList.remove('open');
-
-      if (toggle) {
-        toggle.addEventListener('click', event => {
-          event.preventDefault();
-          event.stopPropagation();
-          card.classList.toggle('open');
-          setLabel();
-        });
-      }
-
-      setLabel();
-    });
-
-    const root = document.documentElement;
-    const toggle = document.getElementById('themeToggle');
-
-    function applyTheme(theme) {
-      root.setAttribute('data-theme', theme);
-      if (toggle) toggle.textContent = theme === 'dark' ? 'Light mode' : 'Dark mode';
-      localStorage.setItem('portfolio-theme', theme);
-    }
-
-    applyTheme(localStorage.getItem('portfolio-theme') || 'light');
-
-    if (toggle) {
-      toggle.addEventListener('click', () => {
-        applyTheme(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
-      });
-    }
-  </script>
-
+  <!-- Static portfolio version: no JavaScript required. -->
 </body>
 </html>
