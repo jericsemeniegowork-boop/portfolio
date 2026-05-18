@@ -106,23 +106,3 @@ My resume is included in the `resume/` folder.
 ## Note
 
 All samples are representative and non-confidential. They were created to show my QA process, documentation style, testing mindset, and ability to explain my work clearly.
-
-## QMS update
-
-Added QMS / process documentation support to reflect quality documentation, process references, workflow notes, and compliance-related support evidence.
-
-## Update note
-
-Supporting QA Samples are now interactive. Banking QA, Game QA, and CSE Review Studio cards can be expanded to show details.
-
-## Update note
-
-Additional case study source files are now visible in the portfolio: Game QA Frostwater, Banking QA Account Balance, Testing Type Coverage Matrix, and QA Tools Matrix.
-
-## Update note
-
-Case card interaction cleanup: supporting sample cards now start collapsed, only the button expands details, source document links remain visible, and Browser LocalStorage wording was fixed.
-
-## Update note
-
-Removed the Lake Isabella game QA source file and links to keep the portfolio focused on the stronger Game QA sample.
