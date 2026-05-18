@@ -2584,6 +2584,28 @@
       }
     }
 
+  
+    /* Rebuild 10: case card interaction cleanup */
+    .interactive-case{
+      cursor:default !important;
+    }
+    .case-toggle{
+      cursor:pointer !important;
+    }
+    .case-source-links.always-visible{
+      display:flex !important;
+      margin-top:14px;
+      padding-top:12px !important;
+      border-top:1px solid var(--line) !important;
+      background:transparent !important;
+    }
+    .interactive-case:not(.open) .case-details{
+      display:none !important;
+    }
+    .interactive-case.open .case-details{
+      display:grid !important;
+    }
+
   </style>
 </head>
 <body>
@@ -3005,7 +3027,7 @@
                   <li>Careful validation of sensitive data</li>
                 </ul>
               </div>
-              <div class="case-source-links">
+              <div class="case-source-links always-visible">
                 <a href="qa-test-artifacts/14_Banking_QA_Account_Balance_Case.md" target="_blank">Open Banking QA source document</a>
               </div>
             </div>
@@ -3044,9 +3066,8 @@
                   <li>Risk-based QA thinking</li>
                 </ul>
               </div>
-              <div class="case-source-links">
+              <div class="case-source-links always-visible">
                 <a href="qa-test-artifacts/13_Game_QA_Frostwater_Lake_Case.md" target="_blank">Open Frostwater game QA source document</a>
-                <a href="qa-test-artifacts/13B_Game_QA_Lake_Isabella_Case.md" target="_blank">Open Lake Isabella game QA source document</a>
               </div>
             </div>
           </article>
@@ -3061,7 +3082,7 @@
             </div>
             <div class="tag-row">
               <span class="tag">HTML/CSS/JS</span>
-              <span class="tag">Browser Browser LocalStorage</span>
+              <span class="tag">Browser LocalStorage</span>
               <span class="tag">Vercel</span>
             </div>
             <div class="case-details">
@@ -3276,12 +3297,6 @@
               <span>Game QA</span>
               <strong>Frostwater Lake Case</strong>
               <small>Patch regression, reward integrity, reconnect behavior, and evidence collection.</small>
-            </a>
-
-            <a class="additional-doc-card" href="qa-test-artifacts/13B_Game_QA_Lake_Isabella_Case.md" target="_blank">
-              <span>Game QA</span>
-              <strong>Lake Isabella Case</strong>
-              <small>Optional supporting game QA case focused on reward integrity investigation.</small>
             </a>
 
             <a class="additional-doc-card" href="qa-test-artifacts/14_Banking_QA_Account_Balance_Case.md" target="_blank">
@@ -4680,19 +4695,23 @@
         if (panel) panel.classList.add('active');
       });
     });
-
-  
     document.querySelectorAll('.interactive-case').forEach(card => {
       const toggle = card.querySelector('.case-toggle');
       const setLabel = () => {
         if (toggle) toggle.textContent = card.classList.contains('open') ? 'Hide details' : 'View details';
       };
-      card.addEventListener('click', (event) => {
-        if (event.target.closest('a')) return;
-        card.classList.toggle('open');
-        setLabel();
-      });
+      card.classList.remove('open');
+      if (toggle) {
+        toggle.addEventListener('click', (event) => {
+          event.preventDefault();
+          event.stopPropagation();
+          card.classList.toggle('open');
+          setLabel();
+        });
+      }
       setLabel();
+    });
+setLabel();
     });
 
   </script>

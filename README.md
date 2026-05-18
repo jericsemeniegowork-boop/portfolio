@@ -117,4 +117,12 @@ Supporting QA Samples are now interactive. Banking QA, Game QA, and CSE Review S
 
 ## Update note
 
-Additional case study source files are now visible in the portfolio: Game QA Frostwater, Game QA Lake Isabella, Banking QA Account Balance, Testing Type Coverage Matrix, and QA Tools Matrix.
+Additional case study source files are now visible in the portfolio: Game QA Frostwater, Banking QA Account Balance, Testing Type Coverage Matrix, and QA Tools Matrix.
+
+## Update note
+
+Case card interaction cleanup: supporting sample cards now start collapsed, only the button expands details, source document links remain visible, and Browser LocalStorage wording was fixed.
+
+## Update note
+
+Removed the Lake Isabella game QA source file and links to keep the portfolio focused on the stronger Game QA sample.
