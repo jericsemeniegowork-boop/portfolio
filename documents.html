@@ -7,144 +7,228 @@
   <meta name="description" content="Jeric Semeniego QA portfolio: manual testing, test cases, UAT support, regression testing, defect reports, SAP S/4HANA, ServiceNow, QMS documentation.">
   <style>
 :root{
-  --bg:#f7f8fb;
-  --paper:#ffffff;
-  --ink:#111827;
-  --muted:#4b5563;
-  --line:#d8dee8;
-  --blue:#1f4e79;
-  --soft:#eef5fb;
-  --radius:18px;
+  --bg:#f6f4ef;
+  --paper:#fffdf8;
+  --ink:#151515;
+  --muted:#55524c;
+  --line:#ded8cc;
+  --accent:#153e52;
+  --accent2:#8a6f3d;
+  --soft:#f0ebe2;
+  --white:#ffffff;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
   margin:0;
-  font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
-  background:var(--bg);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(21,62,82,.07), transparent 30%),
+    var(--bg);
   color:var(--ink);
   line-height:1.62;
 }
-a{color:var(--blue);text-decoration:none}
+a{color:var(--accent);text-decoration:none}
 a:hover{text-decoration:underline}
-.container{width:min(1000px,calc(100% - 36px));margin:0 auto}
+.container{width:min(1060px,calc(100% - 40px));margin:0 auto}
 .topbar{
-  background:rgba(255,255,255,.94);
-  border-bottom:1px solid var(--line);
   position:sticky;
   top:0;
   z-index:20;
+  background:rgba(246,244,239,.92);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
 }
 .topbar-inner{
-  min-height:68px;
+  width:min(1060px,calc(100% - 40px));
+  margin:0 auto;
+  min-height:70px;
   display:flex;
   align-items:center;
   justify-content:space-between;
   gap:18px;
-  width:min(1000px,calc(100% - 36px));
-  margin:0 auto;
 }
 .brand{
   color:var(--ink);
-  font-weight:800;
-  letter-spacing:-.02em;
+  font-weight:850;
+  letter-spacing:-.03em;
+}
+.brand span{
+  display:block;
+  color:var(--muted);
+  font-size:12px;
+  font-weight:650;
+  letter-spacing:0;
+  margin-top:2px;
 }
 .nav{
   display:flex;
-  flex-wrap:wrap;
   gap:6px;
+  flex-wrap:wrap;
   justify-content:flex-end;
 }
 .nav a{
-  padding:7px 10px;
-  border-radius:999px;
   color:var(--muted);
-  font-weight:700;
+  border:1px solid transparent;
+  border-radius:999px;
+  padding:7px 10px;
   font-size:13px;
+  font-weight:750;
 }
-.nav a.active,
-.nav a:hover{
-  background:var(--soft);
-  color:var(--blue);
+.nav a:hover,.nav a.active{
+  color:var(--ink);
+  border-color:var(--line);
+  background:rgba(255,253,248,.74);
   text-decoration:none;
 }
-.page{padding:34px 0 46px}
+.nav a.work{
+  color:var(--white);
+  background:var(--accent);
+  border-color:var(--accent);
+}
+.nav a.work:hover{background:#0f2f3f;color:white}
+.page{padding:34px 0 52px}
 .hero{
+  display:grid;
+  grid-template-columns:1.06fr .94fr;
+  gap:20px;
+  align-items:stretch;
+  margin:34px 0 22px;
+}
+.hero-main,.panel{
   background:var(--paper);
   border:1px solid var(--line);
-  border-radius:24px;
-  padding:40px;
-  margin:32px 0 22px;
+  border-radius:28px;
+}
+.hero-main{
+  padding:44px;
+  position:relative;
+  overflow:hidden;
+}
+.hero-main:after{
+  content:"";
+  position:absolute;
+  left:44px;
+  right:44px;
+  bottom:0;
+  height:4px;
+  background:linear-gradient(90deg,var(--accent),var(--accent2));
+  border-radius:99px 99px 0 0;
+}
+.kicker{
+  display:inline-flex;
+  color:var(--accent);
+  background:var(--soft);
+  border:1px solid var(--line);
+  border-radius:999px;
+  padding:6px 10px;
+  font-weight:850;
+  font-size:12px;
+}
+h1,h2,h3{
+  line-height:1.08;
+  color:var(--ink);
 }
 h1{
-  font-size:clamp(34px,5vw,54px);
-  line-height:1.06;
-  letter-spacing:-.05em;
-  margin:0 0 14px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size:clamp(42px,7vw,76px);
+  letter-spacing:-.055em;
+  margin:16px 0 16px;
+  font-weight:700;
 }
 h2{
-  font-size:clamp(24px,3vw,34px);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size:clamp(30px,4vw,44px);
   letter-spacing:-.035em;
   margin:0 0 10px;
+  font-weight:700;
 }
-h3{margin:0 0 8px;line-height:1.2}
+h3{margin:0 0 8px;font-size:21px;letter-spacing:-.02em}
 .lead{
   color:var(--muted);
-  max-width:760px;
   font-size:17px;
+  max-width:760px;
   margin:0 0 12px;
 }
 .actions{
   display:flex;
   flex-wrap:wrap;
   gap:10px;
-  margin-top:22px;
+  margin-top:24px;
 }
 .btn{
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  border:1px solid var(--blue);
-  background:var(--blue);
-  color:#fff;
-  padding:9px 14px;
+  min-height:42px;
+  padding:10px 15px;
   border-radius:999px;
-  font-weight:800;
+  border:1px solid var(--accent);
+  background:var(--accent);
+  color:white;
+  font-weight:850;
 }
-.btn:hover{background:#173f63;color:white;text-decoration:none}
+.btn:hover{background:#0f2f3f;color:white;text-decoration:none}
 .btn.secondary{
-  background:#fff;
-  color:var(--blue);
+  background:transparent;
+  color:var(--accent);
   border-color:var(--line);
 }
-.btn.secondary:hover{background:var(--soft);color:var(--blue)}
+.btn.secondary:hover{
+  background:var(--soft);
+  color:var(--accent);
+}
+.hero-side{
+  display:grid;
+  gap:14px;
+}
+.side-card{
+  padding:24px;
+}
+.side-card h2{font-size:30px}
+.small-list{
+  display:grid;
+  gap:10px;
+  margin-top:14px;
+}
+.small-row{
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  padding:12px 13px;
+  border:1px solid var(--line);
+  border-radius:16px;
+  background:rgba(255,255,255,.45);
+}
+.small-row strong{color:var(--ink)}
+.small-row span{color:var(--muted);font-weight:650}
 .section{
   background:var(--paper);
   border:1px solid var(--line);
-  border-radius:22px;
-  padding:26px;
-  margin:18px 0;
+  border-radius:26px;
+  padding:30px;
+  margin:20px 0;
 }
 .section p{color:var(--muted)}
 .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
 .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
 .card{
-  background:#fbfcfe;
+  background:rgba(255,255,255,.48);
   border:1px solid var(--line);
-  border-radius:18px;
-  padding:18px;
+  border-radius:20px;
+  padding:20px;
 }
 .card p{margin:0}
 .card ul{margin:8px 0 0;padding-left:18px;color:var(--muted)}
 .badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
 .badge{
   background:var(--soft);
-  border:1px solid #c7dff1;
-  color:var(--blue);
+  border:1px solid var(--line);
+  color:var(--accent);
   border-radius:999px;
-  padding:5px 9px;
+  padding:6px 10px;
   font-size:12px;
-  font-weight:800;
+  font-weight:850;
 }
 .timeline{display:grid;gap:12px}
 .step{
@@ -152,38 +236,38 @@ h3{margin:0 0 8px;line-height:1.2}
   grid-template-columns:54px 1fr;
   gap:14px;
   border:1px solid var(--line);
-  background:#fbfcfe;
-  border-radius:18px;
-  padding:16px;
+  background:rgba(255,255,255,.48);
+  border-radius:20px;
+  padding:17px;
 }
 .no{
   width:38px;
   height:38px;
-  border-radius:12px;
+  border-radius:50%;
   display:grid;
   place-items:center;
   background:var(--soft);
-  color:var(--blue);
+  color:var(--accent);
   font-weight:900;
 }
 .table-wrap{
   overflow:auto;
   border:1px solid var(--line);
-  border-radius:16px;
+  border-radius:18px;
   background:#fff;
 }
 table{width:100%;border-collapse:collapse;min-width:760px}
-th,td{padding:12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th,td{padding:13px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
 th{background:var(--soft);color:var(--ink);font-size:12px;text-transform:uppercase;letter-spacing:.03em}
 td{color:var(--muted)}
-td:first-child{font-weight:800;color:var(--blue);white-space:nowrap}
+td:first-child{font-weight:850;color:var(--accent);white-space:nowrap}
 .doc-list{display:grid;gap:10px}
 .doc-link{
   display:flex;
   justify-content:space-between;
   gap:14px;
   padding:14px;
-  background:#fbfcfe;
+  background:rgba(255,255,255,.48);
   border:1px solid var(--line);
   border-radius:16px;
 }
@@ -191,59 +275,71 @@ td:first-child{font-weight:800;color:var(--blue);white-space:nowrap}
 .doc-link span{color:var(--muted)}
 .exp{display:grid;grid-template-columns:150px 1fr;gap:14px;margin:16px 0}
 .date{
-  color:var(--blue);
-  font-weight:800;
+  color:var(--accent);
+  font-weight:850;
   background:var(--soft);
-  border:1px solid #c7dff1;
-  border-radius:14px;
+  border:1px solid var(--line);
+  border-radius:15px;
   padding:10px;
   height:max-content;
   text-align:center;
 }
 .exp-body{
   border:1px solid var(--line);
-  border-radius:18px;
+  border-radius:20px;
   padding:18px;
-  background:#fbfcfe;
+  background:rgba(255,255,255,.48);
 }
 .company{color:var(--muted);font-weight:700;margin:0 0 10px}
 .exp-body ul{margin:0;padding-left:18px;color:var(--muted)}
+.service{
+  border-left:4px solid var(--accent);
+}
+.quote-box{
+  background:#151515;
+  color:#fff;
+  border-radius:26px;
+  padding:30px;
+  margin:20px 0;
+}
+.quote-box h2,.quote-box p{color:#fff}
+.quote-box p{opacity:.82}
 .footer{
-  color:#6b7280;
-  width:min(1000px,calc(100% - 36px));
+  color:#6b665e;
+  width:min(1060px,calc(100% - 40px));
   margin:0 auto;
-  padding:24px 0 40px;
+  padding:24px 0 42px;
   font-size:13px;
 }
-@media(max-width:800px){
+@media(max-width:900px){
+  .hero,.grid-2,.grid-3,.exp,.step{grid-template-columns:1fr}
   .topbar-inner{flex-direction:column;align-items:flex-start;padding:14px 0}
   .nav{justify-content:flex-start}
-  .grid-2,.grid-3,.exp,.step{grid-template-columns:1fr}
-  .hero,.section{padding:22px}
+  .hero-main,.section{padding:24px}
 }
 </style>
 </head>
 <body>
 <header class="topbar">
   <div class="topbar-inner">
-    <a class="brand" href="index.html">Jeric Semeniego</a>
+    <a class="brand" href="index.html">Jeric Semeniego<span>QA Analyst / Manual QA Tester</span></a>
     <nav class="nav"><a href="index.html" class="">Home</a>
 <a href="qa-process.html" class="">QA Process</a>
 <a href="case-studies.html" class="">Case Studies</a>
 <a href="documents.html" class="active">Documents</a>
 <a href="experience.html" class="">Experience</a>
+<a href="work-with-me.html" class="work">Work With Me</a>
 <a href="resume.html" class="">Resume</a>
 <a href="contact.html" class="">Contact</a></nav>
   </div>
 </header>
 <main class="container page">
-
 <section class="section">
-  <h1>Documents</h1>
+  <span class="kicker">Documents</span>
+  <h1>QA artifacts for review.</h1>
   <p>These files show the kind of QA documentation I can prepare or follow during testing.</p>
 </section>
-<section class="section">
-  <div class="doc-list"><a class="doc-link" href="qa-test-artifacts/01_Requirement_Analysis.md" target="_blank"><strong>Requirement Analysis</strong><span>Open</span></a>
+<section class="section"><div class="doc-list"><a class="doc-link" href="qa-test-artifacts/01_Requirement_Analysis.md" target="_blank"><strong>Requirement Analysis</strong><span>Open</span></a>
 <a class="doc-link" href="qa-test-artifacts/02_Test_Plan.md" target="_blank"><strong>Test Plan</strong><span>Open</span></a>
 <a class="doc-link" href="qa-test-artifacts/03_Test_Scenarios.md" target="_blank"><strong>Test Scenarios</strong><span>Open</span></a>
 <a class="doc-link" href="qa-test-artifacts/04_Manual_Test_Cases.csv" target="_blank"><strong>Manual Test Cases</strong><span>Open</span></a>
@@ -258,9 +354,7 @@ td:first-child{font-weight:800;color:var(--blue);white-space:nowrap}
 <a class="doc-link" href="qa-test-artifacts/13_Game_QA_Frostwater_Lake_Case.md" target="_blank"><strong>Game QA Frostwater Lake Case</strong><span>Open</span></a>
 <a class="doc-link" href="qa-test-artifacts/14_Banking_QA_Account_Balance_Case.md" target="_blank"><strong>Banking QA Account Balance Case</strong><span>Open</span></a>
 <a class="doc-link" href="qa-test-artifacts/15_Testing_Type_Coverage_Matrix.md" target="_blank"><strong>Testing Type Coverage Matrix</strong><span>Open</span></a>
-<a class="doc-link" href="qa-test-artifacts/16_QA_Tools_Matrix.md" target="_blank"><strong>QA Tools Matrix</strong><span>Open</span></a></div>
-</section>
-
+<a class="doc-link" href="qa-test-artifacts/16_QA_Tools_Matrix.md" target="_blank"><strong>QA Tools Matrix</strong><span>Open</span></a></div></section>
 </main>
 <footer class="footer">References available upon request. · Jeric Semeniego · QA Portfolio</footer>
 </body>
