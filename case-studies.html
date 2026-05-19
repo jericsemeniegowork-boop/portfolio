@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jeric Semeniego | Home</title>
+  <title>Jeric Semeniego | Case Studies</title>
   <meta name="description" content="Jeric Semeniego QA portfolio: manual testing, test cases, UAT support, regression testing, defect reports, SAP S/4HANA, ServiceNow, QMS documentation.">
   <style>
 :root{
@@ -227,9 +227,9 @@ td:first-child{font-weight:800;color:var(--blue);white-space:nowrap}
 <header class="topbar">
   <div class="topbar-inner">
     <a class="brand" href="index.html">Jeric Semeniego</a>
-    <nav class="nav"><a href="index.html" class="active">Home</a>
+    <nav class="nav"><a href="index.html" class="">Home</a>
 <a href="qa-process.html" class="">QA Process</a>
-<a href="case-studies.html" class="">Case Studies</a>
+<a href="case-studies.html" class="active">Case Studies</a>
 <a href="documents.html" class="">Documents</a>
 <a href="experience.html" class="">Experience</a>
 <a href="resume.html" class="">Resume</a>
@@ -238,34 +238,48 @@ td:first-child{font-weight:800;color:var(--blue);white-space:nowrap}
 </header>
 <main class="container page">
 
-<section class="hero">
-  <h1>QA Analyst / Manual QA Tester</h1>
-  <p class="lead">I test workflows, write test cases, document defects, and support UAT/regression work.</p>
-  <p class="lead">My background includes SAP S/4HANA support, ServiceNow ticket handling, QMS/process documentation, workflow validation, and issue tracking.</p>
-  <div class="actions">
-    <a class="btn" href="case-studies.html">View QA Work</a>
-    <a class="btn secondary" href="resume/Jeric_Semeniego_Resume.pdf" target="_blank">Open Resume</a>
-    <a class="btn secondary" href="contact.html">Contact</a>
+<section class="section">
+  <h1>Case Studies</h1>
+  <p>These are sample QA cases I can explain in an interview. They are non-confidential and made to show how I think through test coverage.</p>
+</section>
+<section class="section">
+  <h2>Main case: Internal Service Filing Workflow</h2>
+  <p>This case covers UI and navigation checks, form validation, record management, data integrity, generated document checks, end-to-end workflow, and issue tracking.</p>
+  <div class="grid-2">
+    <div class="card"><h3>What I tested</h3><ul><li>Repository/list page</li><li>Add new filing entry</li><li>View and verify details</li><li>Edit status and remarks</li><li>Generate or download form</li><li>Data consistency</li></ul></div>
+    <div class="card"><h3>What this shows</h3><ul><li>Test planning</li><li>Positive and negative testing</li><li>UAT and regression awareness</li><li>Clear issue reporting</li></ul></div>
   </div>
 </section>
 <section class="section">
-  <h2>What I can do</h2>
+  <h2>Sample test cases</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>ID</th><th>Test Case</th><th>What I validate</th></tr></thead>
+      <tbody><tr><td>TC_001</td><td>View Repository/List of Filed Entries</td><td>List page, table columns, layout, search, sorting, pagination, and export if available.</td></tr>
+<tr><td>TC_002</td><td>Add New Filing Entry</td><td>Add New form, required fields, cancel behavior, valid submission, success message, and saved record.</td></tr>
+<tr><td>TC_003</td><td>View and Verify Filing Entry Details</td><td>Saved details, attachments, and action buttons display correctly.</td></tr>
+<tr><td>TC_004</td><td>Edit / Update Filing Entry Status and Remarks</td><td>Editable fields, cancel without saving, valid updates, success notification, and updated details.</td></tr>
+<tr><td>TC_005</td><td>Generate / Download Form or Information Sheet</td><td>Generated file opens correctly and contains accurate record data.</td></tr>
+<tr><td>TC_006</td><td>Negative / Validation and Error Handling</td><td>Missing or invalid inputs trigger correct validation and valid corrected data can be submitted.</td></tr>
+<tr><td>TC_007</td><td>Data Integrity and Record Consistency</td><td>Values match across form, list, details page, and generated document.</td></tr>
+<tr><td>TC_008</td><td>End-to-End Happy Path</td><td>Full Add -> View -> Edit -> Generate workflow completes successfully.</td></tr>
+<tr><td>TC_009</td><td>Report / Issue Tracking Compliance</td><td>Failed results are logged in JIRA with screenshots, evidence, and JIRA IDs in the execution log.</td></tr></tbody>
+    </table>
+  </div>
+</section>
+<section class="section">
+  <h2>Defect sample</h2>
+  <div class="card">
+    <h3>Back Button Navigation Redirects to Incorrect Page</h3>
+    <p>During testing, I found that the Back button did not consistently return the user to the most recent page or panel. This can confuse users and disrupt the expected navigation flow, especially if the issue appears in multiple related screens.</p>
+  </div>
+</section>
+<section class="section">
+  <h2>Supporting samples</h2>
   <div class="grid-3">
-    <div class="card"><h3>Manual testing</h3><p>Write and execute test cases, compare expected vs actual behavior, and document results clearly.</p></div>
-    <div class="card"><h3>UAT and regression</h3><p>Support business validation, retest fixes, and check affected workflows after system changes.</p></div>
-    <div class="card"><h3>Support documentation</h3><p>Handle tickets, prepare validation notes, document defects, and maintain process/QMS references.</p></div>
-  </div>
-</section>
-<section class="section">
-  <h2>Best-fit roles</h2>
-  <div class="badges">
-    <span class="badge">Manual QA Tester</span>
-    <span class="badge">QA Analyst</span>
-    <span class="badge">UAT Tester</span>
-    <span class="badge">Application Support Analyst</span>
-    <span class="badge">SAP Support</span>
-    <span class="badge">ServiceNow Support</span>
-    <span class="badge">Freelance QA Documentation</span>
+    <div class="card"><h3>Banking QA</h3><p>Account balance visibility, login/MFA, masking, session behavior, cross-device checks, and API response awareness.</p><div class="actions"><a class="btn secondary" href="qa-test-artifacts/14_Banking_QA_Account_Balance_Case.md" target="_blank">Open document</a></div></div>
+    <div class="card"><h3>Game QA</h3><p>Patch regression, reward validation, duplicate prevention, reconnect behavior, stability, and evidence collection.</p><div class="actions"><a class="btn secondary" href="qa-test-artifacts/13_Game_QA_Frostwater_Lake_Case.md" target="_blank">Open document</a></div></div>
+    <div class="card"><h3>CSE Review Studio</h3><p>Mobile-first exam review app with saved progress, notes, mistake logs, mock exams, and usability checks.</p></div>
   </div>
 </section>
 
