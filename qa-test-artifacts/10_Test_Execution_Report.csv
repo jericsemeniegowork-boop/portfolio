@@ -1,9 +1,0 @@
-Test Case ID,Module,Status,Actual Result,Defect ID
-TC-001,Create Request,Pass,Draft saved successfully,
-TC-002,Validation,Pass,Required message displayed,
-TC-003,Submit,Pass,Status changed to Pending Approval,
-TC-004,Approval,Pass,Request approved,
-TC-005,Rejection,Fail,Rejection allowed without reason,BUG-002
-TC-006,Read-only,Fail,Approved request remained editable,BUG-001
-TC-007,Status,Pass,List and detail matched,
-TC-008,Regression,Blocked,Blocked by high defect,BUG-001
