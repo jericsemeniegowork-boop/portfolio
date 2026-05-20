@@ -57,19 +57,6 @@ A mobile-first Civil Service Exam review web app built with HTML, CSS, JavaScrip
 * GitHub
 * Vercel
 
-## Folder Guide
-
-```text
-index.html
-README.md
-resume/
-qa-test-artifacts/
-projects/
-study-reviewer/
-VALIDATION\_REPORT.md
-GITHUB\_UPLOAD\_GUIDE.md
-```
-
 ## Resume
 
 My resume is included in the `resume/` folder.
