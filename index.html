@@ -1,0 +1,4258 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jeric Semeniego | QA Portfolio</title>
+  <meta name="description" content="QA portfolio for Jeric Semeniego: manual testing, regression, UAT, defect reporting, banking QA, game QA, and release validation." />
+  <style>
+    :root {
+      --bg:#f6f8fb;
+      --surface:#ffffff;
+      --surface-2:#f1f5f9;
+      --text:#111827;
+      --muted:#64748b;
+      --line:#dbe3ee;
+      --accent:#2563eb;
+      --accent-2:#14b8a6;
+      --accent-3:#f59e0b;
+      --danger:#ef4444;
+      --soft:#eff6ff;
+      --shadow:0 20px 50px rgba(15,23,42,.10);
+      --max:1180px;
+    }
+
+    html[data-theme="dark"] {
+      --bg:#0b1020;
+      --surface:#111827;
+      --surface-2:#172033;
+      --text:#f8fafc;
+      --muted:#a7b4c7;
+      --line:#25324a;
+      --accent:#60a5fa;
+      --accent-2:#5eead4;
+      --accent-3:#fbbf24;
+      --soft:#13213a;
+      --shadow:0 22px 70px rgba(0,0,0,.32);
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      background:
+        radial-gradient(circle at top left, rgba(96,165,250,.20), transparent 34%),
+        radial-gradient(circle at top right, rgba(20,184,166,.16), transparent 28%),
+        var(--bg);
+      color:var(--text);
+      font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      line-height:1.6;
+      font-size:15px;
+    }
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{width:min(var(--max),calc(100% - 32px));margin:0 auto}
+    .topbar{
+      position:sticky;top:0;z-index:50;
+      background:rgba(11,16,32,.78);
+      border-bottom:1px solid var(--line);
+      backdrop-filter:blur(18px);
+    }
+    html[data-theme="light"] .topbar{background:rgba(246,248,251,.88)}
+    .navwrap{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:14px 0}
+    .brand{font-weight:950;color:var(--text);letter-spacing:-.04em;font-size:18px}
+    .nav{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+    .nav button,.theme-toggle{
+      border:1px solid transparent;background:transparent;color:var(--muted);
+      border-radius:999px;padding:8px 11px;font-weight:850;font-size:12px;cursor:pointer;
+    }
+    .nav button:hover,.nav button.active,.theme-toggle:hover{
+      color:var(--text);background:var(--surface-2);border-color:var(--line);text-decoration:none;
+    }
+    .page{display:none;padding:34px 0}
+    .page.active{display:block}
+
+    .hero{
+      display:grid;grid-template-columns:1.35fr .65fr;gap:18px;align-items:stretch;
+    }
+    .hero-main{
+      position:relative;overflow:hidden;background:linear-gradient(135deg,var(--surface),var(--surface-2));
+      border:1px solid var(--line);border-radius:30px;padding:42px;box-shadow:var(--shadow);
+    }
+    .hero-main:before{
+      content:"";position:absolute;inset:-80px -120px auto auto;width:360px;height:360px;
+      background:radial-gradient(circle, rgba(96,165,250,.34), transparent 70%);
+    }
+    .eyebrow{
+      display:inline-flex;gap:8px;align-items:center;padding:7px 11px;border:1px solid var(--line);
+      background:rgba(96,165,250,.10);border-radius:999px;color:var(--accent);font-weight:950;
+      text-transform:uppercase;letter-spacing:.08em;font-size:11px;margin-bottom:18px;
+    }
+    .hero h1{position:relative;margin:0;font-size:clamp(42px,6vw,72px);line-height:.96;letter-spacing:-.07em;max-width:860px}
+    .hero .lead{position:relative;color:var(--muted);font-size:17px;max-width:760px;margin:18px 0 0}
+    .actions{position:relative;display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:10px 14px;
+      border-radius:13px;border:1px solid var(--accent);background:var(--accent);color:#061021;
+      font-weight:950;cursor:pointer;box-shadow:0 12px 24px rgba(96,165,250,.18);
+    }
+    html[data-theme="light"] .btn{color:#fff}
+    .btn:hover{filter:brightness(.98);text-decoration:none}
+    .btn.secondary{background:var(--surface);color:var(--text);border-color:var(--line);box-shadow:none}
+    .hero-side{display:grid;gap:14px}
+    .spotlight-card{
+      background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:22px;box-shadow:var(--shadow);
+    }
+    .spotlight-card h3{margin:0 0 7px;font-size:17px;letter-spacing:-.02em}
+    .spotlight-card p{margin:0;color:var(--muted)}
+    .metric-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:18px}
+    .metric{
+      background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:18px;padding:16px;
+    }
+    .metric strong{display:block;font-size:28px;line-height:1;color:var(--text);letter-spacing:-.04em}
+    .metric span{display:block;margin-top:7px;color:var(--muted);font-size:13px;font-weight:750}
+
+    .section{
+      background:var(--surface);border:1px solid var(--line);border-radius:28px;padding:30px;
+      box-shadow:var(--shadow);margin-bottom:18px;
+    }
+    .section h2{margin:0 0 9px;font-size:30px;line-height:1.15;letter-spacing:-.045em}
+    .section-intro{color:var(--muted);max-width:860px;margin:0 0 18px;font-size:15px}
+    .grid{display:grid;gap:14px}
+    .three{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .four{grid-template-columns:repeat(4,minmax(0,1fr))}
+    .card{
+      background:var(--surface-2);border:1px solid var(--line);border-radius:22px;padding:20px;
+      position:relative;overflow:hidden;
+    }
+    .card:after{content:"";position:absolute;right:-30px;top:-30px;width:90px;height:90px;background:rgba(96,165,250,.10);border-radius:50%}
+    .card h3{margin:0 0 8px;font-size:18px;letter-spacing:-.02em}
+    .card p{margin:0;color:var(--muted)}
+    .cycle-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+    .cycle-card{background:var(--surface-2);border:1px solid var(--line);border-radius:22px;padding:20px}
+    .cycle-card span{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:12px;background:var(--soft);color:var(--accent);font-weight:950;margin-bottom:12px}
+    .cycle-card h3{margin:0 0 7px}
+    .cycle-card p{margin:0;color:var(--muted)}
+
+    .case-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+    .case-card{background:linear-gradient(145deg,var(--surface-2),var(--surface));border:1px solid var(--line);border-radius:26px;padding:24px;position:relative;overflow:hidden}
+    .case-card:before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:var(--accent)}
+    .case-card.bank:before{background:var(--accent-2)}
+    .case-card.game:before{background:var(--accent-3)}
+    .case-card.project:before{background:#a78bfa}
+    .case-card h3{margin:0 0 8px;font-size:21px;letter-spacing:-.03em}
+    .case-card p{color:var(--muted);margin:0 0 14px}
+    .tag-row{display:flex;gap:8px;flex-wrap:wrap}
+    .tag{display:inline-flex;border:1px solid var(--line);background:rgba(255,255,255,.04);border-radius:999px;padding:5px 8px;font-size:12px;color:var(--muted);font-weight:800}
+
+    .artifact-layout{display:grid;grid-template-columns:280px minmax(0,1fr);gap:18px}
+    .artifact-menu{position:sticky;top:90px;align-self:start;background:var(--surface-2);border:1px solid var(--line);border-radius:22px;padding:10px;max-height:calc(100vh - 116px);overflow:auto}
+    .artifact-tab{width:100%;text-align:left;border:1px solid transparent;background:transparent;color:var(--muted);border-radius:14px;padding:11px 12px;font-weight:850;cursor:pointer;margin-bottom:5px}
+    .artifact-tab.active,.artifact-tab:hover{background:var(--surface);border-color:var(--line);color:var(--text)}
+    .artifact-panel{display:none}
+    .artifact-panel.active{display:block}
+    .artifact-head{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;flex-wrap:wrap;margin-bottom:16px}
+    .artifact-head h3{margin:9px 0 0;font-size:29px;letter-spacing:-.04em}
+    .pill{display:inline-flex;background:var(--soft);color:var(--accent);border:1px solid var(--line);border-radius:999px;padding:6px 10px;font-size:12px;font-weight:950}
+    .file-path{color:var(--muted);font-size:12px;font-family:ui-monospace,SFMono-Regular,Consolas,monospace;overflow-wrap:anywhere}
+    .artifact-evidence-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px}
+    .evidence-card{background:var(--surface-2);border:1px solid var(--line);border-radius:18px;padding:17px}
+    .evidence-card.wide{grid-column:1/-1}
+    .evidence-card h4{margin:0 0 7px;text-transform:uppercase;letter-spacing:.055em;font-size:12px;color:var(--accent)}
+    .evidence-card p{margin:0;color:var(--muted)}
+    .evidence-card ul{margin:0;padding-left:18px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:5px 18px;color:var(--muted)}
+
+    .doc-preview{border:1px solid var(--line);border-radius:20px;overflow:hidden;background:var(--surface-2)}
+    .doc-preview summary{padding:15px 18px;font-weight:950;cursor:pointer;background:var(--surface);border-bottom:1px solid var(--line)}
+    .doc-preview-body{max-height:580px;overflow:auto;padding:20px}
+    .doc-preview-body h3{margin:0 0 12px;font-size:22px}
+    .doc-preview-body h4{margin:20px 0 8px;font-size:17px}
+    .doc-preview-body h5{margin:16px 0 8px;font-size:15px}
+    .doc-preview-body p,.doc-preview-body li{color:var(--muted);font-size:14px;line-height:1.65}
+    .doc-preview-body pre{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px;overflow:auto}
+    .doc-preview-body code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:13px}
+    .doc-table-wrap{overflow:auto;margin:12px 0 18px;border:1px solid var(--line);border-radius:14px}
+    .doc-table{width:100%;border-collapse:collapse;margin:0;min-width:660px}
+    .doc-table th,.doc-table td{border:1px solid var(--line);padding:10px;vertical-align:top;text-align:left;font-size:13px;line-height:1.55}
+    .doc-table th{background:var(--soft);color:var(--text)}
+    .doc-table td{color:var(--muted)}
+
+    .tools-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+    .tool-card{background:var(--surface-2);border:1px solid var(--line);border-radius:22px;padding:20px}
+    .tool-card h3{margin:0 0 8px}
+    .tool-card p{margin:6px 0;color:var(--muted)}
+    .tool-card strong{color:var(--text)}
+    .timeline{display:grid;gap:12px}
+    .role{background:var(--surface-2);border:1px solid var(--line);border-radius:22px;padding:20px}
+    .role-top{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:10px}
+    .role h3{margin:0;font-size:18px}
+    .role .meta{color:var(--muted);font-weight:800;font-size:13px}
+    .role ul{margin:0;padding-left:18px;color:var(--muted)}
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .contact-card{background:var(--surface);border:1px solid var(--line);border-radius:26px;padding:26px;box-shadow:var(--shadow)}
+    .contact-list{display:grid;gap:10px}
+    .contact-bubble{display:flex;justify-content:space-between;gap:12px;background:var(--surface-2);border:1px solid var(--line);border-radius:16px;padding:13px 15px}
+    .contact-bubble strong{white-space:nowrap}
+    .contact-bubble span,.contact-bubble a{color:var(--muted);text-align:right;overflow-wrap:anywhere}
+    footer{color:var(--muted);text-align:center;padding:28px 0;font-size:13px}
+
+    @media(max-width:980px){
+      .hero,.case-grid,.artifact-layout,.contact-grid{grid-template-columns:1fr}
+      .artifact-menu{position:static;max-height:none}
+      .metric-grid,.four{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .three,.cycle-grid,.tools-grid{grid-template-columns:1fr}
+      .artifact-evidence-grid{grid-template-columns:1fr}
+      .evidence-card.wide{grid-column:auto}
+      .evidence-card ul{grid-template-columns:1fr}
+    }
+    @media(max-width:680px){
+      .navwrap{align-items:flex-start;flex-direction:column}
+      .hero-main,.section{padding:22px}
+      .hero h1{font-size:38px}
+      .metric-grid,.four{grid-template-columns:1fr}
+      .contact-bubble{flex-direction:column}
+      .contact-bubble span,.contact-bubble a{text-align:left}
+    }
+  
+    /* Human premium polish */
+    .eyebrow.small{
+      margin-bottom:12px;
+      font-size:10px;
+      letter-spacing:.1em;
+    }
+
+    .capability-grid{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:14px;
+      margin-top:18px;
+    }
+    .capability-card{
+      background:linear-gradient(145deg,var(--surface-2),var(--surface));
+      border:1px solid var(--line);
+      border-radius:24px;
+      padding:20px;
+      position:relative;
+      overflow:hidden;
+    }
+    .capability-card.primary{
+      border-color:rgba(96,165,250,.55);
+      box-shadow:0 18px 40px rgba(96,165,250,.10);
+    }
+    .capability-card:after{
+      content:"";
+      position:absolute;
+      right:-42px;
+      top:-42px;
+      width:110px;
+      height:110px;
+      border-radius:999px;
+      background:rgba(96,165,250,.10);
+    }
+    .cap-top{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      margin-bottom:14px;
+      position:relative;
+      z-index:1;
+    }
+    .cap-top span{
+      width:34px;
+      height:34px;
+      display:grid;
+      place-items:center;
+      border-radius:12px;
+      background:var(--soft);
+      color:var(--accent);
+      font-weight:950;
+      border:1px solid var(--line);
+    }
+    .cap-top strong{
+      color:var(--muted);
+      font-size:12px;
+      text-transform:uppercase;
+      letter-spacing:.06em;
+    }
+    .capability-card h3{
+      margin:0 0 8px;
+      font-size:19px;
+      letter-spacing:-.025em;
+      position:relative;
+      z-index:1;
+    }
+    .capability-card p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.62;
+      position:relative;
+      z-index:1;
+    }
+    .mini-tags{
+      display:flex;
+      flex-wrap:wrap;
+      gap:7px;
+      margin-top:14px;
+      position:relative;
+      z-index:1;
+    }
+    .mini-tags span{
+      display:inline-flex;
+      padding:5px 8px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      color:var(--muted);
+      background:rgba(255,255,255,.04);
+      font-size:12px;
+      font-weight:850;
+    }
+    .capability-strip{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:12px;
+      margin-top:16px;
+    }
+    .capability-strip div{
+      background:var(--surface-2);
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:16px;
+    }
+    .capability-strip strong{
+      display:block;
+      color:var(--text);
+      margin-bottom:5px;
+    }
+    .capability-strip span{
+      color:var(--muted);
+      line-height:1.6;
+    }
+
+    /* Fix ugly experience tags */
+    .role-top{
+      display:block !important;
+    }
+    .role-top .pill{
+      margin-top:10px;
+      max-width:max-content;
+      float:none;
+    }
+    .role{
+      overflow:hidden;
+    }
+
+    @media(max-width:980px){
+      .capability-grid{grid-template-columns:1fr 1fr}
+      .capability-strip{grid-template-columns:1fr}
+    }
+    @media(max-width:680px){
+      .capability-grid{grid-template-columns:1fr}
+    }
+
+  
+    /* Color theory upgrade: navy = trust, blue = QA action, teal = validation, amber = risk */
+    :root{
+      --bg:#f4f7fb;
+      --surface:#ffffff;
+      --surface-2:#f7fafc;
+      --text:#102033;
+      --muted:#5c6b7d;
+      --line:#d9e3ef;
+      --accent:#2563eb;
+      --accent-rgb:37,99,235;
+      --accent-2:#0f766e;
+      --accent-2-rgb:15,118,110;
+      --accent-3:#b7791f;
+      --accent-3-rgb:183,121,31;
+      --soft:#eef5ff;
+      --shadow:0 18px 48px rgba(15,31,55,.10);
+    }
+    html[data-theme="dark"]{
+      --bg:#07111f;
+      --surface:#0f1b2d;
+      --surface-2:#14243a;
+      --text:#f8fafc;
+      --muted:#b5c3d8;
+      --line:#263a58;
+      --accent:#5ea1ff;
+      --accent-rgb:94,161,255;
+      --accent-2:#3dd6c6;
+      --accent-2-rgb:61,214,198;
+      --accent-3:#f6bd4b;
+      --accent-3-rgb:246,189,75;
+      --soft:#112a4a;
+      --shadow:0 22px 70px rgba(0,0,0,.38);
+    }
+
+    body{
+      background:
+        radial-gradient(circle at 14% 0%, rgba(var(--accent-rgb),.26), transparent 32%),
+        radial-gradient(circle at 90% 10%, rgba(var(--accent-2-rgb),.16), transparent 30%),
+        linear-gradient(180deg, var(--bg), #08101d 760px);
+    }
+    html[data-theme="light"] body{
+      background:
+        radial-gradient(circle at 14% 0%, rgba(var(--accent-rgb),.13), transparent 32%),
+        radial-gradient(circle at 90% 10%, rgba(var(--accent-2-rgb),.10), transparent 30%),
+        linear-gradient(180deg, var(--bg), #eef3f8 780px);
+    }
+
+    .topbar{
+      box-shadow:0 10px 34px rgba(0,0,0,.18);
+    }
+    html[data-theme="light"] .topbar{
+      box-shadow:0 10px 34px rgba(15,31,55,.08);
+    }
+
+    .brand{
+      letter-spacing:-.035em;
+    }
+    .brand::before{
+      content:"";
+      display:inline-block;
+      width:10px;
+      height:10px;
+      border-radius:999px;
+      margin-right:9px;
+      background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      box-shadow:0 0 0 4px rgba(var(--accent-rgb),.12);
+    }
+
+    .hero-main{
+      background:
+        linear-gradient(135deg, rgba(var(--accent-rgb),.16), transparent 34%),
+        linear-gradient(145deg, var(--surface), var(--surface-2));
+      border-color:rgba(var(--accent-rgb),.32);
+    }
+    .hero-main:after{
+      content:"";
+      position:absolute;
+      inset:auto 28px 0 28px;
+      height:4px;
+      background:linear-gradient(90deg,var(--accent),var(--accent-2),var(--accent-3));
+      border-radius:999px 999px 0 0;
+      opacity:.92;
+    }
+
+    .eyebrow{
+      background:rgba(var(--accent-rgb),.13);
+      border-color:rgba(var(--accent-rgb),.32);
+      color:var(--accent);
+      box-shadow:inset 0 0 22px rgba(var(--accent-rgb),.08);
+    }
+
+    .hero h1{
+      max-width:900px;
+      text-wrap:balance;
+    }
+    .hero .lead{
+      max-width:820px;
+    }
+
+    .btn{
+      background:linear-gradient(135deg,var(--accent),#7bb7ff);
+      border-color:rgba(var(--accent-rgb),.66);
+      color:#06111f!important;
+      box-shadow:0 16px 34px rgba(var(--accent-rgb),.22);
+    }
+    html[data-theme="light"] .btn{
+      color:#fff!important;
+    }
+    .btn.secondary{
+      background:linear-gradient(145deg,var(--surface),var(--surface-2));
+      color:var(--text)!important;
+      border-color:var(--line);
+      box-shadow:none;
+    }
+
+    .proof-strip{
+      position:relative;
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:10px;
+      margin-top:18px;
+      z-index:1;
+    }
+    .proof-strip div{
+      display:flex;
+      flex-direction:column;
+      gap:2px;
+      background:rgba(255,255,255,.04);
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:13px 14px;
+    }
+    .proof-strip strong{
+      color:var(--text);
+      font-size:14px;
+    }
+    .proof-strip small{
+      color:var(--muted);
+      font-weight:700;
+    }
+    .dot{
+      width:9px;
+      height:9px;
+      border-radius:999px;
+      display:inline-block;
+      margin-bottom:4px;
+      box-shadow:0 0 0 5px rgba(255,255,255,.04);
+    }
+    .dot.blue{background:var(--accent)}
+    .dot.teal{background:var(--accent-2)}
+    .dot.amber{background:var(--accent-3)}
+
+    .spotlight-card{
+      background:
+        linear-gradient(145deg, rgba(var(--accent-rgb),.06), transparent 42%),
+        var(--surface);
+    }
+    .spotlight-card:nth-child(2){
+      background:
+        linear-gradient(145deg, rgba(var(--accent-2-rgb),.07), transparent 42%),
+        var(--surface);
+    }
+    .spotlight-card:nth-child(3){
+      background:
+        linear-gradient(145deg, rgba(var(--accent-3-rgb),.07), transparent 42%),
+        var(--surface);
+    }
+
+    .metric{
+      background:linear-gradient(145deg,var(--surface-2),rgba(var(--accent-rgb),.06));
+    }
+    .metric strong{
+      color:var(--accent);
+    }
+
+    .section{
+      border-color:rgba(148,163,184,.22);
+    }
+    .section h2{
+      text-wrap:balance;
+    }
+
+    .card,.cycle-card,.tool-card,.role,.capability-card,.case-card,.evidence-card,.doc-preview{
+      transition:transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+    }
+    .card:hover,.cycle-card:hover,.tool-card:hover,.role:hover,.capability-card:hover,.case-card:hover{
+      transform:translateY(-2px);
+      border-color:rgba(var(--accent-rgb),.42);
+      box-shadow:0 20px 44px rgba(0,0,0,.18);
+    }
+    html[data-theme="light"] .card:hover,
+    html[data-theme="light"] .cycle-card:hover,
+    html[data-theme="light"] .tool-card:hover,
+    html[data-theme="light"] .role:hover,
+    html[data-theme="light"] .capability-card:hover,
+    html[data-theme="light"] .case-card:hover{
+      box-shadow:0 20px 44px rgba(15,31,55,.10);
+    }
+
+    .case-card{
+      min-height:210px;
+    }
+    .case-card:before{
+      width:7px;
+      background:linear-gradient(180deg,var(--accent),#94c5ff);
+    }
+    .case-card.bank:before{
+      background:linear-gradient(180deg,var(--accent-2),#98f5ea);
+    }
+    .case-card.game:before{
+      background:linear-gradient(180deg,var(--accent-3),#ffe0a3);
+    }
+    .case-card.project:before{
+      background:linear-gradient(180deg,#a78bfa,#60a5fa);
+    }
+
+    .artifact-menu{
+      border-color:rgba(var(--accent-rgb),.25);
+      box-shadow:inset 0 0 0 1px rgba(255,255,255,.02);
+    }
+    .artifact-tab.active{
+      color:var(--text);
+      background:
+        linear-gradient(90deg, rgba(var(--accent-rgb),.18), transparent),
+        var(--surface);
+      border-color:rgba(var(--accent-rgb),.35);
+    }
+    .pill,.artifact-tag,.tool-label{
+      background:rgba(var(--accent-rgb),.12)!important;
+      color:var(--accent)!important;
+      border-color:rgba(var(--accent-rgb),.30)!important;
+    }
+    .role:nth-child(2) .pill,
+    .capability-card:nth-child(3) .mini-tags span{
+      background:rgba(var(--accent-2-rgb),.12)!important;
+      color:var(--accent-2)!important;
+      border-color:rgba(var(--accent-2-rgb),.30)!important;
+    }
+    .role:nth-child(4) .pill{
+      background:rgba(var(--accent-3-rgb),.12)!important;
+      color:var(--accent-3)!important;
+      border-color:rgba(var(--accent-3-rgb),.30)!important;
+    }
+
+    .doc-preview summary{
+      background:
+        linear-gradient(90deg, rgba(var(--accent-rgb),.10), transparent),
+        var(--surface);
+    }
+    .doc-table th{
+      background:rgba(var(--accent-rgb),.12);
+    }
+
+    .contact-card:first-child{
+      background:
+        linear-gradient(135deg, rgba(var(--accent-rgb),.12), transparent 46%),
+        linear-gradient(145deg,var(--surface),var(--surface-2));
+      border-color:rgba(var(--accent-rgb),.28);
+    }
+
+    @media(max-width:780px){
+      .proof-strip{grid-template-columns:1fr}
+    }
+
+  
+    /* Light mode contrast fix */
+    html[data-theme="light"]{
+      --bg:#f6f8fb;
+      --surface:#ffffff;
+      --surface-2:#eef3f8;
+      --text:#0f172a;
+      --muted:#334155;
+      --line:#cbd5e1;
+      --accent:#1d4ed8;
+      --accent-2:#0f766e;
+      --accent-3:#b45309;
+      --soft:#e8f1ff;
+      --shadow:0 18px 44px rgba(15,31,55,.10);
+    }
+
+    html[data-theme="light"] body{
+      color:var(--text);
+      background:
+        radial-gradient(circle at 14% 0%, rgba(37,99,235,.12), transparent 32%),
+        radial-gradient(circle at 90% 10%, rgba(15,118,110,.10), transparent 30%),
+        linear-gradient(180deg,#f6f8fb,#edf3f9 780px);
+    }
+
+    html[data-theme="light"] .hero-main,
+    html[data-theme="light"] .section,
+    html[data-theme="light"] .spotlight-card,
+    html[data-theme="light"] .contact-card{
+      background:linear-gradient(145deg,#ffffff,#f8fafc);
+      color:var(--text);
+    }
+
+    html[data-theme="light"] .card,
+    html[data-theme="light"] .cycle-card,
+    html[data-theme="light"] .case-card,
+    html[data-theme="light"] .tool-card,
+    html[data-theme="light"] .role,
+    html[data-theme="light"] .capability-card,
+    html[data-theme="light"] .evidence-card,
+    html[data-theme="light"] .artifact-menu,
+    html[data-theme="light"] .doc-preview,
+    html[data-theme="light"] .doc-preview-body,
+    html[data-theme="light"] .contact-bubble,
+    html[data-theme="light"] .metric,
+    html[data-theme="light"] .proof-strip div{
+      background:#ffffff;
+      color:var(--text);
+      border-color:var(--line);
+    }
+
+    html[data-theme="light"] h1,
+    html[data-theme="light"] h2,
+    html[data-theme="light"] h3,
+    html[data-theme="light"] h4,
+    html[data-theme="light"] h5,
+    html[data-theme="light"] strong,
+    html[data-theme="light"] .brand,
+    html[data-theme="light"] .artifact-head h3,
+    html[data-theme="light"] .tool-table-wrap h3{
+      color:var(--text)!important;
+    }
+
+    html[data-theme="light"] p,
+    html[data-theme="light"] li,
+    html[data-theme="light"] span,
+    html[data-theme="light"] small,
+    html[data-theme="light"] .lead,
+    html[data-theme="light"] .section-intro,
+    html[data-theme="light"] .meta,
+    html[data-theme="light"] .file-path,
+    html[data-theme="light"] .doc-preview-body p,
+    html[data-theme="light"] .doc-preview-body li,
+    html[data-theme="light"] .doc-table td,
+    html[data-theme="light"] .contact-bubble span,
+    html[data-theme="light"] .contact-bubble a{
+      color:var(--muted);
+    }
+
+    html[data-theme="light"] .metric strong{
+      background:none!important;
+      -webkit-background-clip:initial!important;
+      background-clip:initial!important;
+      color:var(--accent)!important;
+      -webkit-text-fill-color:var(--accent)!important;
+    }
+
+    html[data-theme="light"] .btn{
+      background:var(--accent)!important;
+      border-color:var(--accent)!important;
+      color:#ffffff!important;
+      -webkit-text-fill-color:#ffffff!important;
+    }
+
+    html[data-theme="light"] .btn.secondary{
+      background:#ffffff!important;
+      border-color:var(--line)!important;
+      color:var(--text)!important;
+      -webkit-text-fill-color:var(--text)!important;
+    }
+
+    html[data-theme="light"] .nav button,
+    html[data-theme="light"] .theme-toggle{
+      color:#334155!important;
+    }
+
+    html[data-theme="light"] .nav button.active,
+    html[data-theme="light"] .nav button:hover,
+    html[data-theme="light"] .theme-toggle:hover{
+      background:#e8f1ff!important;
+      color:var(--accent)!important;
+      border-color:#b7cdfa!important;
+    }
+
+    html[data-theme="light"] .eyebrow,
+    html[data-theme="light"] .pill,
+    html[data-theme="light"] .tag,
+    html[data-theme="light"] .artifact-tag,
+    html[data-theme="light"] .tool-label,
+    html[data-theme="light"] .mini-tags span{
+      background:#e8f1ff!important;
+      color:var(--accent)!important;
+      border-color:#b7cdfa!important;
+      -webkit-text-fill-color:var(--accent)!important;
+    }
+
+    html[data-theme="light"] .artifact-tab{
+      color:#475569!important;
+    }
+
+    html[data-theme="light"] .artifact-tab.active,
+    html[data-theme="light"] .artifact-tab:hover{
+      background:#e8f1ff!important;
+      color:var(--accent)!important;
+      border-color:#b7cdfa!important;
+    }
+
+    html[data-theme="light"] .doc-preview summary{
+      background:#f8fafc!important;
+      color:var(--text)!important;
+    }
+
+    html[data-theme="light"] .doc-table th{
+      background:#e8f1ff!important;
+      color:var(--text)!important;
+    }
+
+    html[data-theme="light"] pre,
+    html[data-theme="light"] code{
+      background:#f8fafc!important;
+      color:#0f172a!important;
+    }
+
+    html[data-theme="light"] a{
+      color:var(--accent)!important;
+    }
+
+  
+    /* Visual proof graphics */
+    .visual-grid{
+      display:grid;
+      grid-template-columns:1.15fr .85fr;
+      gap:16px;
+      margin-top:18px;
+    }
+    .visual-card{
+      background:linear-gradient(145deg,var(--surface-2),var(--surface));
+      border:1px solid var(--line);
+      border-radius:26px;
+      padding:22px;
+      box-shadow:var(--shadow);
+      overflow:hidden;
+      position:relative;
+    }
+    .visual-card.wide{
+      grid-column:1 / -1;
+    }
+    .visual-card::after{
+      content:"";
+      position:absolute;
+      right:-60px;
+      top:-60px;
+      width:160px;
+      height:160px;
+      border-radius:999px;
+      background:rgba(var(--accent-rgb),.09);
+      pointer-events:none;
+    }
+    .visual-head{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      gap:12px;
+      margin-bottom:18px;
+      position:relative;
+      z-index:1;
+    }
+    .visual-head h3{
+      margin:6px 0 0;
+      color:var(--text);
+      font-size:22px;
+      letter-spacing:-.03em;
+    }
+    .visual-label{
+      display:inline-flex;
+      color:var(--accent);
+      font-size:12px;
+      font-weight:950;
+      text-transform:uppercase;
+      letter-spacing:.07em;
+    }
+    .visual-badge{
+      display:inline-flex;
+      padding:7px 10px;
+      border-radius:999px;
+      color:var(--accent);
+      background:rgba(var(--accent-rgb),.12);
+      border:1px solid rgba(var(--accent-rgb),.32);
+      font-weight:950;
+      font-size:12px;
+      white-space:nowrap;
+    }
+    .visual-badge.teal{
+      color:var(--accent-2);
+      background:rgba(var(--accent-2-rgb),.12);
+      border-color:rgba(var(--accent-2-rgb),.32);
+    }
+    .visual-badge.amber{
+      color:var(--accent-3);
+      background:rgba(var(--accent-3-rgb),.12);
+      border-color:rgba(var(--accent-3-rgb),.32);
+    }
+
+    .cycle-graphic{
+      display:grid;
+      grid-template-columns:1fr 34px 1fr 34px 1fr 34px 1fr 34px 1fr 34px 1fr;
+      align-items:center;
+      gap:8px;
+      position:relative;
+      z-index:1;
+    }
+    .cycle-node{
+      background:var(--surface);
+      border:1px solid var(--line);
+      border-radius:20px;
+      padding:16px 12px;
+      text-align:center;
+      min-height:126px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      box-shadow:0 10px 26px rgba(0,0,0,.08);
+    }
+    .cycle-node span{
+      width:34px;
+      height:34px;
+      display:grid;
+      place-items:center;
+      margin:0 auto 9px;
+      border-radius:12px;
+      background:var(--soft);
+      color:var(--accent);
+      border:1px solid var(--line);
+      font-weight:950;
+      font-size:13px;
+    }
+    .cycle-node strong{
+      color:var(--text);
+      font-size:15px;
+    }
+    .cycle-node small{
+      color:var(--muted);
+      font-weight:750;
+    }
+    .cycle-line{
+      height:3px;
+      background:linear-gradient(90deg,var(--accent),var(--accent-2));
+      border-radius:999px;
+      position:relative;
+    }
+    .cycle-line::after{
+      content:"";
+      position:absolute;
+      right:-1px;
+      top:50%;
+      transform:translateY(-50%) rotate(45deg);
+      width:8px;
+      height:8px;
+      border-top:3px solid var(--accent-2);
+      border-right:3px solid var(--accent-2);
+    }
+
+    .dashboard-grid{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:10px;
+      position:relative;
+      z-index:1;
+    }
+    .dash-tile{
+      background:var(--surface);
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:16px;
+    }
+    .dash-tile strong{
+      display:block;
+      font-size:32px;
+      line-height:1;
+      letter-spacing:-.05em;
+      color:var(--accent);
+    }
+    .dash-tile span{
+      color:var(--muted);
+      font-size:13px;
+      font-weight:800;
+    }
+    .dash-tile.pass strong{color:var(--accent-2)}
+    .dash-tile.fail strong{color:var(--danger)}
+    .dash-tile.blocked strong{color:var(--accent-3)}
+    .progress-wrap{
+      margin-top:16px;
+      display:grid;
+      gap:8px;
+      position:relative;
+      z-index:1;
+    }
+    .progress-row{
+      display:flex;
+      justify-content:space-between;
+      gap:10px;
+      color:var(--muted);
+      font-weight:800;
+      font-size:13px;
+    }
+    .progress-row strong{
+      color:var(--text);
+    }
+    .progress-bar{
+      height:10px;
+      background:var(--surface);
+      border:1px solid var(--line);
+      border-radius:999px;
+      overflow:hidden;
+    }
+    .progress-bar i{
+      display:block;
+      height:100%;
+      background:linear-gradient(90deg,var(--accent),var(--accent-2));
+      border-radius:999px;
+    }
+    .progress-bar.amber i{
+      background:linear-gradient(90deg,var(--accent-3),var(--accent));
+    }
+
+    .defect-flow{
+      display:grid;
+      grid-template-columns:1fr 18px 1fr;
+      gap:8px;
+      align-items:center;
+      position:relative;
+      z-index:1;
+    }
+    .defect-flow div{
+      background:var(--surface);
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:12px;
+      min-height:76px;
+    }
+    .defect-flow span{
+      display:block;
+      color:var(--text);
+      font-weight:950;
+    }
+    .defect-flow small{
+      color:var(--muted);
+      font-weight:750;
+    }
+    .defect-flow b{
+      height:3px;
+      background:linear-gradient(90deg,var(--accent),var(--accent-2));
+      border-radius:999px;
+    }
+    .bug-report-mini{
+      margin-top:15px;
+      background:var(--surface);
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:16px;
+      position:relative;
+      z-index:1;
+    }
+    .bug-report-mini h4{
+      margin:0 0 8px;
+      color:var(--text);
+    }
+    .bug-report-mini ul{
+      margin:0;
+      padding-left:18px;
+      color:var(--muted);
+      display:grid;
+      gap:4px;
+    }
+    .visual-note{
+      margin:16px 0 0;
+      color:var(--muted);
+      position:relative;
+      z-index:1;
+      font-weight:750;
+    }
+
+    @media(max-width:1050px){
+      .cycle-graphic{
+        grid-template-columns:1fr;
+      }
+      .cycle-line{
+        height:24px;
+        width:3px;
+        margin:0 auto;
+        background:linear-gradient(180deg,var(--accent),var(--accent-2));
+      }
+      .cycle-line::after{
+        right:50%;
+        top:auto;
+        bottom:-2px;
+        transform:translateX(50%) rotate(135deg);
+      }
+    }
+    @media(max-width:900px){
+      .visual-grid{
+        grid-template-columns:1fr;
+      }
+    }
+    @media(max-width:560px){
+      .dashboard-grid,.defect-flow{
+        grid-template-columns:1fr;
+      }
+      .defect-flow b{
+        width:3px;
+        height:16px;
+        margin:0 auto;
+      }
+    }
+
+    html[data-theme="light"] .visual-card,
+    html[data-theme="light"] .cycle-node,
+    html[data-theme="light"] .dash-tile,
+    html[data-theme="light"] .defect-flow div,
+    html[data-theme="light"] .bug-report-mini{
+      background:#ffffff !important;
+      border-color:#cbd5e1 !important;
+    }
+    html[data-theme="light"] .visual-head h3,
+    html[data-theme="light"] .cycle-node strong,
+    html[data-theme="light"] .progress-row strong,
+    html[data-theme="light"] .defect-flow span,
+    html[data-theme="light"] .bug-report-mini h4{
+      color:#0f172a !important;
+      -webkit-text-fill-color:#0f172a !important;
+    }
+    html[data-theme="light"] .visual-note,
+    html[data-theme="light"] .cycle-node small,
+    html[data-theme="light"] .dash-tile span,
+    html[data-theme="light"] .progress-row,
+    html[data-theme="light"] .defect-flow small,
+    html[data-theme="light"] .bug-report-mini li{
+      color:#334155 !important;
+      -webkit-text-fill-color:#334155 !important;
+    }
+
+  
+    /* Rebuild 01: clean corporate homepage */
+    html[data-theme="light"]{
+      --bg:#f6f8fb;
+      --surface:#ffffff;
+      --surface-2:#f8fafc;
+      --text:#0f172a;
+      --muted:#334155;
+      --line:#d6e0ec;
+      --accent:#1f4e79;
+      --accent-rgb:31,78,121;
+      --accent-2:#0f766e;
+      --accent-2-rgb:15,118,110;
+      --accent-3:#a16207;
+      --accent-3-rgb:161,98,7;
+      --soft:#eef5fb;
+      --shadow:0 14px 34px rgba(15, 23, 42, .08);
+    }
+    html[data-theme="light"] body{
+      background:#f6f8fb !important;
+      color:var(--text);
+    }
+    html[data-theme="light"] .topbar{
+      background:rgba(255,255,255,.92) !important;
+      box-shadow:0 8px 24px rgba(15,23,42,.06);
+    }
+    .clean-hero{
+      grid-template-columns:1.08fr .92fr;
+      gap:20px;
+    }
+    .clean-hero-main{
+      background:#ffffff !important;
+      border:1px solid var(--line) !important;
+      border-top:5px solid var(--accent) !important;
+      box-shadow:var(--shadow) !important;
+      padding:40px !important;
+    }
+    .clean-hero-main:before,
+    .clean-hero-main:after{
+      display:none !important;
+    }
+    .clean-hero-main .eyebrow{
+      color:var(--accent) !important;
+      background:var(--soft) !important;
+      border:1px solid #c7dff1 !important;
+      box-shadow:none !important;
+      text-transform:none !important;
+      letter-spacing:0 !important;
+      font-size:13px !important;
+      font-weight:850 !important;
+    }
+    .clean-hero-main h1{
+      color:#0f172a !important;
+      -webkit-text-fill-color:#0f172a !important;
+      font-size:clamp(42px,6vw,68px) !important;
+      letter-spacing:-.055em !important;
+      line-height:1 !important;
+      margin-top:4px !important;
+    }
+    .hero-title{
+      font-size:23px !important;
+      line-height:1.35 !important;
+      color:#1f4e79 !important;
+      font-weight:850 !important;
+      max-width:800px;
+      margin:16px 0 0 !important;
+    }
+    .clean-hero-main .lead{
+      color:#334155 !important;
+      -webkit-text-fill-color:#334155 !important;
+      max-width:820px;
+      font-size:16px;
+      margin-top:14px;
+    }
+    .tool-strip{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-top:22px;
+    }
+    .tool-strip span{
+      display:inline-flex;
+      padding:7px 10px;
+      border-radius:999px;
+      background:#f8fafc;
+      border:1px solid var(--line);
+      color:#334155;
+      font-size:13px;
+      font-weight:800;
+    }
+    .clean-proof-side{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+    }
+    .proof-card{
+      background:#ffffff;
+      border:1px solid var(--line);
+      border-radius:22px;
+      padding:20px;
+      box-shadow:var(--shadow);
+    }
+    .proof-card span{
+      width:34px;
+      height:34px;
+      display:grid;
+      place-items:center;
+      border-radius:12px;
+      background:var(--soft);
+      border:1px solid #c7dff1;
+      color:var(--accent);
+      font-weight:950;
+      margin-bottom:12px;
+    }
+    .proof-card h3{
+      margin:0 0 8px;
+      color:#0f172a;
+      font-size:17px;
+      line-height:1.25;
+    }
+    .proof-card p{
+      margin:0;
+      color:#334155;
+      font-size:14px;
+      line-height:1.58;
+    }
+    html[data-theme="light"] .btn{
+      background:#1f4e79 !important;
+      border-color:#1f4e79 !important;
+      color:#ffffff !important;
+      -webkit-text-fill-color:#ffffff !important;
+      box-shadow:none !important;
+    }
+    html[data-theme="light"] .btn.secondary{
+      background:#ffffff !important;
+      color:#1f4e79 !important;
+      -webkit-text-fill-color:#1f4e79 !important;
+      border-color:var(--line) !important;
+    }
+    @media(max-width:980px){
+      .clean-hero,
+      .clean-proof-side{
+        grid-template-columns:1fr;
+      }
+    }
+
+  
+    /* Rebuild 02: testing process */
+    .process-heading{
+      display:grid;
+      grid-template-columns:1fr 300px;
+      gap:18px;
+      align-items:start;
+      margin-bottom:22px;
+    }
+    .process-eyebrow{
+      text-transform:none !important;
+      letter-spacing:0 !important;
+      font-size:13px !important;
+      color:var(--accent) !important;
+      background:var(--soft) !important;
+      border:1px solid #c7dff1 !important;
+      box-shadow:none !important;
+    }
+    .process-note{
+      background:#f8fafc;
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:18px;
+    }
+    .process-note strong{
+      display:block;
+      color:#0f172a;
+      margin-bottom:6px;
+      font-size:15px;
+    }
+    .process-note span{
+      color:#334155;
+      line-height:1.55;
+    }
+    .process-timeline{
+      display:grid;
+      gap:14px;
+    }
+    .process-step{
+      display:grid;
+      grid-template-columns:54px 1fr;
+      gap:16px;
+      background:#ffffff;
+      border:1px solid var(--line);
+      border-radius:22px;
+      padding:20px;
+      box-shadow:0 10px 26px rgba(15,23,42,.05);
+    }
+    .step-number{
+      width:44px;
+      height:44px;
+      display:grid;
+      place-items:center;
+      background:var(--soft);
+      border:1px solid #c7dff1;
+      border-radius:14px;
+      color:var(--accent);
+      font-weight:950;
+    }
+    .process-step h3{
+      margin:0 0 6px;
+      color:#0f172a;
+      font-size:19px;
+    }
+    .process-step p{
+      margin:0 0 10px;
+      color:#334155;
+    }
+    .process-step ul{
+      margin:0;
+      padding-left:18px;
+      color:#334155;
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:4px 18px;
+    }
+    .method-grid{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:14px;
+    }
+    .method-card{
+      background:#ffffff;
+      border:1px solid var(--line);
+      border-radius:20px;
+      padding:18px;
+      box-shadow:0 10px 24px rgba(15,23,42,.05);
+    }
+    .method-card h3{
+      margin:0 0 7px;
+      color:#0f172a;
+      font-size:18px;
+    }
+    .method-card p{
+      margin:0 0 12px;
+      color:#334155;
+      line-height:1.58;
+    }
+    .method-card span{
+      display:block;
+      background:#f8fafc;
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:10px;
+      color:#475569;
+      font-size:13px;
+      line-height:1.45;
+    }
+    @media(max-width:980px){
+      .process-heading,
+      .method-grid{
+        grid-template-columns:1fr;
+      }
+      .process-step ul{
+        grid-template-columns:1fr;
+      }
+    }
+    @media(max-width:640px){
+      .process-step{
+        grid-template-columns:1fr;
+      }
+    }
+
+  
+    /* Rebuild 03: case studies */
+    .case-heading{
+      display:grid;
+      grid-template-columns:1fr 320px;
+      gap:18px;
+      align-items:start;
+      margin-bottom:22px;
+    }
+    .case-eyebrow{
+      text-transform:none !important;
+      letter-spacing:0 !important;
+      font-size:13px !important;
+      color:var(--accent) !important;
+      background:var(--soft) !important;
+      border:1px solid #c7dff1 !important;
+      box-shadow:none !important;
+    }
+    .case-note{
+      background:#f8fafc;
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:18px;
+    }
+    .case-note strong{
+      display:block;
+      color:#0f172a;
+      margin-bottom:6px;
+    }
+    .case-note span{
+      color:#334155;
+      line-height:1.55;
+    }
+    .featured-case{
+      display:grid;
+      grid-template-columns:1fr 300px;
+      gap:18px;
+      background:#ffffff;
+      border:1px solid var(--line);
+      border-left:6px solid var(--accent);
+      border-radius:24px;
+      padding:24px;
+      box-shadow:0 12px 28px rgba(15,23,42,.06);
+    }
+    .case-label{
+      display:inline-flex;
+      padding:6px 10px;
+      border-radius:999px;
+      background:var(--soft);
+      border:1px solid #c7dff1;
+      color:var(--accent);
+      font-size:12px;
+      font-weight:950;
+    }
+    .featured-main h3{
+      margin:12px 0 8px;
+      color:#0f172a;
+      font-size:28px;
+      letter-spacing:-.035em;
+    }
+    .featured-main p{
+      color:#334155;
+      margin:0 0 18px;
+      line-height:1.65;
+    }
+    .case-story-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+    }
+    .case-story-grid div,
+    .featured-side{
+      background:#f8fafc;
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:16px;
+    }
+    .case-story-grid h4,
+    .featured-side h4,
+    .defect-card h4{
+      margin:0 0 8px;
+      color:#0f172a;
+      font-size:15px;
+    }
+    .case-story-grid ul,
+    .defect-steps ol{
+      margin:0;
+      padding-left:18px;
+      color:#334155;
+    }
+    .coverage-list{
+      display:grid;
+      gap:8px;
+    }
+    .coverage-list span{
+      display:block;
+      background:#ffffff;
+      border:1px solid var(--line);
+      border-radius:12px;
+      padding:10px;
+      color:#334155;
+      font-weight:800;
+      font-size:13px;
+    }
+    .testcase-table-wrap{
+      overflow:auto;
+      border:1px solid var(--line);
+      border-radius:20px;
+      background:#ffffff;
+      box-shadow:0 12px 28px rgba(15,23,42,.05);
+    }
+    .testcase-table{
+      width:100%;
+      border-collapse:collapse;
+      min-width:860px;
+    }
+    .testcase-table th,
+    .testcase-table td{
+      border-bottom:1px solid var(--line);
+      padding:14px;
+      text-align:left;
+      vertical-align:top;
+      line-height:1.55;
+    }
+    .testcase-table th{
+      background:#eef5fb;
+      color:#0f172a;
+      font-size:13px;
+      text-transform:uppercase;
+      letter-spacing:.04em;
+    }
+    .testcase-table td{
+      color:#334155;
+    }
+    .testcase-table td:first-child{
+      color:var(--accent);
+      font-weight:950;
+      white-space:nowrap;
+    }
+    .defect-card{
+      background:#ffffff;
+      border:1px solid var(--line);
+      border-left:6px solid #a16207;
+      border-radius:24px;
+      padding:24px;
+      box-shadow:0 12px 28px rgba(15,23,42,.06);
+    }
+    .defect-title-row{
+      display:flex;
+      justify-content:space-between;
+      gap:14px;
+      align-items:flex-start;
+      flex-wrap:wrap;
+      margin-bottom:16px;
+    }
+    .defect-title-row h3{
+      margin:12px 0 0;
+      color:#0f172a;
+      font-size:26px;
+      letter-spacing:-.03em;
+    }
+    .severity-badge{
+      background:#fff7ed;
+      border:1px solid #fed7aa;
+      color:#9a3412;
+      border-radius:999px;
+      padding:8px 12px;
+      font-weight:950;
+      font-size:13px;
+    }
+    .defect-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+      margin-bottom:14px;
+    }
+    .defect-grid div,
+    .defect-steps,
+    .defect-impact{
+      background:#f8fafc;
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:16px;
+    }
+    .defect-grid p{
+      margin:0 0 10px;
+      color:#334155;
+    }
+    .defect-impact{
+      display:grid;
+      gap:5px;
+      color:#334155;
+    }
+    .defect-impact strong{
+      color:#0f172a;
+    }
+    .supporting-case-grid{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:14px;
+    }
+    .supporting-case{
+      background:#ffffff;
+      border:1px solid var(--line);
+      border-radius:22px;
+      padding:20px;
+      box-shadow:0 10px 24px rgba(15,23,42,.05);
+    }
+    .supporting-case h3{
+      margin:0 0 8px;
+      color:#0f172a;
+      font-size:19px;
+    }
+    .supporting-case p{
+      margin:0 0 14px;
+      color:#334155;
+      line-height:1.58;
+    }
+    @media(max-width:980px){
+      .case-heading,
+      .featured-case,
+      .case-story-grid,
+      .defect-grid,
+      .supporting-case-grid{
+        grid-template-columns:1fr;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container navwrap">
+      <a class="brand" href="#" onclick="showPage('overview')">Jeric Semeniego</a>
+      <nav class="nav">
+        <button class="navbtn active" data-page="overview">Overview</button>
+        <button class="navbtn" data-page="cycle">Testing Process</button>
+        <button class="navbtn" data-page="cases">Case Studies</button>
+        <button class="navbtn" data-page="artifacts">QA Documents</button>
+        <button class="navbtn" data-page="tools">Tools Used</button>
+        <button class="navbtn" data-page="experience">Experience</button>
+        <button class="navbtn" data-page="contact">Contact</button>
+        <button class="theme-toggle" id="themeToggle" type="button">Dark mode</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    
+    <section id="overview" class="page active">
+      <div class="hero clean-hero">
+        <div class="hero-main clean-hero-main">
+          <div class="eyebrow">QA Analyst | Manual Testing | UAT Support</div>
+          <h1>Jeric Semeniego</h1>
+          <p class="hero-title">I build test cases, validate workflows, handle tickets, and document issues clearly.</p>
+          <p class="lead">My background includes SAP S/4HANA support, ServiceNow ticket handling, regression testing, UAT support, patch/reset validation, issue escalation, and workflow documentation.</p>
+          <p class="lead">I created this portfolio to show how I approach QA work in a practical way: understand the flow, plan what needs to be tested, execute the checks, document defects, and summarize the result.</p>
+
+          <div class="tool-strip">
+            <span>ServiceNow</span>
+            <span>SAP S/4HANA</span>
+            <span>Excel</span>
+            <span>SharePoint</span>
+            <span>SQL</span>
+            <span>Selenium Basics</span>
+            <span>Postman</span>
+            <span>GitHub</span>
+            <span>Jira-style Tracking</span>
+          </div>
+
+          <div class="actions">
+            <button class="btn" onclick="showPage('artifacts')">View QA Documents</button>
+            <button class="btn secondary" onclick="showPage('cases')">View Case Studies</button>
+            <a class="btn secondary" href="resume/Jeric_Semeniego_Final_Harvard_QA_Resume.pdf" target="_blank">Open Resume</a>
+          </div>
+        </div>
+
+        <aside class="hero-side clean-proof-side">
+          <div class="proof-card">
+            <span>01</span>
+            <h3>Test Case Design</h3>
+            <p>I create lists of what needs to be tested across functional, regression, UAT, negative, and workflow scenarios.</p>
+          </div>
+          <div class="proof-card">
+            <span>02</span>
+            <h3>Ticketing & Issue Handling</h3>
+            <p>I handled SAP-related tickets, validated issues, escalated blockers, documented updates, and supported resolution.</p>
+          </div>
+          <div class="proof-card">
+            <span>03</span>
+            <h3>Workflow Validation</h3>
+            <p>I tested patches, resets, incidents, failed workflows, incorrect data, process errors, and system bugs.</p>
+          </div>
+          <div class="proof-card">
+            <span>04</span>
+            <h3>Documentation & Coordination</h3>
+            <p>I prepared flow documents, testing notes, schedules, and system documentation aligned with business process blueprints.</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+
+    
+    <section id="cycle" class="page">
+      <div class="section process-section">
+        <div class="process-heading">
+          <div>
+            <span class="eyebrow process-eyebrow">Testing Process</span>
+            <h2>How I usually approach testing</h2>
+            <p class="section-intro">I try to keep testing practical. First I understand the flow, then I list what needs to be tested, execute the checks, document the result, and escalate or retest when needed.</p>
+          </div>
+          <div class="process-note">
+            <strong>My focus</strong>
+            <span>Clear test cases, accurate validation, clean tickets, and useful reports.</span>
+          </div>
+        </div>
+
+        <div class="process-timeline">
+          <div class="process-step">
+            <div class="step-number">01</div>
+            <div>
+              <h3>Understand the workflow</h3>
+              <p>I review the business flow, system document, blueprint, or ticket details so I know what the system is supposed to do before testing.</p>
+              <ul>
+                <li>What is the expected behavior?</li>
+                <li>Who is the user or role involved?</li>
+                <li>What part of the system is affected?</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="process-step">
+            <div class="step-number">02</div>
+            <div>
+              <h3>List what needs to be tested</h3>
+              <p>I prepare a clear list of test scenarios and test cases instead of testing randomly.</p>
+              <ul>
+                <li>Functional checks</li>
+                <li>Negative and boundary checks</li>
+                <li>Regression checks</li>
+                <li>UAT/business checks</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="process-step">
+            <div class="step-number">03</div>
+            <div>
+              <h3>Execute the test carefully</h3>
+              <p>I run the workflow step by step, compare actual behavior against expected behavior, and record the result.</p>
+              <ul>
+                <li>Pass, fail, or blocked status</li>
+                <li>Actual result and notes</li>
+                <li>Evidence when needed</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="process-step">
+            <div class="step-number">04</div>
+            <div>
+              <h3>Log or update the ticket</h3>
+              <p>If I find an issue, I document it clearly so the next person can understand and reproduce it.</p>
+              <ul>
+                <li>Steps to reproduce</li>
+                <li>Expected vs actual result</li>
+                <li>Impact, severity, and screenshots/logs if available</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="process-step">
+            <div class="step-number">05</div>
+            <div>
+              <h3>Escalate, coordinate, or retest</h3>
+              <p>For issues that need a developer, business user, or another team, I escalate with the right details. After a fix or reset, I retest the affected workflow.</p>
+              <ul>
+                <li>Patch/reset validation</li>
+                <li>Incident follow-up</li>
+                <li>Regression after fix</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="process-step">
+            <div class="step-number">06</div>
+            <div>
+              <h3>Summarize the result</h3>
+              <p>I prepare notes or reports that show what was tested, what passed, what failed, and what still needs attention.</p>
+              <ul>
+                <li>Testing summary</li>
+                <li>Open risks or blockers</li>
+                <li>UAT or release readiness notes</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Testing methods I apply</h2>
+        <p class="section-intro">These are the types of checks I use when building test cases or validating a ticket.</p>
+        <div class="method-grid">
+          <div class="method-card">
+            <h3>Functional Testing</h3>
+            <p>Checks if the feature or workflow behaves according to the requirement.</p>
+            <span>Example: request submission, approval, status update</span>
+          </div>
+          <div class="method-card">
+            <h3>Regression Testing</h3>
+            <p>Checks if a change, fix, patch, or reset broke an existing workflow.</p>
+            <span>Example: retesting related SAP process steps after a fix</span>
+          </div>
+          <div class="method-card">
+            <h3>UAT Support</h3>
+            <p>Helps confirm that the system works for business users and real workflow needs.</p>
+            <span>Example: preparing checks, notes, and feedback tracking</span>
+          </div>
+          <div class="method-card">
+            <h3>Negative Testing</h3>
+            <p>Checks how the system behaves when invalid, missing, or unexpected input is used.</p>
+            <span>Example: missing required field or unauthorized access</span>
+          </div>
+          <div class="method-card">
+            <h3>Data / Status Validation</h3>
+            <p>Checks that records, statuses, history, and system results are accurate.</p>
+            <span>Example: validating incorrect data or failed workflow status</span>
+          </div>
+          <div class="method-card">
+            <h3>Smoke / Sanity Checks</h3>
+            <p>Quick checks to confirm if a build, fix, or workflow is stable enough to continue testing.</p>
+            <span>Example: confirming the main flow works after a reset</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    
+    <section id="cases" class="page">
+      <div class="section case-section">
+        <div class="case-heading">
+          <div>
+            <span class="eyebrow case-eyebrow">Case Studies</span>
+            <h2>Work samples I can explain in an interview</h2>
+            <p class="section-intro">I kept the case studies practical and non-confidential. The goal is to show how I think through a workflow, decide what needs to be tested, document issues, and report the result.</p>
+          </div>
+          <div class="case-note">
+            <strong>Main case study</strong>
+            <span>Internal Service Filing Workflow — a realistic filing and record management module.</span>
+          </div>
+        </div>
+
+        <div class="featured-case">
+          <div class="featured-main">
+            <span class="case-label">Main QA sample</span>
+            <h3>Internal Service Filing Workflow</h3>
+            <p>I prepared manual test coverage for an internal service filing workflow. The scope covered UI behavior, navigation, form validation, record management, data integrity, end-to-end filing, document generation, and JIRA issue tracking.</p>
+
+            <div class="case-story-grid">
+              <div>
+                <h4>What I tested</h4>
+                <ul>
+                  <li>Repository/list page</li>
+                  <li>Add new filing entry</li>
+                  <li>View and verify record details</li>
+                  <li>Edit/update status and remarks</li>
+                  <li>Generate or download related form</li>
+                  <li>Data consistency across list, details, and generated document</li>
+                </ul>
+              </div>
+              <div>
+                <h4>What this shows</h4>
+                <ul>
+                  <li>I can plan test coverage before execution</li>
+                  <li>I can group test cases by testing area</li>
+                  <li>I can cover positive, negative, and end-to-end scenarios</li>
+                  <li>I can connect failed test results to JIRA reporting</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <aside class="featured-side">
+            <h4>Coverage groups</h4>
+            <div class="coverage-list">
+              <span>UI & Navigation</span>
+              <span>Forms & Data Entry</span>
+              <span>Record Management</span>
+              <span>Data Integrity</span>
+              <span>End-to-End Scenarios</span>
+              <span>JIRA Reporting</span>
+            </div>
+          </aside>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Sample test case set</h2>
+        <p class="section-intro">These are the main test cases I would use to validate the filing workflow from list view to document generation.</p>
+
+        <div class="testcase-table-wrap">
+          <table class="testcase-table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Test Case</th>
+                <th>What I validate</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>TC_001</td>
+                <td>View Repository/List of Filed Entries</td>
+                <td>List page, table columns, layout, search, sorting, pagination, and export if available.</td>
+              </tr>
+              <tr>
+                <td>TC_002</td>
+                <td>Add New Filing Entry</td>
+                <td>Add New form, required fields, cancel behavior, valid submission, success message, and saved record.</td>
+              </tr>
+              <tr>
+                <td>TC_003</td>
+                <td>View and Verify Filing Entry Details</td>
+                <td>Saved details, attachments, and action buttons display correctly.</td>
+              </tr>
+              <tr>
+                <td>TC_004</td>
+                <td>Edit / Update Filing Entry Status and Remarks</td>
+                <td>Editable fields, cancel without saving, valid updates, success notification, and updated details.</td>
+              </tr>
+              <tr>
+                <td>TC_005</td>
+                <td>Generate / Download Form or Information Sheet</td>
+                <td>Generated file opens correctly and contains accurate record data.</td>
+              </tr>
+              <tr>
+                <td>TC_006</td>
+                <td>Negative / Validation and Error Handling</td>
+                <td>Missing or invalid inputs trigger correct validation and valid corrected data can be submitted.</td>
+              </tr>
+              <tr>
+                <td>TC_007</td>
+                <td>Data Integrity and Record Consistency</td>
+                <td>Values match across form, list, details page, and generated document.</td>
+              </tr>
+              <tr>
+                <td>TC_008</td>
+                <td>End-to-End Happy Path</td>
+                <td>Full Add → View → Edit → Generate workflow completes successfully.</td>
+              </tr>
+              <tr>
+                <td>TC_009</td>
+                <td>Report / Issue Tracking Compliance</td>
+                <td>Failed results are logged in JIRA with screenshots, evidence, and JIRA IDs in the execution log.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Defect sample from the same style of testing</h2>
+        <p class="section-intro">This is a cleaned and anonymized version of a navigation issue. It shows how I document a defect so it can be reproduced and reviewed.</p>
+
+        <div class="defect-card">
+          <div class="defect-title-row">
+            <div>
+              <span class="case-label">Defect Sample</span>
+              <h3>Back Button Navigation Redirects to Incorrect Page</h3>
+            </div>
+            <div class="severity-badge">Severity: Medium</div>
+          </div>
+
+          <div class="defect-grid">
+            <div>
+              <h4>Issue Description</h4>
+              <p>During testing in a time management workflow, I observed that the Back button did not consistently return the user to the most recent page or panel previously accessed.</p>
+              <p>The issue appeared across multiple screens, which suggested a possible shared navigation handling problem.</p>
+            </div>
+            <div>
+              <h4>Expected vs Actual</h4>
+              <p><strong>Expected:</strong> Clicking Back should return the user to the most recent page or panel in the current workflow.</p>
+              <p><strong>Actual:</strong> In some cases, Back redirects the user to a different process or page instead of the last interacted screen.</p>
+            </div>
+          </div>
+
+          <div class="defect-steps">
+            <h4>Replication Steps</h4>
+            <ol>
+              <li>Open the administrative module.</li>
+              <li>Navigate to the time management workflow.</li>
+              <li>Open a record or details screen.</li>
+              <li>Click the Back button.</li>
+              <li>Observe the destination page.</li>
+              <li>Repeat on a related screen to confirm if the issue occurs in multiple flows.</li>
+            </ol>
+          </div>
+
+          <div class="defect-impact">
+            <strong>Impact:</strong>
+            <span>This affects navigation accuracy, user experience, and test execution flow consistency. Since it occurs in multiple flows, it may require review of shared routing or navigation history handling.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Other case studies</h2>
+        <p class="section-intro">These additional samples show that I can apply the same QA thinking to other domains.</p>
+
+        <div class="supporting-case-grid">
+          <div class="supporting-case">
+            <h3>Banking QA Case Study</h3>
+            <p>Account overview and balance visibility sample covering login, MFA, balance display, masking, session behavior, cross-device checks, and API response awareness.</p>
+            <div class="tag-row">
+              <span class="tag">Banking QA</span>
+              <span class="tag">Security-aware</span>
+              <span class="tag">API awareness</span>
+            </div>
+          </div>
+
+          <div class="supporting-case">
+            <h3>Game QA Case Study</h3>
+            <p>Fictional live-service game sample covering patch regression, reward validation, duplicate prevention, reconnect/session behavior, stability, and evidence collection.</p>
+            <div class="tag-row">
+              <span class="tag">Game QA</span>
+              <span class="tag">Regression</span>
+              <span class="tag">Stability checks</span>
+            </div>
+          </div>
+
+          <div class="supporting-case">
+            <h3>CSE Review Studio</h3>
+            <p>Mobile-first exam review web app with practice questions, mock exams, topic drills, saved progress, notes, mistake logs, and UI/usability checks.</p>
+            <div class="tag-row">
+              <span class="tag">HTML/CSS/JS</span>
+              <span class="tag">LocalStorage</span>
+              <span class="tag">Vercel</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="capabilities" class="page">
+      <div class="section capability-hero">
+        <span class="eyebrow small">Capability map</span>
+        <h2>How I can help a QA team</h2>
+        <p class="section-intro">This section shows the practical areas I can contribute to now, plus the technical areas I am building toward.</p>
+
+        <div class="capability-grid">
+          <div class="capability-card primary">
+            <div class="cap-top"><span>01</span><strong>Strongest</strong></div>
+            <h3>Manual QA execution</h3>
+            <p>Functional testing, regression testing, smoke checks, sanity checks, exploratory checks, UAT support, and careful test execution.</p>
+            <div class="mini-tags"><span>Functional</span><span>Regression</span><span>UAT</span></div>
+          </div>
+
+          <div class="capability-card">
+            <div class="cap-top"><span>02</span><strong>Daily value</strong></div>
+            <h3>Defect documentation</h3>
+            <p>Clear bug reports with steps to reproduce, expected result, actual result, severity, priority, evidence, and retest notes.</p>
+            <div class="mini-tags"><span>Bug reports</span><span>Evidence</span><span>Retest</span></div>
+          </div>
+
+          <div class="capability-card">
+            <div class="cap-top"><span>03</span><strong>Work background</strong></div>
+            <h3>Workflow validation</h3>
+            <p>Business process checks involving roles, approvals, status updates, incidents, access issues, documentation, and escalation.</p>
+            <div class="mini-tags"><span>SAP</span><span>ServiceNow</span><span>Support</span></div>
+          </div>
+
+          <div class="capability-card">
+            <div class="cap-top"><span>04</span><strong>Technical support</strong></div>
+            <h3>Basic technical checks</h3>
+            <p>SQL result checks, Postman/API awareness, Browser DevTools, console errors, response validation, and web UI behavior checks.</p>
+            <div class="mini-tags"><span>SQL</span><span>Postman</span><span>DevTools</span></div>
+          </div>
+
+          <div class="capability-card">
+            <div class="cap-top"><span>05</span><strong>Growth path</strong></div>
+            <h3>Automation support</h3>
+            <p>Selenium/Python basics and identifying stable smoke or regression flows that can become good automation candidates.</p>
+            <div class="mini-tags"><span>Selenium</span><span>Python basics</span><span>Smoke checks</span></div>
+          </div>
+
+          <div class="capability-card">
+            <div class="cap-top"><span>06</span><strong>Release mindset</strong></div>
+            <h3>Testing summaries</h3>
+            <p>Pass/fail status, open defects, risks, blocker notes, regression status, UAT notes, and release recommendation.</p>
+            <div class="mini-tags"><span>Reports</span><span>Risks</span><span>Release</span></div>
+          </div>
+        </div>
+
+        <div class="capability-strip">
+          <div><strong>Best-fit roles</strong><span>Manual QA Tester, QA Analyst, UAT Tester, Application Support, IT Support, ServiceNow/SAP Support</span></div>
+          <div><strong>Current focus</strong><span>Getting stronger in API checks, SQL validation, automation basics, and interview-ready QA explanation.</span></div>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="visualproof" class="page">
+      <div class="section">
+        <span class="eyebrow small">Visual QA evidence</span>
+        <h2>Visual proof of how I test</h2>
+        <p class="section-intro">No screenshots are needed here. These graphics summarize my QA process, reporting mindset, and defect handling in a way recruiters can understand quickly.</p>
+
+        <div class="visual-grid">
+          <div class="visual-card wide">
+            <div class="visual-head">
+              <div>
+                <span class="visual-label">Testing cycle</span>
+                <h3>From requirement to release decision</h3>
+              </div>
+              <span class="visual-badge">Full cycle</span>
+            </div>
+
+            <div class="cycle-graphic">
+              <div class="cycle-node"><span>01</span><strong>Review</strong><small>requirements</small></div>
+              <div class="cycle-line"></div>
+              <div class="cycle-node"><span>02</span><strong>Plan</strong><small>scope & risk</small></div>
+              <div class="cycle-line"></div>
+              <div class="cycle-node"><span>03</span><strong>Design</strong><small>test cases</small></div>
+              <div class="cycle-line"></div>
+              <div class="cycle-node"><span>04</span><strong>Execute</strong><small>record results</small></div>
+              <div class="cycle-line"></div>
+              <div class="cycle-node"><span>05</span><strong>Defects</strong><small>report issues</small></div>
+              <div class="cycle-line"></div>
+              <div class="cycle-node"><span>06</span><strong>Release</strong><small>summary</small></div>
+            </div>
+
+            <p class="visual-note">This is how the artifacts connect together instead of being random files.</p>
+          </div>
+
+          <div class="visual-card">
+            <div class="visual-head">
+              <div>
+                <span class="visual-label">Mini dashboard</span>
+                <h3>Sample test run snapshot</h3>
+              </div>
+              <span class="visual-badge amber">Report</span>
+            </div>
+
+            <div class="dashboard-grid">
+              <div class="dash-tile"><strong>24</strong><span>Test cases</span></div>
+              <div class="dash-tile pass"><strong>18</strong><span>Passed</span></div>
+              <div class="dash-tile fail"><strong>4</strong><span>Failed</span></div>
+              <div class="dash-tile blocked"><strong>2</strong><span>Blocked</span></div>
+            </div>
+
+            <div class="progress-wrap">
+              <div class="progress-row"><span>Execution coverage</span><strong>92%</strong></div>
+              <div class="progress-bar"><i style="width:92%"></i></div>
+              <div class="progress-row"><span>Release confidence</span><strong>Conditional</strong></div>
+              <div class="progress-bar amber"><i style="width:70%"></i></div>
+            </div>
+
+            <p class="visual-note">Shows how I would summarize progress, blockers, and release readiness.</p>
+          </div>
+
+          <div class="visual-card">
+            <div class="visual-head">
+              <div>
+                <span class="visual-label">Defect lifecycle</span>
+                <h3>How I track issues</h3>
+              </div>
+              <span class="visual-badge teal">Validation</span>
+            </div>
+
+            <div class="defect-flow">
+              <div><span>New</span><small>Issue found</small></div>
+              <b></b>
+              <div><span>Logged</span><small>Steps + evidence</small></div>
+              <b></b>
+              <div><span>Fixed</span><small>Developer update</small></div>
+              <b></b>
+              <div><span>Retested</span><small>Original steps</small></div>
+              <b></b>
+              <div><span>Closed</span><small>Confirmed</small></div>
+            </div>
+
+            <div class="bug-report-mini">
+              <h4>Bug report structure</h4>
+              <ul>
+                <li>Steps to reproduce</li>
+                <li>Expected vs actual result</li>
+                <li>Severity and priority</li>
+                <li>Evidence and impact</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<section id="artifacts" class="page">
+      <div class="section">
+        <h2>Artifacts</h2>
+        <p class="section-intro">Each artifact includes a short explanation and an embedded readable preview. The source files are still in the repository, but the important evidence can be reviewed here.</p>
+        <div class="artifact-layout">
+          <aside class="artifact-menu">
+            <button class="artifact-tab active" data-artifact="a0">Requirement Analysis</button>
+<button class="artifact-tab " data-artifact="a1">Test Plan</button>
+<button class="artifact-tab " data-artifact="a2">Test Scenarios</button>
+<button class="artifact-tab " data-artifact="a3">Manual Test Cases</button>
+<button class="artifact-tab " data-artifact="a4">RTM</button>
+<button class="artifact-tab " data-artifact="a5">Test Data</button>
+<button class="artifact-tab " data-artifact="a6">Defect Reports</button>
+<button class="artifact-tab " data-artifact="a7">Regression Checklist</button>
+<button class="artifact-tab " data-artifact="a8">UAT Checklist</button>
+<button class="artifact-tab " data-artifact="a9">Test Summary</button>
+<button class="artifact-tab " data-artifact="a10">Game QA Case</button>
+<button class="artifact-tab " data-artifact="a11">Banking QA Case</button>
+<button class="artifact-tab " data-artifact="a12">Coverage Matrix</button>
+<button class="artifact-tab " data-artifact="a13">Tools Matrix</button>
+          </aside>
+          <div class="artifact-panel-wrap">
+            
+    <article id="a0" class="artifact-panel active">
+      <div class="artifact-head">
+        <div>
+          <span class="pill">Requirement review</span>
+          <h3>Requirement Analysis</h3>
+        </div>
+        <span class="file-path">qa-test-artifacts/01_Requirement_Analysis.md</span>
+      </div>
+
+      <div class="artifact-evidence-grid">
+        <div class="evidence-card">
+          <h4>What I did</h4>
+          <p>I reviewed the workflow and identified testable requirements, risks, assumptions, and clarification questions.</p>
+        </div>
+        <div class="evidence-card">
+          <h4>What this shows</h4>
+          <p>Shows I can turn requirements into testable QA conditions.</p>
+        </div>
+        <div class="evidence-card wide">
+          <h4>Evidence included</h4>
+          <ul><li>Testable requirements</li><li>Risks and dependencies</li><li>Clarification questions</li><li>Business rule coverage</li></ul>
+        </div>
+      </div>
+
+      <details class="doc-preview" open>
+        <summary>Readable document preview</summary>
+        <div class="doc-preview-body"><h3>Requirement Analysis</h3>
+<h4>Case Study</h4>
+<p>Purchase Request and Approval Management System</p>
+<h4>Testable Requirements</h4>
+<ul>
+<li>Requester can create a purchase request.</li>
+<li>Required fields must block submission when missing.</li>
+<li>Requester can submit a valid request for approval.</li>
+<li>Approver can approve or reject a pending request.</li>
+<li>Rejection must require a reason.</li>
+<li>Approved requests must become read-only.</li>
+<li>Request list and detail page must show the same status.</li>
+<li>Request history must record important actions.</li>
+<li>Unauthorized users must not access approval actions.</li>
+</ul>
+<h4>Clarification Questions</h4>
+<ol>
+<li>Can a requester approve their own request?</li>
+<li>Which fields are required before submission?</li>
+<li>Should rejected requests be editable and resubmittable?</li>
+<li>What actions should appear in history/audit trail?</li>
+<li>What are the release exit criteria?</li>
+</ol>
+<h4>Main Risks</h4>
+<ul>
+<li>Approved request remains editable.</li>
+<li>Status mismatch between list and detail page.</li>
+<li>Rejection without reason.</li>
+<li>Missing audit/history record.</li>
+<li>Unauthorized approval action.</li>
+</ul></div>
+      </details>
+    </article>
+    
+    <article id="a1" class="artifact-panel ">
+      <div class="artifact-head">
+        <div>
+          <span class="pill">Planning</span>
+          <h3>Test Plan</h3>
+        </div>
+        <span class="file-path">qa-test-artifacts/02_Test_Plan.md</span>
+      </div>
+
+      <div class="artifact-evidence-grid">
+        <div class="evidence-card">
+          <h4>What I did</h4>
+          <p>I defined scope, approach, test types, environment needs, entry criteria, and exit criteria.</p>
+        </div>
+        <div class="evidence-card">
+          <h4>What this shows</h4>
+          <p>Shows I can organize QA work before execution.</p>
+        </div>
+        <div class="evidence-card wide">
+          <h4>Evidence included</h4>
+          <ul><li>Scope</li><li>Test approach</li><li>Entry/exit criteria</li><li>Release decision basis</li></ul>
+        </div>
+      </div>
+
+      <details class="doc-preview" open>
+        <summary>Readable document preview</summary>
+        <div class="doc-preview-body"><h3>Test Plan</h3>
+<h4>Objective</h4>
+<p>Validate the Purchase Request workflow from creation to approval/rejection and release readiness.</p>
+<h4>In Scope</h4>
+<ul>
+<li>Create request</li>
+<li>Required field validation</li>
+<li>Submit for approval</li>
+<li>Approve / reject request</li>
+<li>Rejection reason validation</li>
+<li>Status consistency</li>
+<li>Read-only behavior after approval</li>
+<li>Role-based access</li>
+<li>Regression and release validation</li>
+</ul>
+<h4>Out of Scope</h4>
+<ul>
+<li>Payment processing</li>
+<li>External vendor integrations</li>
+<li>Load testing</li>
+<li>Production data testing</li>
+</ul>
+<h4>Test Types</h4>
+<ul>
+<li>Functional Testing</li>
+<li>Negative Testing</li>
+<li>Boundary Testing</li>
+<li>Smoke Testing</li>
+<li>Regression Testing</li>
+<li>UAT / Acceptance Testing</li>
+<li>Defect Retesting</li>
+</ul>
+<h4>Entry Criteria</h4>
+<ul>
+<li>Requirements are available.</li>
+<li>QA/staging environment is ready.</li>
+<li>Test users and test data are prepared.</li>
+<li>Build is deployed.</li>
+</ul>
+<h4>Exit Criteria</h4>
+<ul>
+<li>Critical test cases are executed.</li>
+<li>High-impact defects are fixed or accepted.</li>
+<li>Retesting and regression are complete.</li>
+<li>Test summary is prepared.</li>
+</ul></div>
+      </details>
+    </article>
+    
+    <article id="a2" class="artifact-panel ">
+      <div class="artifact-head">
+        <div>
+          <span class="pill">Scenario design</span>
+          <h3>Test Scenarios</h3>
+        </div>
+        <span class="file-path">qa-test-artifacts/03_Test_Scenarios.md</span>
+      </div>
+
+      <div class="artifact-evidence-grid">
+        <div class="evidence-card">
+          <h4>What I did</h4>
+          <p>I broke the workflow into high-level scenarios that needed coverage.</p>
+        </div>
+        <div class="evidence-card">
+          <h4>What this shows</h4>
+          <p>Shows I can identify critical paths and business rules.</p>
+        </div>
+        <div class="evidence-card wide">
+          <h4>Evidence included</h4>
+          <ul><li>Create request</li><li>Submit</li><li>Approve/reject</li><li>Status updates</li></ul>
+        </div>
+      </div>
+
+      <details class="doc-preview" open>
+        <summary>Readable document preview</summary>
+        <div class="doc-preview-body"><h3>Test Scenarios</h3>
+<div class='doc-table-wrap'><table class='doc-table'><thead><tr>
+<th>ID</th>
+<th>Scenario</th>
+</tr></thead><tbody>
+<tr>
+<td>TS-001</td>
+<td>Verify requester can create a purchase request.</td>
+</tr>
+<tr>
+<td>TS-002</td>
+<td>Verify required fields block submission.</td>
+</tr>
+<tr>
+<td>TS-003</td>
+<td>Verify requester can submit valid request for approval.</td>
+</tr>
+<tr>
+<td>TS-004</td>
+<td>Verify approver can approve pending request.</td>
+</tr>
+<tr>
+<td>TS-005</td>
+<td>Verify approver can reject with reason.</td>
+</tr>
+<tr>
+<td>TS-006</td>
+<td>Verify rejection without reason is blocked.</td>
+</tr>
+<tr>
+<td>TS-007</td>
+<td>Verify requester cannot approve own request.</td>
+</tr>
+<tr>
+<td>TS-008</td>
+<td>Verify request list and detail status match.</td>
+</tr>
+<tr>
+<td>TS-009</td>
+<td>Verify approved request becomes read-only.</td>
+</tr>
+<tr>
+<td>TS-010</td>
+<td>Verify request history records key actions.</td>
+</tr>
+<tr>
+<td>TS-011</td>
+<td>Verify impacted workflows still work after fixes.</td>
+</tr>
+</tbody></table></div></div>
+      </details>
+    </article>
+    
+    <article id="a3" class="artifact-panel ">
+      <div class="artifact-head">
+        <div>
+          <span class="pill">Execution-ready</span>
+          <h3>Manual Test Cases</h3>
+        </div>
+        <span class="file-path">qa-test-artifacts/04_Manual_Test_Cases.csv</span>
+      </div>
+
+      <div class="artifact-evidence-grid">
+        <div class="evidence-card">
+          <h4>What I did</h4>
+          <p>I wrote step-by-step test cases with preconditions, test data, and expected results.</p>
+        </div>
+        <div class="evidence-card">
+          <h4>What this shows</h4>
+          <p>Shows I can create repeatable tests another tester can follow.</p>
+        </div>
+        <div class="evidence-card wide">
+          <h4>Evidence included</h4>
+          <ul><li>Preconditions</li><li>Test data</li><li>Steps</li><li>Expected results</li></ul>
+        </div>
+      </div>
+
+      <details class="doc-preview" open>
+        <summary>Readable document preview</summary>
+        <div class="doc-preview-body"><div class='doc-table-wrap'><table class='doc-table'>
+<thead><tr>
+<th>Test Case ID</th>
+<th>Requirement ID</th>
+<th>Module</th>
+<th>Type</th>
+<th>Title</th>
+<th>Precondition</th>
+<th>Test Data</th>
+<th>Steps</th>
+<th>Expected Result</th>
+<th>Status</th>
+</tr></thead><tbody>
+<tr>
+<td>TC-001</td>
+<td>REQ-001</td>
+<td>Create Request</td>
+<td>Positive</td>
+<td>Requester creates request with valid data</td>
+<td>Requester user exists</td>
+<td>Item=Laptop; Amount=50000</td>
+<td>1. Login as requester2. Open Create Request3. Enter valid data4. Save draft</td>
+<td>Draft is saved and request ID is generated</td>
+<td>Not Run</td>
+</tr>
+<tr>
+<td>TC-002</td>
+<td>REQ-002</td>
+<td>Validation</td>
+<td>Negative</td>
+<td>Required fields block submission</td>
+<td>Requester is on form</td>
+<td>Department blank</td>
+<td>1. Leave department blank2. Click Submit</td>
+<td>System blocks submission and shows required field message</td>
+<td>Not Run</td>
+</tr>
+<tr>
+<td>TC-003</td>
+<td>REQ-003</td>
+<td>Submit</td>
+<td>Positive</td>
+<td>Requester submits valid request</td>
+<td>Draft exists</td>
+<td>PR-1001</td>
+<td>1. Open draft2. Click Submit</td>
+<td>Status changes to Pending Approval</td>
+<td>Not Run</td>
+</tr>
+<tr>
+<td>TC-004</td>
+<td>REQ-004</td>
+<td>Approval</td>
+<td>Positive</td>
+<td>Approver approves request</td>
+<td>Pending request assigned</td>
+<td>Approver_User</td>
+<td>1. Login as approver2. Open request3. Click Approve</td>
+<td>Status changes to Approved</td>
+<td>Not Run</td>
+</tr>
+<tr>
+<td>TC-005</td>
+<td>REQ-005</td>
+<td>Rejection</td>
+<td>Negative</td>
+<td>Rejection without reason is blocked</td>
+<td>Pending request exists</td>
+<td>Blank reason</td>
+<td>1. Click Reject2. Leave reason blank3. Confirm</td>
+<td>System requires rejection reason</td>
+<td>Not Run</td>
+</tr>
+<tr>
+<td>TC-006</td>
+<td>REQ-006</td>
+<td>Read-only</td>
+<td>Positive</td>
+<td>Approved request becomes read-only</td>
+<td>Approved request exists</td>
+<td>PR-1002</td>
+<td>1. Login as requester2. Open approved request3. Try editing amount</td>
+<td>Protected fields are disabled</td>
+<td>Not Run</td>
+</tr>
+<tr>
+<td>TC-007</td>
+<td>REQ-007</td>
+<td>Status</td>
+<td>Positive</td>
+<td>List and detail status match</td>
+<td>Request status updated</td>
+<td>PR-1002</td>
+<td>1. Check request list2. Open detail page3. Compare status</td>
+<td>Both pages show same status</td>
+<td>Not Run</td>
+</tr>
+<tr>
+<td>TC-008</td>
+<td>REQ-010</td>
+<td>Regression</td>
+<td>Regression</td>
+<td>Approval fix does not break request creation</td>
+<td>New build deployed</td>
+<td>Valid request data</td>
+<td>1. Create draft2. Submit3. Approve</td>
+<td>Core workflow still works</td>
+<td>Not Run</td>
+</tr>
+</tbody></table></div></div>
+      </details>
+    </article>
+    
+    <article id="a4" class="artifact-panel ">
+      <div class="artifact-head">
+        <div>
+          <span class="pill">Coverage</span>
+          <h3>RTM</h3>
+        </div>
+        <span class="file-path">qa-test-artifacts/05_RTM.csv</span>
+      </div>
+
+      <div class="artifact-evidence-grid">
+        <div class="evidence-card">
+          <h4>What I did</h4>
+          <p>I mapped requirements to scenarios and test cases.</p>
+        </div>
+        <div class="evidence-card">
+          <h4>What this shows</h4>
+          <p>Shows I can track coverage and avoid missing requirements.</p>
+        </div>
+        <div class="evidence-card wide">
+          <h4>Evidence included</h4>
+          <ul><li>Requirement IDs</li><li>Scenario mapping</li><li>Test case mapping</li><li>Coverage status</li></ul>
+        </div>
+      </div>
+
+      <details class="doc-preview" open>
+        <summary>Readable document preview</summary>
+        <div class="doc-preview-body"><div class='doc-table-wrap'><table class='doc-table'>
+<thead><tr>
+<th>Requirement ID</th>
+<th>Requirement</th>
+<th>Scenario ID</th>
+<th>Test Case ID</th>
+<th>Status</th>
+</tr></thead><tbody>
+<tr>
+<td>REQ-001</td>
+<td>Requester can create purchase request</td>
+<td>TS-001</td>
+<td>TC-001</td>
+<td>Covered</td>
+</tr>
+<tr>
+<td>REQ-002</td>
+<td>Required fields are validated</td>
+<td>TS-002</td>
+<td>TC-002</td>
+<td>Covered</td>
+</tr>
+<tr>
+<td>REQ-003</td>
+<td>Requester can submit request</td>
+<td>TS-003</td>
+<td>TC-003</td>
+<td>Covered</td>
+</tr>
+<tr>
+<td>REQ-004</td>
+<td>Approver can approve request</td>
+<td>TS-004</td>
+<td>TC-004</td>
+<td>Covered</td>
+</tr>
+<tr>
+<td>REQ-005</td>
+<td>Rejection requires reason</td>
+<td>TS-005, TS-006</td>
+<td>TC-005</td>
+<td>Covered</td>
+</tr>
+<tr>
+<td>REQ-006</td>
+<td>Approved request becomes read-only</td>
+<td>TS-009</td>
+<td>TC-006</td>
+<td>Covered</td>
+</tr>
+<tr>
+<td>REQ-007</td>
+<td>Status is consistent</td>
+<td>TS-008</td>
+<td>TC-007</td>
+<td>Covered</td>
+</tr>
+<tr>
+<td>REQ-010</td>
+<td>Regression confirms impacted flows</td>
+<td>TS-011</td>
+<td>TC-008</td>
+<td>Covered</td>
+</tr>
+</tbody></table></div></div>
+      </details>
+    </article>
+    
+    <article id="a5" class="artifact-panel ">
+      <div class="artifact-head">
+        <div>
+          <span class="pill">Data preparation</span>
+          <h3>Test Data</h3>
+        </div>
+        <span class="file-path">qa-test-artifacts/06_Test_Data.csv</span>
+      </div>
+
+      <div class="artifact-evidence-grid">
+        <div class="evidence-card">
+          <h4>What I did</h4>
+          <p>I prepared valid, invalid, boundary, and role-based data.</p>
+        </div>
+        <div class="evidence-card">
+          <h4>What this shows</h4>
+          <p>Shows I can support realistic and repeatable testing.</p>
+        </div>
+        <div class="evidence-card wide">
+          <h4>Evidence included</h4>
+          <ul><li>Valid inputs</li><li>Invalid inputs</li><li>Boundary values</li><li>User roles</li></ul>
+        </div>
+      </div>
+
+      <details class="doc-preview" open>
+        <summary>Readable document preview</summary>
+        <div class="doc-preview-body"><div class='doc-table-wrap'><table class='doc-table'>
+<thead><tr>
+<th>Data ID</th>
+<th>Data Name</th>
+<th>Value</th>
+<th>Purpose</th>
+</tr></thead><tbody>
+<tr>
+<td>TD-001</td>
+<td>Requester user</td>
+<td>requester01</td>
+<td>Valid requester account</td>
+</tr>
+<tr>
+<td>TD-002</td>
+<td>Approver user</td>
+<td>approver01</td>
+<td>Valid approver account</td>
+</tr>
+<tr>
+<td>TD-003</td>
+<td>Unauthorized user</td>
+<td>viewer01</td>
+<td>No approval access</td>
+</tr>
+<tr>
+<td>TD-004</td>
+<td>Valid amount</td>
+<td>50000</td>
+<td>Positive test</td>
+</tr>
+<tr>
+<td>TD-005</td>
+<td>Zero amount</td>
+<td>0</td>
+<td>Negative test</td>
+</tr>
+<tr>
+<td>TD-006</td>
+<td>Negative amount</td>
+<td>-100</td>
+<td>Negative test</td>
+</tr>
+<tr>
+<td>TD-007</td>
+<td>Valid rejection reason</td>
+<td>Budget not approved</td>
+<td>Positive rejection test</td>
+</tr>
+<tr>
+<td>TD-008</td>
+<td>Blank rejection reason</td>
+<td></td>
+<td>Negative rejection test</td>
+</tr>
+</tbody></table></div></div>
+      </details>
+    </article>
+    
+    <article id="a6" class="artifact-panel ">
+      <div class="artifact-head">
+        <div>
+          <span class="pill">Bug documentation</span>
+          <h3>Defect Reports</h3>
+        </div>
+        <span class="file-path">qa-test-artifacts/07_Defect_Report_Samples.md</span>
+      </div>
+
+      <div class="artifact-evidence-grid">
+        <div class="evidence-card">
+          <h4>What I did</h4>
+          <p>I documented failed behavior with steps, expected result, actual result, severity, priority, and impact.</p>
+        </div>
+        <div class="evidence-card">
+          <h4>What this shows</h4>
+          <p>Shows I can make issues easy to reproduce and fix.</p>
+        </div>
+        <div class="evidence-card wide">
+          <h4>Evidence included</h4>
+          <ul><li>Steps to reproduce</li><li>Expected vs actual</li><li>Severity/priority</li><li>Evidence</li></ul>
+        </div>
+      </div>
+
+      <details class="doc-preview" open>
+        <summary>Readable document preview</summary>
+        <div class="doc-preview-body"><h3>Defect Report Samples</h3>
+<h4>BUG-001: Approved Request Remains Editable</h4>
+<p><strong>Module:</strong> Purchase Request / Approval</p>
+<p><strong>Severity:</strong> High</p>
+<p><strong>Priority:</strong> High</p>
+<h5>Steps to Reproduce</h5>
+<ol>
+<li>Login as requester.</li>
+<li>Open an approved request.</li>
+<li>Try to edit the Amount field.</li>
+<li>Click Save.</li>
+</ol>
+<h5>Expected Result</h5>
+<p>Approved request should be read-only and protected fields should be disabled.</p>
+<h5>Actual Result</h5>
+<p>Requester can still edit protected fields.</p>
+<h5>Impact</h5>
+<p>Can affect approval integrity, audit accuracy, and reporting.</p>
+<p>---</p>
+<h4>BUG-002: Rejection Allowed Without Reason</h4>
+<p><strong>Module:</strong> Approval Workflow</p>
+<p><strong>Severity:</strong> Medium</p>
+<p><strong>Priority:</strong> High</p>
+<h5>Steps to Reproduce</h5>
+<ol>
+<li>Login as approver.</li>
+<li>Open pending request.</li>
+<li>Click Reject.</li>
+<li>Leave reason blank.</li>
+<li>Confirm rejection.</li>
+</ol>
+<h5>Expected Result</h5>
+<p>System blocks rejection and requires a reason.</p>
+<h5>Actual Result</h5>
+<p>Request is rejected without reason.</p>
+<h5>Impact</h5>
+<p>Business users cannot see why the request was rejected.</p></div>
+      </details>
+    </article>
+    
+    <article id="a7" class="artifact-panel ">
+      <div class="artifact-head">
+        <div>
+          <span class="pill">Impact testing</span>
+          <h3>Regression Checklist</h3>
+        </div>
+        <span class="file-path">qa-test-artifacts/08_Regression_Checklist.md</span>
+      </div>
+
+      <div class="artifact-evidence-grid">
+        <div class="evidence-card">
+          <h4>What I did</h4>
+          <p>I listed related workflows to retest after fixes, patches, or process changes.</p>
+        </div>
+        <div class="evidence-card">
+          <h4>What this shows</h4>
+          <p>Shows I understand how changes can break existing behavior.</p>
+        </div>
+        <div class="evidence-card wide">
+          <h4>Evidence included</h4>
+          <ul><li>Retest scope</li><li>Impacted areas</li><li>Related workflows</li><li>Release confidence</li></ul>
+        </div>
+      </div>
+
+      <details class="doc-preview" open>
+        <summary>Readable document preview</summary>
+        <div class="doc-preview-body"><h3>Regression Checklist</h3>
+<h4>Login and Access</h4>
+<ul>
+<li>[ ] Requester can login.</li>
+<li>[ ] Approver can login.</li>
+<li>[ ] Unauthorized user cannot access approval action.</li>
+</ul>
+<h4>Request Creation</h4>
+<ul>
+<li>[ ] Create request page opens.</li>
+<li>[ ] Valid draft can be saved.</li>
+<li>[ ] Required field validation works.</li>
+<li>[ ] Invalid amount values are blocked.</li>
+</ul>
+<h4>Approval Workflow</h4>
+<ul>
+<li>[ ] Request can be submitted.</li>
+<li>[ ] Approver can approve.</li>
+<li>[ ] Approver can reject with reason.</li>
+<li>[ ] Rejection without reason is blocked.</li>
+</ul>
+<h4>Status and History</h4>
+<ul>
+<li>[ ] Request list shows latest status.</li>
+<li>[ ] Detail page shows same status.</li>
+<li>[ ] History records create, submit, approve, and reject actions.</li>
+</ul></div>
+      </details>
+    </article>
+    
+    <article id="a8" class="artifact-panel ">
+      <div class="artifact-head">
+        <div>
+          <span class="pill">Business validation</span>
+          <h3>UAT Checklist</h3>
+        </div>
+        <span class="file-path">qa-test-artifacts/09_UAT_Checklist.md</span>
+      </div>
+
+      <div class="artifact-evidence-grid">
+        <div class="evidence-card">
+          <h4>What I did</h4>
+          <p>I prepared business-facing checks for user acceptance testing.</p>
+        </div>
+        <div class="evidence-card">
+          <h4>What this shows</h4>
+          <p>Shows I can support users and validate business readiness.</p>
+        </div>
+        <div class="evidence-card wide">
+          <h4>Evidence included</h4>
+          <ul><li>Business scenarios</li><li>User confirmation</li><li>Feedback tracking</li><li>Acceptance readiness</li></ul>
+        </div>
+      </div>
+
+      <details class="doc-preview" open>
+        <summary>Readable document preview</summary>
+        <div class="doc-preview-body"><h3>UAT Checklist</h3>
+<h4>Scenario 1: Requester Submits Request</h4>
+<ul>
+<li>[ ] Requester can open form.</li>
+<li>[ ] Requester can enter valid details.</li>
+<li>[ ] Requester can submit request.</li>
+<li>[ ] Status becomes Pending Approval.</li>
+</ul>
+<h4>Scenario 2: Approver Reviews Request</h4>
+<ul>
+<li>[ ] Approver can view pending request.</li>
+<li>[ ] Approver can approve request.</li>
+<li>[ ] Approver can reject with reason.</li>
+<li>[ ] Status updates correctly.</li>
+</ul>
+<h4>Scenario 3: Business Rules</h4>
+<ul>
+<li>[ ] Requester cannot approve own request.</li>
+<li>[ ] Approved request is read-only.</li>
+<li>[ ] Rejection requires reason.</li>
+<li>[ ] History records key actions.</li>
+</ul></div>
+      </details>
+    </article>
+    
+    <article id="a9" class="artifact-panel ">
+      <div class="artifact-head">
+        <div>
+          <span class="pill">Reporting</span>
+          <h3>Test Summary</h3>
+        </div>
+        <span class="file-path">qa-test-artifacts/11_Test_Summary_Report.md</span>
+      </div>
+
+      <div class="artifact-evidence-grid">
+        <div class="evidence-card">
+          <h4>What I did</h4>
+          <p>I summarized execution status, defects, risks, and release recommendation.</p>
+        </div>
+        <div class="evidence-card">
+          <h4>What this shows</h4>
+          <p>Shows I can communicate QA results clearly.</p>
+        </div>
+        <div class="evidence-card wide">
+          <h4>Evidence included</h4>
+          <ul><li>Pass/fail status</li><li>Open defects</li><li>Risks</li><li>Recommendation</li></ul>
+        </div>
+      </div>
+
+      <details class="doc-preview" open>
+        <summary>Readable document preview</summary>
+        <div class="doc-preview-body"><h3>Test Summary Report</h3>
+<h4>Scope Tested</h4>
+<ul>
+<li>Create request</li>
+<li>Required field validation</li>
+<li>Submit for approval</li>
+<li>Approve / reject request</li>
+<li>Status display</li>
+<li>Read-only behavior</li>
+<li>Regression checklist</li>
+</ul>
+<h4>Metrics</h4>
+<div class='doc-table-wrap'><table class='doc-table'><thead><tr>
+<th>Metric</th>
+<th>Count</th>
+</tr></thead><tbody>
+<tr>
+<td>Total Test Cases</td>
+<td>8</td>
+</tr>
+<tr>
+<td>Passed</td>
+<td>5</td>
+</tr>
+<tr>
+<td>Failed</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Blocked</td>
+<td>1</td>
+</tr>
+</tbody></table></div>
+<h4>Defects</h4>
+<div class='doc-table-wrap'><table class='doc-table'><thead><tr>
+<th>Defect ID</th>
+<th>Title</th>
+<th>Severity</th>
+</tr></thead><tbody>
+<tr>
+<td>BUG-001</td>
+<td>Approved request remains editable</td>
+<td>High</td>
+</tr>
+<tr>
+<td>BUG-002</td>
+<td>Rejection allowed without reason</td>
+<td>Medium</td>
+</tr>
+</tbody></table></div>
+<h4>Recommendation</h4>
+<p>Not ready for release until BUG-001 is fixed and retested. After the fix, run regression around approval, status, read-only behavior, and request history.</p></div>
+      </details>
+    </article>
+    
+    <article id="a10" class="artifact-panel ">
+      <div class="artifact-head">
+        <div>
+          <span class="pill">Game testing</span>
+          <h3>Game QA Case</h3>
+        </div>
+        <span class="file-path">qa-test-artifacts/13_Game_QA_Frostwater_Lake_Case.md</span>
+      </div>
+
+      <div class="artifact-evidence-grid">
+        <div class="evidence-card">
+          <h4>What I did</h4>
+          <p>I created a fictional game QA sample for patch regression and reward integrity.</p>
+        </div>
+        <div class="evidence-card">
+          <h4>What this shows</h4>
+          <p>Shows I can apply QA thinking to game flows and evidence collection.</p>
+        </div>
+        <div class="evidence-card wide">
+          <h4>Evidence included</h4>
+          <ul><li>Reward validation</li><li>Reconnect behavior</li><li>Patch regression</li><li>Incident escalation</li></ul>
+        </div>
+      </div>
+
+      <details class="doc-preview" open>
+        <summary>Readable document preview</summary>
+        <div class="doc-preview-body"><h3>Extra Game QA Case Study: Frostwater Lake Reward Integrity Investigation</h3>
+<h4>Purpose</h4>
+<p>I created this as a non-confidential QA portfolio sample for a live-service game economy incident. It covers patch testing, manual test cases, incident escalation, and abuse-risk validation for a suspected treasure reward duplication issue.</p>
+<h4>Incident Summary</h4>
+<ul>
+<li><strong>Incident ID:</strong> INC-ECO-FROST-001</li>
+<li><strong>Severity:</strong> Critical / P0</li>
+<li><strong>Component:</strong> Online Economy / Treasure Maps / Reward Transactions</li>
+<li><strong>Risk:</strong> Duplicate cash, gold, XP, or treasure reward transaction from a single map instance.</li>
+</ul>
+<h4>Core Test Cases</h4>
+<div class='doc-table-wrap'><table class='doc-table'><thead><tr>
+<th>ID</th>
+<th>Title</th>
+<th>Priority</th>
+<th>Coverage</th>
+</tr></thead><tbody>
+<tr>
+<td>TC-FROST-001</td>
+<td>Verify treasure reward is granted once</td>
+<td>Critical</td>
+<td>Reward and inventory integrity</td>
+</tr>
+<tr>
+<td>TC-FROST-002</td>
+<td>Verify reconnect does not duplicate reward</td>
+<td>Critical</td>
+<td>Network persistence</td>
+</tr>
+<tr>
+<td>TC-FROST-003</td>
+<td>Verify session change does not restore claimed reward</td>
+<td>Critical</td>
+<td>Session state</td>
+</tr>
+<tr>
+<td>TC-FROST-004</td>
+<td>Verify area reload does not reset claimed chest state</td>
+<td>High</td>
+<td>World streaming regression</td>
+</tr>
+<tr>
+<td>TC-FROST-005</td>
+<td>Verify multiple treasure maps do not corrupt inventory state</td>
+<td>High</td>
+<td>Inventory regression</td>
+</tr>
+<tr>
+<td>TC-ABUSE-001</td>
+<td>Verify repeated reward claim attempts are rejected and logged</td>
+<td>Critical</td>
+<td>Anti-abuse and server authority</td>
+</tr>
+</tbody></table></div>
+<h4>Evidence Required</h4>
+<ul>
+<li>Video recording</li>
+<li>Build version</li>
+<li>Platform</li>
+<li>Player ID</li>
+<li>Session ID</li>
+<li>Treasure map instance ID</li>
+<li>Chest instance ID</li>
+<li>Wallet before/after</li>
+<li>Inventory before/after</li>
+<li>Economy transaction logs</li>
+<li>Security telemetry</li>
+</ul>
+<h4>Escalation Summary</h4>
+<p>P0 investigation opened for a suspected reward integrity issue. Risk includes duplicate cash/gold/XP grants from a single treasure map state. Request review from Economy Backend, Gameplay Systems, Online Services, Anti-Cheat, and Live Ops.</p>
+<h4>Fix Acceptance Criteria</h4>
+<ul>
+<li>Valid reward claim grants exactly one reward.</li>
+<li>Treasure map is consumed or marked completed.</li>
+<li>Reconnect, session change, and area reload do not duplicate the reward.</li>
+<li>Repeated or invalid claim requests are rejected server-side.</li>
+<li>Suspicious attempts are logged for review.</li>
+<li>Normal treasure map flows still work after the fix.</li>
+</ul>
+<h3>Added Patch Regression Context: Latest / Recent FTO-Style Coverage</h3>
+<h4>Fictional Patch Context Used for This Sample</h4>
+<ul>
+<li>Frontier Trails Online Patch v1.8.0 is used as the sample fictional patch-note reference for this portfolio sample.</li>
+<li>Current Frontier Trails Online live-service context is represented by the Seasonal Wildlife Research bonus rotation.</li>
+<li>In a real QA role, the exact build number, environment, and release notes must be confirmed before testing.</li>
+</ul>
+<h4>Patch Areas Added to Regression Scope</h4>
+<div class='doc-table-wrap'><table class='doc-table'><thead><tr>
+<th>Patch Area</th>
+<th>Test Type</th>
+<th>Validation Focus</th>
+</tr></thead><tbody>
+<tr>
+<td>Custom crew names hidden publicly</td>
+<td>Privacy / UI / Regression</td>
+<td>Public players do not see custom crew names.</td>
+</tr>
+<tr>
+<td>Custom mount names hidden publicly</td>
+<td>Privacy / UI / Regression</td>
+<td>Public players see mount breed, not custom mount name.</td>
+</tr>
+<tr>
+<td>Wildlife Research samples count toward Daily Challenges</td>
+<td>Functional / Regression / Economy</td>
+<td>Sample progress updates correctly and pays once.</td>
+</tr>
+<tr>
+<td>Open-World Missions launch fix</td>
+<td>Functional / Smoke / Regression</td>
+<td>Missions launch, objectives appear, rewards resolve.</td>
+</tr>
+<tr>
+<td>Stable entry improvement</td>
+<td>Regression / Performance / Stability</td>
+<td>Stable menu loads without infinite loading.</td>
+</tr>
+<tr>
+<td>Mount and wagon summon improvement</td>
+<td>Functional / Regression</td>
+<td>Correct owned mount or wagon responds after travel/session changes.</td>
+</tr>
+<tr>
+<td>Voice chat defaults to Off</td>
+<td>Privacy / Settings / Regression</td>
+<td>Fresh or default sessions do not expose voice chat unexpectedly.</td>
+</tr>
+<tr>
+<td>PC crash / launch / HDR / FSR changes</td>
+<td>Compatibility / Performance / Stability</td>
+<td>Launch, graphics settings, crash logs, and supported PC configuration checks pass.</td>
+</tr>
+<tr>
+<td>Wildlife Research bonus rotation</td>
+<td>Economy / UI / Regression</td>
+<td>Bonus text and reward multipliers display and pay correctly once.</td>
+</tr>
+</tbody></table></div>
+<h4>Testing Types Applied</h4>
+<div class='doc-table-wrap'><table class='doc-table'><thead><tr>
+<th>Testing Type</th>
+<th>Example in this case</th>
+</tr></thead><tbody>
+<tr>
+<td>Functional</td>
+<td>Validate reward claim, Wildlife Research sample counting, mission launch, stable entry, mount recall.</td>
+</tr>
+<tr>
+<td>UI / Visual</td>
+<td>Validate reward summary, map marker, stable menu, public name labels, voice chat setting.</td>
+</tr>
+<tr>
+<td>Security / Anti-Abuse</td>
+<td>Reject duplicate reward requests and invalid reward claims server-side.</td>
+</tr>
+<tr>
+<td>Privacy</td>
+<td>Confirm public custom crew and mount names are hidden.</td>
+</tr>
+<tr>
+<td>Internationalization</td>
+<td>Confirm region/account behavior if supported by requirements.</td>
+</tr>
+<tr>
+<td>Localization</td>
+<td>Validate updated strings in supported languages.</td>
+</tr>
+<tr>
+<td>Accessibility</td>
+<td>Check readable prompts, focus, subtitles/captions, and non-color-only state indicators.</td>
+</tr>
+<tr>
+<td>Performance / Stability</td>
+<td>Validate session load, stable load, long sessions, crash fixes, PC graphics behavior.</td>
+</tr>
+<tr>
+<td>Cross-Platform</td>
+<td>Validate behavior across PC and consoles where supported.</td>
+</tr>
+<tr>
+<td>Negative / Boundary</td>
+<td>Disconnect during reward claim, session change, area unload/reload, multiple maps.</td>
+</tr>
+<tr>
+<td>Regression</td>
+<td>Re-run recent patch fixes plus treasure reward integrity checks.</td>
+</tr>
+<tr>
+<td>Automation</td>
+<td>Prioritize economy idempotency, patch smoke checks, and high-risk regression checks.</td>
+</tr>
+</tbody></table></div>
+<h4>Added Patch Test Cases</h4>
+<h5>TC-FTO-PATCH-001: Wildlife Research sample and bonus reward verification</h5>
+<p><strong>Priority:</strong> High</p>
+<p><strong>Type:</strong> Functional / Regression / Economy</p>
+<div class='doc-table-wrap'><table class='doc-table'><thead><tr>
+<th>Step</th>
+<th>Action</th>
+<th>Expected Result</th>
+</tr></thead><tbody>
+<tr>
+<td>1</td>
+<td>Log in with a Wildlife Researcher-enabled QA account.</td>
+<td>Player enters online session and Daily Challenge list is available.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Perform a valid sample flow using QA data.</td>
+<td>Sample is collected or sold according to the test requirement.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Open Daily Challenge progress.</td>
+<td>Wildlife Research sample challenge updates correctly.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Check reward or bonus display if bonus period is active.</td>
+<td>Expected bonus text and payout are shown once and match server logs.</td>
+</tr>
+</tbody></table></div>
+<h5>TC-FTO-PATCH-002: Stable entry and mount recall regression</h5>
+<p><strong>Priority:</strong> Critical</p>
+<p><strong>Type:</strong> Regression / Performance / Stability</p>
+<div class='doc-table-wrap'><table class='doc-table'><thead><tr>
+<th>Step</th>
+<th>Action</th>
+<th>Expected Result</th>
+</tr></thead><tbody>
+<tr>
+<td>1</td>
+<td>Enter online session mounted on an owned mount.</td>
+<td>Player and mount spawn correctly.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Enter stable on while mounted.</td>
+<td>Stable menu loads within expected threshold.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Exit stable, fast travel, then call mount.</td>
+<td>Correct owned mount responds and can be mounted.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Repeat across multiple sessions/platforms.</td>
+<td>No recurring stable lock, missing mount, or summon failure occurs.</td>
+</tr>
+</tbody></table></div>
+<h5>TC-FTO-PATCH-003: Public custom name privacy regression</h5>
+<p><strong>Priority:</strong> High</p>
+<p><strong>Type:</strong> Privacy / UI / Regression</p>
+<div class='doc-table-wrap'><table class='doc-table'><thead><tr>
+<th>Step</th>
+<th>Action</th>
+<th>Expected Result</th>
+</tr></thead><tbody>
+<tr>
+<td>1</td>
+<td>Create a custom crew name in QA.</td>
+<td>Custom name is saved only where allowed by design.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Observe from another account in the same session.</td>
+<td>Public display does not show custom crew name.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Assign a custom mount name and observe from another account.</td>
+<td>Public display shows mount breed, not custom mount name.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Check supported platforms.</td>
+<td>Public name behavior is consistent.</td>
+</tr>
+</tbody></table></div></div>
+      </details>
+    </article>
+    
+    <article id="a11" class="artifact-panel ">
+      <div class="artifact-head">
+        <div>
+          <span class="pill">Banking QA</span>
+          <h3>Banking QA Case</h3>
+        </div>
+        <span class="file-path">qa-test-artifacts/14_Banking_QA_Account_Balance_Case.md</span>
+      </div>
+
+      <div class="artifact-evidence-grid">
+        <div class="evidence-card">
+          <h4>What I did</h4>
+          <p>I created a banking QA sample for account overview, masking, session behavior, and cross-device checks.</p>
+        </div>
+        <div class="evidence-card">
+          <h4>What this shows</h4>
+          <p>Shows I can test accuracy, privacy, access, and sensitive workflows.</p>
+        </div>
+        <div class="evidence-card wide">
+          <h4>Evidence included</h4>
+          <ul><li>Login/MFA</li><li>Balance display</li><li>Masking</li><li>Session/logout</li></ul>
+        </div>
+      </div>
+
+      <details class="doc-preview" open>
+        <summary>Readable document preview</summary>
+        <div class="doc-preview-body"><h3>Banking QA Case Study: Account Balance &amp; Cross-Channel Validation</h3>
+<h4>Document Type</h4>
+<p>Manual QA / Banking Application Test Case / Requirement Gap Analysis / Automation Prioritization</p>
+<h4>Case Study Scope</h4>
+<p>I created this non-confidential banking QA sample for a fictional online banking platform called <strong>SecureBank</strong>. The focus is an <strong>Account Overview and Balance Visibility</strong> feature across web and mobile.</p>
+<p>The sample intentionally avoids assuming complete system behavior. It starts with questions a QA analyst should ask before finalizing test coverage.</p>
+<p>---</p>
+<h4>Feature Under Test</h4>
+<p>A customer logs in to a banking application and views account information, including:</p>
+<ul>
+<li>Account list</li>
+<li>Available balance</li>
+<li>Ledger/current balance</li>
+<li>Negative balance display</li>
+<li>Pending transactions</li>
+<li>Last updated timestamp</li>
+<li>Cross-device consistency between web and mobile</li>
+</ul>
+<p>---</p>
+<h4>Requirement Gaps / Questions to Ask</h4>
+<div class='doc-table-wrap'><table class='doc-table'><thead><tr>
+<th>Area</th>
+<th>Questions to Ask Before Testing</th>
+</tr></thead><tbody>
+<tr>
+<td>Balance rules</td>
+<td>Should the app show available balance, ledger balance, or both? How are pending transactions displayed?</td>
+</tr>
+<tr>
+<td>Negative balance</td>
+<td>Should negative balances show a minus sign, red text, warning message, overdraft label, or all of these?</td>
+</tr>
+<tr>
+<td>Permissions</td>
+<td>Can all customers see all accounts, or only accounts under their profile? What about joint accounts?</td>
+</tr>
+<tr>
+<td>Privacy</td>
+<td>Should full account numbers be masked? Which customer data is considered sensitive?</td>
+</tr>
+<tr>
+<td>Security</td>
+<td>Is MFA required before viewing balances or only during login? Are screenshots allowed on mobile?</td>
+</tr>
+<tr>
+<td>Session</td>
+<td>What is the inactivity timeout? Are concurrent sessions allowed?</td>
+</tr>
+<tr>
+<td>Internationalization</td>
+<td>Is this a global bank? Can a customer from another country log in? Are country restrictions based on account origin, IP, or customer profile?</td>
+</tr>
+<tr>
+<td>Localization</td>
+<td>Which languages and currencies are supported? How should date, amount, and decimal formats display?</td>
+</tr>
+<tr>
+<td>Accessibility</td>
+<td>What WCAG level is required? Are screen readers and keyboard navigation in scope?</td>
+</tr>
+<tr>
+<td>Performance</td>
+<td>What is the SLA for login and account overview loading? What mobile network profiles should be tested?</td>
+</tr>
+<tr>
+<td>Cross-app sync</td>
+<td>How quickly should changes on mobile appear on desktop, and vice versa?</td>
+</tr>
+<tr>
+<td>Automation</td>
+<td>Which flows are stable enough for UI automation? Which backend validations should be covered by API tests?</td>
+</tr>
+</tbody></table></div>
+<p>---</p>
+<h4>Test Plan Summary</h4>
+<div class='doc-table-wrap'><table class='doc-table'><thead><tr>
+<th>Item</th>
+<th>Detail</th>
+</tr></thead><tbody>
+<tr>
+<td>Objective</td>
+<td>Validate that customers can securely view accurate account balances across web and mobile.</td>
+</tr>
+<tr>
+<td>In Scope</td>
+<td>Functional balance display, access control, privacy masking, basic security checks, localization checks, accessibility checks, performance observation, cross-app sync.</td>
+</tr>
+<tr>
+<td>Out of Scope</td>
+<td>Real production banking data, real payment network testing, penetration testing beyond QA-safe checks, regulatory certification.</td>
+</tr>
+<tr>
+<td>Test Types</td>
+<td>Functional, negative, security-aware, privacy, internationalization, localization, accessibility, performance, cross-platform, regression.</td>
+</tr>
+<tr>
+<td>Priority</td>
+<td>High because balance visibility is customer-facing and financial-data related.</td>
+</tr>
+</tbody></table></div>
+<p>---</p>
+<h4>Manual Test Case: Account Balance Overview</h4>
+<h5>Test Case ID</h5>
+<p>TC-BANK-001</p>
+<h5>Title</h5>
+<p>Verify customer can log in and view correct masked account balance details.</p>
+<h5>Priority</h5>
+<p>Critical</p>
+<h5>Test Type</h5>
+<p>Functional / Privacy / Security-Aware</p>
+<h5>Preconditions</h5>
+<ol>
+<li>Customer test account exists.</li>
+<li>Customer has at least one active account.</li>
+<li>Test data uses synthetic banking data only.</li>
+<li>User has valid credentials.</li>
+<li>Test environment is not production.</li>
+</ol>
+<h5>Test Data</h5>
+<div class='doc-table-wrap'><table class='doc-table'><thead><tr>
+<th>Data</th>
+<th>Example</th>
+</tr></thead><tbody>
+<tr>
+<td>Customer</td>
+<td>qa.customer01</td>
+</tr>
+<tr>
+<td>Account type</td>
+<td>Savings</td>
+</tr>
+<tr>
+<td>Account number</td>
+<td>1234567890, expected masked display: <strong>*</strong>*7890</td>
+</tr>
+<tr>
+<td>Available balance</td>
+<td>10,000.00</td>
+</tr>
+<tr>
+<td>Ledger balance</td>
+<td>10,500.00</td>
+</tr>
+<tr>
+<td>Pending debit</td>
+<td>500.00</td>
+</tr>
+<tr>
+<td>Currency</td>
+<td>PHP</td>
+</tr>
+</tbody></table></div>
+<h5>Steps</h5>
+<div class='doc-table-wrap'><table class='doc-table'><thead><tr>
+<th>Step</th>
+<th>Action</th>
+<th>Expected Result</th>
+</tr></thead><tbody>
+<tr>
+<td>1</td>
+<td>Open the banking web app.</td>
+<td>Login page loads over secure connection.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Enter valid username and password.</td>
+<td>Credentials are accepted.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Complete MFA if required by environment.</td>
+<td>User is authenticated successfully.</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Navigate to Account Overview.</td>
+<td>Account list is displayed.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Check account number display.</td>
+<td>Account number is masked except allowed last digits.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Check available balance.</td>
+<td>Available balance matches expected test data.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Check ledger/current balance.</td>
+<td>Ledger balance matches expected test data.</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Check pending transaction effect.</td>
+<td>Available balance reflects pending debit if business rules require it.</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Refresh the page.</td>
+<td>Balance values remain consistent.</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Log out.</td>
+<td>Session ends and protected pages are no longer accessible.</td>
+</tr>
+</tbody></table></div>
+<h5>Expected Result</h5>
+<p>The customer can securely view accurate, properly masked account information. Protected account data is unavailable after logout.</p>
+<p>---</p>
+<h4>Negative Test Cases</h4>
+<div class='doc-table-wrap'><table class='doc-table'><thead><tr>
+<th>Test ID</th>
+<th>Scenario</th>
+<th>Expected Result</th>
+<th>Priority</th>
+</tr></thead><tbody>
+<tr>
+<td>TC-BANK-002</td>
+<td>Login with wrong password</td>
+<td>Login fails without revealing whether username exists</td>
+<td>Critical</td>
+</tr>
+<tr>
+<td>TC-BANK-003</td>
+<td>Access account page after logout using browser back</td>
+<td>User is redirected to login or access denied</td>
+<td>Critical</td>
+</tr>
+<tr>
+<td>TC-BANK-004</td>
+<td>Customer attempts to view another customer account ID</td>
+<td>Access is denied and event is logged</td>
+<td>Critical</td>
+</tr>
+<tr>
+<td>TC-BANK-005</td>
+<td>Account has negative balance</td>
+<td>Balance displays according to confirmed business rule</td>
+<td>High</td>
+</tr>
+<tr>
+<td>TC-BANK-006</td>
+<td>Pending transaction exists</td>
+<td>Available and ledger balance display correctly</td>
+<td>High</td>
+</tr>
+<tr>
+<td>TC-BANK-007</td>
+<td>Unsupported language selected</td>
+<td>App falls back to default language or shows controlled error</td>
+<td>Medium</td>
+</tr>
+<tr>
+<td>TC-BANK-008</td>
+<td>Slow 3G profile on mobile</td>
+<td>App remains usable or shows loading feedback within SLA</td>
+<td>High</td>
+</tr>
+</tbody></table></div>
+<p>---</p>
+<h4>Security-Aware QA Checks</h4>
+<p>These are QA-safe checks, not a full penetration test.</p>
+<div class='doc-table-wrap'><table class='doc-table'><thead><tr>
+<th>Test ID</th>
+<th>Scenario</th>
+<th>Expected Result</th>
+</tr></thead><tbody>
+<tr>
+<td>SEC-BANK-001</td>
+<td>Enter script-like text in editable fields such as nickname or search</td>
+<td>Text is sanitized and not executed in the browser</td>
+</tr>
+<tr>
+<td>SEC-BANK-002</td>
+<td>Session token after logout</td>
+<td>Token cannot be reused to access account data</td>
+</tr>
+<tr>
+<td>SEC-BANK-003</td>
+<td>Direct URL to another account</td>
+<td>Server denies unauthorized access</td>
+</tr>
+<tr>
+<td>SEC-BANK-004</td>
+<td>Sensitive data in URL</td>
+<td>Account numbers, tokens, and personal data are not exposed in the URL</td>
+</tr>
+<tr>
+<td>SEC-BANK-005</td>
+<td>Browser cache after logout</td>
+<td>Protected data is not accessible from cached pages</td>
+</tr>
+</tbody></table></div>
+<p>---</p>
+<h4>Privacy Checks</h4>
+<div class='doc-table-wrap'><table class='doc-table'><thead><tr>
+<th>Test ID</th>
+<th>Scenario</th>
+<th>Expected Result</th>
+</tr></thead><tbody>
+<tr>
+<td>PRIV-BANK-001</td>
+<td>Account number display</td>
+<td>Account number is masked according to policy</td>
+</tr>
+<tr>
+<td>PRIV-BANK-002</td>
+<td>Statement preview</td>
+<td>Personal and account data are only shown to authorized user</td>
+</tr>
+<tr>
+<td>PRIV-BANK-003</td>
+<td>Logs and error messages</td>
+<td>Sensitive customer data is not exposed in client-visible errors</td>
+</tr>
+<tr>
+<td>PRIV-BANK-004</td>
+<td>Cookie consent and tracking</td>
+<td>Tracking behavior follows regional privacy requirements if applicable</td>
+</tr>
+</tbody></table></div>
+<p>---</p>
+<h4>Internationalization and Localization Checks</h4>
+<div class='doc-table-wrap'><table class='doc-table'><thead><tr>
+<th>Test ID</th>
+<th>Scenario</th>
+<th>Expected Result</th>
+</tr></thead><tbody>
+<tr>
+<td>I18N-BANK-001</td>
+<td>Customer logs in from a different country</td>
+<td>Behavior follows confirmed bank policy</td>
+</tr>
+<tr>
+<td>I18N-BANK-002</td>
+<td>Spoofed or unusual IP location</td>
+<td>App follows risk/security policy, such as step-up authentication or block</td>
+</tr>
+<tr>
+<td>L10N-BANK-001</td>
+<td>Change language to supported language</td>
+<td>Labels, errors, and buttons render correctly</td>
+</tr>
+<tr>
+<td>L10N-BANK-002</td>
+<td>Currency and number format</td>
+<td>Amounts follow selected locale rules</td>
+</tr>
+<tr>
+<td>L10N-BANK-003</td>
+<td>Long translated strings</td>
+<td>UI does not overlap, truncate critical information, or break layout</td>
+</tr>
+</tbody></table></div>
+<p>---</p>
+<h4>Accessibility Checks</h4>
+<div class='doc-table-wrap'><table class='doc-table'><thead><tr>
+<th>Test ID</th>
+<th>Scenario</th>
+<th>Expected Result</th>
+</tr></thead><tbody>
+<tr>
+<td>A11Y-BANK-001</td>
+<td>Navigate login and account overview using keyboard only</td>
+<td>User can complete critical flow without mouse</td>
+</tr>
+<tr>
+<td>A11Y-BANK-002</td>
+<td>Screen reader reads account cards</td>
+<td>Account labels and balances are announced clearly</td>
+</tr>
+<tr>
+<td>A11Y-BANK-003</td>
+<td>Color contrast on balance text</td>
+<td>Text is readable and does not rely on color alone</td>
+</tr>
+<tr>
+<td>A11Y-BANK-004</td>
+<td>Error messages</td>
+<td>Errors are programmatically associated with related fields</td>
+</tr>
+<tr>
+<td>A11Y-BANK-005</td>
+<td>Images and icons</td>
+<td>Icons have accessible labels where needed</td>
+</tr>
+</tbody></table></div>
+<p>---</p>
+<h4>Performance and Mobile Checks</h4>
+<div class='doc-table-wrap'><table class='doc-table'><thead><tr>
+<th>Test ID</th>
+<th>Scenario</th>
+<th>Expected Result</th>
+</tr></thead><tbody>
+<tr>
+<td>PERF-BANK-001</td>
+<td>Account overview page load on stable network</td>
+<td>Loads within agreed SLA</td>
+</tr>
+<tr>
+<td>PERF-BANK-002</td>
+<td>Account overview on simulated 3G</td>
+<td>App remains usable and shows loading state</td>
+</tr>
+<tr>
+<td>PERF-BANK-003</td>
+<td>Tap balance refresh button</td>
+<td>Response completes within agreed SLA or shows clear pending state</td>
+</tr>
+<tr>
+<td>PERF-BANK-004</td>
+<td>Mobile app background then foreground</td>
+<td>Session and displayed data follow security/session policy</td>
+</tr>
+<tr>
+<td>PERF-BANK-005</td>
+<td>Battery/memory observation during normal use</td>
+<td>No abnormal drain or crash during basic session</td>
+</tr>
+</tbody></table></div>
+<p>---</p>
+<h4>Cross-App / Cross-Platform Checks</h4>
+<div class='doc-table-wrap'><table class='doc-table'><thead><tr>
+<th>Test ID</th>
+<th>Scenario</th>
+<th>Expected Result</th>
+</tr></thead><tbody>
+<tr>
+<td>CROSS-BANK-001</td>
+<td>View balance on web, then mobile</td>
+<td>Same account data is displayed based on sync rules</td>
+</tr>
+<tr>
+<td>CROSS-BANK-002</td>
+<td>Update account nickname on mobile</td>
+<td>Change reflects on web within expected sync time</td>
+</tr>
+<tr>
+<td>CROSS-BANK-003</td>
+<td>Logout from mobile while web session is active</td>
+<td>Behavior follows confirmed concurrent session policy</td>
+</tr>
+<tr>
+<td>CROSS-BANK-004</td>
+<td>Check supported browsers and devices</td>
+<td>Layout and functionality remain consistent</td>
+</tr>
+</tbody></table></div>
+<p>---</p>
+<h4>Automation Priority</h4>
+<div class='doc-table-wrap'><table class='doc-table'><thead><tr>
+<th>Layer</th>
+<th>Good Automation Candidate</th>
+<th>Why</th>
+</tr></thead><tbody>
+<tr>
+<td>Unit</td>
+<td>Balance calculation helpers</td>
+<td>Fast and reliable for calculation rules</td>
+</tr>
+<tr>
+<td>API</td>
+<td>Account overview response, authorization, masking</td>
+<td>Critical backend behavior; less fragile than UI</td>
+</tr>
+<tr>
+<td>UI</td>
+<td>Login smoke, account overview display, logout</td>
+<td>Covers customer journey but should focus on stable critical paths</td>
+</tr>
+<tr>
+<td>Accessibility</td>
+<td>Automated contrast and label scans</td>
+<td>Catches common issues early</td>
+</tr>
+<tr>
+<td>Performance</td>
+<td>Account overview response time baseline</td>
+<td>Useful for regression trend monitoring</td>
+</tr>
+<tr>
+<td>Manual</td>
+<td>Exploratory security/privacy, localization review, screen reader review</td>
+<td>Needs human judgment and domain confirmation</td>
+</tr>
+</tbody></table></div>
+<p>---</p>
+<h4>Sample Bug Report</h4>
+<h5>Bug ID</h5>
+<p>BUG-BANK-001</p>
+<h5>Title</h5>
+<p>Account balance page displays full account number instead of masked account number.</p>
+<h5>Severity</h5>
+<p>High</p>
+<h5>Priority</h5>
+<p>P1</p>
+<h5>Environment</h5>
+<p>Web staging, Chrome latest, QA test account qa.customer01</p>
+<h5>Steps to Reproduce</h5>
+<ol>
+<li>Log in as qa.customer01.</li>
+<li>Complete MFA if prompted.</li>
+<li>Navigate to Account Overview.</li>
+<li>Observe the account number on the Savings account card.</li>
+</ol>
+<h5>Expected Result</h5>
+<p>The account number should be masked according to policy, such as <strong>*</strong>*7890.</p>
+<h5>Actual Result</h5>
+<p>The full account number is displayed.</p>
+<h5>Impact</h5>
+<p>Sensitive financial data is exposed on the customer-facing screen. This may create privacy, shoulder-surfing, screenshot, and compliance risk.</p>
+<h5>Evidence</h5>
+<p>Screenshot, test account ID, browser version, timestamp, and network response if allowed.</p>
+<p>---</p>
+<h4>Severity Examples</h4>
+<div class='doc-table-wrap'><table class='doc-table'><thead><tr>
+<th>Issue</th>
+<th>Suggested Severity</th>
+<th>Reason</th>
+</tr></thead><tbody>
+<tr>
+<td>Balance button does nothing and user cannot view balance</td>
+<td>High</td>
+<td>Blocks a critical customer function</td>
+</tr>
+<tr>
+<td>Wrong available balance is displayed</td>
+<td>Critical</td>
+<td>Financial accuracy issue</td>
+</tr>
+<tr>
+<td>Full account number is exposed</td>
+<td>High</td>
+<td>Privacy and security risk</td>
+</tr>
+<tr>
+<td>Minor font size shift after clicking balance</td>
+<td>Low</td>
+<td>Cosmetic issue if information remains readable</td>
+</tr>
+<tr>
+<td>Unauthorized user can view another account</td>
+<td>Critical</td>
+<td>Access control and privacy failure</td>
+</tr>
+</tbody></table></div>
+<p>---</p>
+<h4>Portfolio Summary</h4>
+<p>Designed a banking QA test case package for a fictional account overview feature. The case study covers requirement gap analysis, functional testing, security-aware QA checks, privacy validation, internationalization, localization, accessibility, performance, cross-platform consistency, automation prioritization, and severity assessment.</p></div>
+      </details>
+    </article>
+    
+    <article id="a12" class="artifact-panel ">
+      <div class="artifact-head">
+        <div>
+          <span class="pill">Coverage map</span>
+          <h3>Coverage Matrix</h3>
+        </div>
+        <span class="file-path">qa-test-artifacts/15_Testing_Type_Coverage_Matrix.md</span>
+      </div>
+
+      <div class="artifact-evidence-grid">
+        <div class="evidence-card">
+          <h4>What I did</h4>
+          <p>I mapped testing types across multiple case studies.</p>
+        </div>
+        <div class="evidence-card">
+          <h4>What this shows</h4>
+          <p>Shows I understand how QA fundamentals apply across domains.</p>
+        </div>
+        <div class="evidence-card wide">
+          <h4>Evidence included</h4>
+          <ul><li>Functional</li><li>Security/privacy</li><li>Accessibility</li><li>Regression priority</li></ul>
+        </div>
+      </div>
+
+      <details class="doc-preview" open>
+        <summary>Readable document preview</summary>
+        <div class="doc-preview-body"><h3>Testing Type Coverage Matrix Across Portfolio Case Studies</h3>
+<p>I created this artifact to map common QA testing types across three representative case studies: Purchase Request workflow, fictional online western game patch testing, and Banking account balance validation.</p>
+<div class='doc-table-wrap'><table class='doc-table'><thead><tr>
+<th>Testing Type</th>
+<th>Purchase Request Case</th>
+<th>Fictional Game Patch Case</th>
+<th>Banking Case</th>
+</tr></thead><tbody>
+<tr>
+<td>Functional</td>
+<td>Create, submit, approve, reject, status update, read-only behavior</td>
+<td>Treasure reward claim, Wildlife Research samples, Open-World Mission launch, stable entry, mount recall</td>
+<td>Login, MFA, account overview, balance display, logout</td>
+</tr>
+<tr>
+<td>UI / Visual</td>
+<td>Required labels, disabled fields, confirmations, status chips</td>
+<td>Reward screen, map marker, stable menu, public name labels, voice chat setting</td>
+<td>Balance cards, masked account display, error messages, negative balance display</td>
+</tr>
+<tr>
+<td>Security / Access Control</td>
+<td>Requester cannot approve own request; unauthorized user blocked</td>
+<td>Server rejects duplicate reward claims and invalid chest interactions</td>
+<td>Unauthorized URL blocked; MFA/session/logout/token behavior</td>
+</tr>
+<tr>
+<td>Privacy</td>
+<td>Request details only visible to permitted roles</td>
+<td>Custom crew and mount names not publicly visible after patch</td>
+<td>Account number masking and no sensitive data in URLs/logs/errors</td>
+</tr>
+<tr>
+<td>Internationalization</td>
+<td>Currency/date questions if global</td>
+<td>Regional/session behavior if supported</td>
+<td>Country access rules, currency, date, decimal format, IP/risk behavior</td>
+</tr>
+<tr>
+<td>Localization</td>
+<td>Translated validation/status text if multilingual</td>
+<td>Reward, mission, and settings strings in supported languages</td>
+<td>Supported languages, long strings, RTL if supported, translated errors</td>
+</tr>
+<tr>
+<td>Accessibility</td>
+<td>Keyboard flow, focus order, contrast, clear errors</td>
+<td>Menu prompts, captions/subtitles, readable reward summaries</td>
+<td>Screen reader labels, keyboard-only flow, contrast, non-color-only errors</td>
+</tr>
+<tr>
+<td>Performance</td>
+<td>Save, submit, approve, list refresh response</td>
+<td>Stable load, session load, long session stability, crash checks</td>
+<td>Login/account overview load, mobile 3G/4G, memory, battery observation</td>
+</tr>
+<tr>
+<td>Cross-App / Compatibility</td>
+<td>Browser/device support</td>
+<td>PC/console/controller/keyboard behavior</td>
+<td>Web/mobile sync, browsers, mobile OS/device coverage</td>
+</tr>
+<tr>
+<td>Negative / Boundary</td>
+<td>Missing fields, invalid amount, reject without reason</td>
+<td>Reconnect during reward claim, session change, area reload, multiple maps</td>
+<td>Wrong password, locked account, negative balance, unavailable service</td>
+</tr>
+<tr>
+<td>Regression</td>
+<td>Re-run main workflow after fixes</td>
+<td>Re-run latest patch fixes and reward integrity checks</td>
+<td>Re-run balance, masking, logout, cross-channel checks</td>
+</tr>
+<tr>
+<td>Automation</td>
+<td>Login, create draft, submit, approve, status checks</td>
+<td>Economy idempotency, reward multiplier, stable/mount smoke, launch smoke</td>
+<td>API masking, authorization, account overview response, UI smoke</td>
+</tr>
+</tbody></table></div>
+<h4>Portfolio Summary</h4>
+<p>The goal is not to claim complete product knowledge. The goal is to show structured QA thinking: ask requirement questions, identify high-risk areas, define expected behavior, execute test cases, validate evidence, report defects, and recommend release readiness.</p></div>
+      </details>
+    </article>
+    
+    <article id="a13" class="artifact-panel ">
+      <div class="artifact-head">
+        <div>
+          <span class="pill">Tool usage</span>
+          <h3>Tools Matrix</h3>
+        </div>
+        <span class="file-path">qa-test-artifacts/16_QA_Tools_Matrix.md</span>
+      </div>
+
+      <div class="artifact-evidence-grid">
+        <div class="evidence-card">
+          <h4>What I did</h4>
+          <p>I connected tool categories to practical QA activities and sample test cases.</p>
+        </div>
+        <div class="evidence-card">
+          <h4>What this shows</h4>
+          <p>Shows practical tool awareness without overclaiming.</p>
+        </div>
+        <div class="evidence-card wide">
+          <h4>Evidence included</h4>
+          <ul><li>Test management</li><li>Bug tracking</li><li>API checks</li><li>Device/browser checks</li></ul>
+        </div>
+      </div>
+
+      <details class="doc-preview" open>
+        <summary>Readable document preview</summary>
+        <div class="doc-preview-body"><h3>QA Tools Utilized in Test Cases</h3>
+<p>I created this artifact to explain how manual testing tools and automation testing tools are applied inside the sample portfolio test cases. The goal is to show applied QA workflow while keeping the tool usage representative and non-confidential.</p>
+<h4>Manual Testing Tools Utilized</h4>
+<div class='doc-table-wrap'><table class='doc-table'><thead><tr>
+<th>Tool Category</th>
+<th>Tools</th>
+<th>How It Supports the Sample Test Cases</th>
+<th>Sample Output</th>
+</tr></thead><tbody>
+<tr>
+<td>Test Management</td>
+<td>TestRail, Zephyr, Excel/Google Sheets</td>
+<td>Created test cases, grouped them by module, assigned priority, recorded expected result, actual result, execution status, and retest result.</td>
+<td>Test run record, pass/fail count, execution summary</td>
+</tr>
+<tr>
+<td>Bug Tracking</td>
+<td>Jira, Bugzilla, Mantis, ServiceNow-style tickets</td>
+<td>Logged defects from failed test cases with reproduction steps, severity, priority, environment, screenshots/video, and retest notes.</td>
+<td>Defect report, escalation ticket, retest evidence</td>
+</tr>
+<tr>
+<td>API Exploration</td>
+<td>Postman</td>
+<td>Manually triggered API requests to compare backend responses with UI behavior before automation.</td>
+<td>API response notes, status code validation, auth check evidence</td>
+</tr>
+<tr>
+<td>Cross-Browser / Device Checks</td>
+<td>BrowserStack</td>
+<td>Checked UI behavior across desktop and mobile browsers, device sizes, and operating systems.</td>
+<td>Cross-browser screenshots, compatibility checklist</td>
+</tr>
+</tbody></table></div>
+<h4>Automation Testing Tools Utilized</h4>
+<div class='doc-table-wrap'><table class='doc-table'><thead><tr>
+<th>Tool Category</th>
+<th>Tools</th>
+<th>How It Supports the Sample Test Cases</th>
+<th>Best Candidate Tests</th>
+</tr></thead><tbody>
+<tr>
+<td>Web Automation</td>
+<td>Selenium, Cypress, Playwright</td>
+<td>Identified stable UI flows that should be automated after manual validation.</td>
+<td>Login smoke, submit request, account overview, read-only validation</td>
+</tr>
+<tr>
+<td>Mobile Automation</td>
+<td>Appium</td>
+<td>Planned mobile regression coverage for banking app flows after requirements are stable.</td>
+<td>Mobile login, balance display, session timeout, cross-app sync</td>
+</tr>
+<tr>
+<td>Low-Code / No-Code Automation</td>
+<td>BugBug.io, Testim-style tools</td>
+<td>Used as an option for quick recorded smoke flows, with manual review to avoid weak assertions and flaky steps.</td>
+<td>Login, dashboard open, balance page open</td>
+</tr>
+<tr>
+<td>Performance Testing</td>
+<td>Apache JMeter, LoadRunner</td>
+<td>Planned baseline load and response-time checks for high-risk customer flows.</td>
+<td>Login, account overview, balance refresh, transaction history</td>
+</tr>
+</tbody></table></div>
+<h4>Tool Utilization by Sample Test Case</h4>
+<div class='doc-table-wrap'><table class='doc-table'><thead><tr>
+<th>Sample Test Case</th>
+<th>Tools Utilized</th>
+<th>How the Tool Supports the Test</th>
+<th>Output / Evidence</th>
+</tr></thead><tbody>
+<tr>
+<td>TC-PR-001: Create purchase request with valid data</td>
+<td>TestRail/Zephyr, Excel/Sheets</td>
+<td>Documented steps, test data, expected result, actual result, and pass/fail status.</td>
+<td>Executed test case record and test summary count</td>
+</tr>
+<tr>
+<td>TC-PR-006: Approved request becomes read-only</td>
+<td>Jira-style bug tracker, Selenium/Playwright candidate</td>
+<td>Logged defect if approved request remained editable; marked as regression automation candidate after fix.</td>
+<td>Bug report with severity, screenshots, and retest status</td>
+</tr>
+<tr>
+<td>TC-GAME-ECO-001: Fictional reward is granted once only</td>
+<td>Bug tracker, logs/telemetry, test harness candidate</td>
+<td>Validated reward transaction count, inventory state, reconnect behavior, and duplicate prevention.</td>
+<td>Incident ticket, log evidence, escalation notes</td>
+</tr>
+<tr>
+<td>TC-GAME-PATCH-002: Patch regression for stable/mount behavior</td>
+<td>Checklist, video evidence, bug tracker</td>
+<td>Repeated stable entry, exit, and mount recall steps after patch changes.</td>
+<td>Regression checklist and video evidence if failed</td>
+</tr>
+<tr>
+<td>TC-BANK-001: Account balance displays correctly</td>
+<td>TestRail/Zephyr, Postman, BrowserStack</td>
+<td>Verified UI balance, compared API response, and checked consistency across desktop and mobile browsers.</td>
+<td>Manual execution result, API response notes, cross-device screenshots</td>
+</tr>
+<tr>
+<td>TC-BANK-SEC-001: Unauthorized account data is not exposed</td>
+<td>Postman, bug tracker, security checklist</td>
+<td>Checked that API responses only return data for the authenticated customer and do not expose other account details.</td>
+<td>API evidence and security defect if failed</td>
+</tr>
+<tr>
+<td>TC-BANK-A11Y-001: Account page supports accessibility expectations</td>
+<td>Accessibility checklist, BrowserStack/device testing</td>
+<td>Checked keyboard navigation, labels, focus order, contrast concerns, and screen-reader-friendly structure where available.</td>
+<td>Accessibility notes and defects for failed items</td>
+</tr>
+<tr>
+<td>TC-BANK-PERF-001: Account overview response under load</td>
+<td>JMeter/LoadRunner</td>
+<td>Planned response-time and load baseline for login/account overview under expected traffic.</td>
+<td>Performance summary with response time, errors, and bottlenecks</td>
+</tr>
+</tbody></table></div>
+<h4>Automation Priority</h4>
+<div class='doc-table-wrap'><table class='doc-table'><thead><tr>
+<th>Priority</th>
+<th>Automate</th>
+<th>Keep Manual / Specialist-Led</th>
+</tr></thead><tbody>
+<tr>
+<td>High</td>
+<td>Login smoke, critical happy paths, API authorization checks, account/reward transaction consistency</td>
+<td>Requirement clarification, suspected abuse investigation, business-rule interpretation</td>
+</tr>
+<tr>
+<td>Medium</td>
+<td>Cross-browser checks, basic accessibility scans, repeated form validation</td>
+<td>Screen reader review, localization judgment, visual polish</td>
+</tr>
+<tr>
+<td>Low</td>
+<td>Stable minor checks only if valuable</td>
+<td>One-off UI changes and unclear requirements</td>
+</tr>
+</tbody></table></div>
+<h4>Professional Positioning</h4>
+<p>Manual QA remains the foundation: understand requirements, ask the right questions, design useful tests, execute carefully, and document defects clearly. Automation is strongest when used for stable, repeatable, high-risk checks that need to run often.</p></div>
+      </details>
+    </article>
+    
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="tools" class="page">
+      <div class="section">
+        <h2>Tools & Technical Awareness</h2>
+        <p class="section-intro">This section shows where each tool fits in the QA process. I keep the wording honest: strongest in manual QA, with supporting technical exposure.</p>
+        <div class="tools-grid">
+          <div class="tool-card"><h3>ServiceNow / Jira-style tracking</h3><p><strong>Purpose:</strong> ticket handling, defect tracking, escalation, validation notes, and closure updates.</p><p><strong>Used for:</strong> SAP-related issue handling, reports, and status updates.</p></div>
+          <div class="tool-card"><h3>SAP S/4HANA / SAP tools</h3><p><strong>Purpose:</strong> business process validation, workflow investigation, access issues, and patch/reset checks.</p><p><strong>Used for:</strong> production-like support and regression/UAT activities.</p></div>
+          <div class="tool-card"><h3>Excel, Google Sheets, SharePoint</h3><p><strong>Purpose:</strong> test cases, RTM, test data, reports, schedules, and process documentation.</p><p><strong>Used for:</strong> organizing validation notes and QA documents.</p></div>
+          <div class="tool-card"><h3>Postman / API awareness</h3><p><strong>Purpose:</strong> status code, response body, authentication, required fields, and error handling checks.</p><p><strong>Best fit:</strong> banking API and backend response validation awareness.</p></div>
+          <div class="tool-card"><h3>SQL validation checks</h3><p><strong>Purpose:</strong> verify records, statuses, history, timestamps, and data consistency.</p><p><strong>Best fit:</strong> QA validation after workflow or transaction changes.</p></div>
+          <div class="tool-card"><h3>Selenium / Python basics</h3><p><strong>Purpose:</strong> automate stable smoke and regression checks after manual validation.</p><p><strong>Positioning:</strong> supporting exposure, with willingness to grow.</p></div>
+          <div class="tool-card"><h3>Browser DevTools</h3><p><strong>Purpose:</strong> console errors, network behavior, responsiveness, and UI issue evidence.</p><p><strong>Best fit:</strong> web app testing and frontend issue reporting.</p></div>
+          <div class="tool-card"><h3>GitHub / Vercel</h3><p><strong>Purpose:</strong> host portfolio files, project samples, and static web apps.</p><p><strong>Used for:</strong> QA portfolio and CSE Review Studio deployment.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="page">
+      <div class="section">
+        <h2>Experience</h2>
+        <p class="section-intro">My work background connects QA, support, documentation, business process validation, and technical troubleshooting.</p>
+        <div class="timeline">
+          <div class="role">
+            <div class="role-top"><div><h3>Accenture — Business Architect / Software Engineer</h3><div class="meta">Hybrid | May 2024 – July 2025</div></div><span class="pill">SAP / ServiceNow / QA Support</span></div>
+            <ul>
+              <li>Supported SAP S/4HANA business process validation, ServiceNow ticket handling, documentation, regression testing, and UAT support.</li>
+              <li>Investigated access issues, failed workflows, incorrect data, process errors, system bugs, and patch/reset-related incidents.</li>
+              <li>Handled tickets, validation notes, reports, status updates, escalation coordination, and project schedule support.</li>
+            </ul>
+          </div>
+          <div class="role">
+            <div class="role-top"><div><h3>TCL Online Services — QA Trainee / Technical Support Representative</h3><div class="meta">Feb 2023 – Oct 2023</div></div><span class="pill">QA / Support / Documentation</span></div>
+            <ul>
+              <li>Supported process research, web tool assistance, production workflow mapping, and documentation.</li>
+              <li>Handled TCL appliance hardware/software issues, documented around 30 issues daily, and escalated complex cases.</li>
+            </ul>
+          </div>
+          <div class="role">
+            <div class="role-top"><div><h3>Scale AI / Outlier — Technical Documentation & AI Evaluation Contractor</h3><div class="meta">Freelance, Remote</div></div><span class="pill">AI evaluation exposure</span></div>
+            <ul>
+              <li>Freelance technical evaluation exposure involving PRD review, rubric-based assessment, schema compliance, and AI output quality checks.</li>
+            </ul>
+          </div>
+          <div class="role">
+            <div class="role-top"><div><h3>iQor Philippines — Account Manager Expert</h3></div><span class="pill">Customer support</span></div>
+            <ul>
+              <li>Handled account support with attention to detail, documentation, escalation, process compliance, and customer-facing issue resolution.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="page">
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h2>Let’s connect</h2>
+          <p class="section-intro">Open to QA Tester, Manual QA Analyst, UAT Support, Application Support, IT Support, and ServiceNow/SAP support-aligned roles.</p>
+          <div class="actions">
+            <a class="btn" href="mailto:jeric.semeniego.work@gmail.com">Send email</a>
+            <a class="btn secondary" href="resume/Jeric_Semeniego_Final_Harvard_QA_Resume.pdf" target="_blank">Open resume</a>
+          </div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-list">
+            <div class="contact-bubble"><strong>Email</strong><a href="mailto:jeric.semeniego.work@gmail.com">jeric.semeniego.work@gmail.com</a></div>
+            <div class="contact-bubble"><strong>Phone</strong><span>+63 961 871 1368</span></div>
+            <div class="contact-bubble"><strong>Location</strong><span>Pasig City, Metro Manila, Philippines</span></div>
+            <div class="contact-bubble"><strong>GitHub</strong><a href="https://github.com/jericsemeniegowork-boop" target="_blank">github.com/jericsemeniegowork-boop</a></div>
+            <div class="contact-bubble"><strong>Portfolio</strong><a href="https://jericsemeniegowork-boop.github.io/portfolio/" target="_blank">jericsemeniegowork-boop.github.io/portfolio</a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="container">© 2026 Jeric Semeniego • QA Portfolio • Representative, non-confidential samples</div></footer>
+
+  <script>
+    function showPage(pageId) {
+      document.querySelectorAll('.page').forEach(page => page.classList.remove('active'));
+      const target = document.getElementById(pageId);
+      if (target) target.classList.add('active');
+      document.querySelectorAll('.navbtn').forEach(btn => btn.classList.toggle('active', btn.dataset.page === pageId));
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    document.querySelectorAll('.navbtn').forEach(btn => {
+      btn.addEventListener('click', () => showPage(btn.dataset.page));
+    });
+
+    document.querySelectorAll('.artifact-tab').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.artifact-tab').forEach(tab => tab.classList.remove('active'));
+        document.querySelectorAll('.artifact-panel').forEach(panel => panel.classList.remove('active'));
+        btn.classList.add('active');
+        const panel = document.getElementById(btn.dataset.artifact);
+        if (panel) panel.classList.add('active');
+      });
+    });
+
+    const root = document.documentElement;
+    const toggle = document.getElementById('themeToggle');
+    function applyTheme(theme) {
+      root.setAttribute('data-theme', theme);
+      toggle.textContent = theme === 'dark' ? 'Light mode' : 'Dark mode';
+      localStorage.setItem('portfolio-theme', theme);
+    }
+    applyTheme(localStorage.getItem('portfolio-theme') || 'light');
+    toggle.addEventListener('click', () => applyTheme(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark'));
+  </script>
+</body>
+</html>
