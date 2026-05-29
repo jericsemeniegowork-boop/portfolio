@@ -1,0 +1,9 @@
+Data ID,Data Name,Value,Purpose
+TD-001,Requester user,requester01,Valid requester account
+TD-002,Approver user,approver01,Valid approver account
+TD-003,Unauthorized user,viewer01,No approval access
+TD-004,Valid amount,50000,Positive test
+TD-005,Zero amount,0,Negative test
+TD-006,Negative amount,-100,Negative test
+TD-007,Valid rejection reason,Budget not approved,Positive rejection test
+TD-008,Blank rejection reason,,Negative rejection test

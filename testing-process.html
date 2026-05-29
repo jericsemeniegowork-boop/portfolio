@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="QA testing approach — workflow review, test case design, execution, defect logging, retest, and release validation.">
+<title>Testing Process | Jeric Semeniego QA Portfolio</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand"><span class="n">JERIC SEMENIEGO</span><span class="r">QA Analyst</span></a>
+    <button class="nav-toggle" onclick="document.getElementById('nav').classList.toggle('open')">&#9776;</button>
+    <ul class="nav-links"><li><a href="index.html" class="">Home</a></li><li><a href="experience.html" class="">Experience</a></li><li><a href="testing-process.html" class="active">Testing</a></li><li><a href="case-studies.html" class="">Case Studies</a></li><li><a href="qa-documents.html" class="">QA Docs</a></li><li><a href="tools.html" class="">Tools</a></li><li><a href="education.html" class="">Education</a></li><li><a href="contact.html" class="">Contact</a></li></ul>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="container">
+    <span class="page-hero-tag">How Testing Gets Done</span>
+    <h1>Testing Approach</h1>
+    <p>A structured, repeatable approach: understand the flow, list what needs testing, execute the checks, document issues, escalate or retest, and summarize the result.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head"><div class="section-title">Core Focus</div><p class="section-sub">Clear test cases, accurate validation, clean tickets, and useful reports.</p></div>
+    <div class="steps">
+      <div class="step"><div class="step-num">01</div><div>
+        <h3>Understand the Workflow</h3>
+        <p>The business flow, system document, QMS/process reference, blueprint, or ticket details are reviewed before testing begins to establish what the system is expected to do.</p>
+        <ul><li>What is the expected behavior?</li><li>Who is the user or role involved?</li><li>What part of the system is affected?</li></ul>
+      </div></div>
+      <div class="step"><div class="step-num">02</div><div>
+        <h3>List What Needs to Be Tested</h3>
+        <p>A structured list of test scenarios and test cases is prepared before execution, avoiding ad-hoc testing.</p>
+        <ul><li>Functional checks</li><li>Negative and boundary checks</li><li>Regression checks</li><li>UAT and business validation checks</li></ul>
+      </div></div>
+      <div class="step"><div class="step-num">03</div><div>
+        <h3>Execute the Test Carefully</h3>
+        <p>Each workflow is executed step by step, with actual behavior compared against expected behavior and results recorded.</p>
+        <ul><li>Pass, fail, or blocked status</li><li>Actual result with notes</li><li>Evidence captured when needed</li></ul>
+      </div></div>
+      <div class="step"><div class="step-num">04</div><div>
+        <h3>Log or Update the Ticket</h3>
+        <p>Issues are documented clearly and thoroughly so any team member can understand and reproduce them.</p>
+        <ul><li>Steps to reproduce</li><li>Expected vs. actual result</li><li>Impact, severity, and evidence when available</li></ul>
+      </div></div>
+      <div class="step"><div class="step-num">05</div><div>
+        <h3>Escalate, Coordinate, or Retest</h3>
+        <p>Issues requiring developer, business user, or cross-team involvement are escalated with full context. Affected workflows are retested after each fix or reset.</p>
+        <ul><li>Patch and reset validation</li><li>Incident follow-up</li><li>Regression after each fix</li></ul>
+      </div></div>
+      <div class="step"><div class="step-num">06</div><div>
+        <h3>Summarize the Result</h3>
+        <p>Notes and reports are prepared to summarize what was tested, what passed, what failed, and what still requires attention.</p>
+        <ul><li>Testing summary with metrics</li><li>Open risks or blockers</li><li>UAT or release readiness notes</li></ul>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-head"><div class="section-title">Testing Methods Applied</div><p class="section-sub">Types of checks used when building test cases or validating a ticket.</p></div>
+    <div class="methods">
+      <div class="method"><h3>Functional Testing</h3><p>Checks if the feature or workflow behaves according to the requirement.</p><div class="eg">Example: request submission, approval flow, status update</div></div>
+      <div class="method"><h3>Regression Testing</h3><p>Checks if a change, fix, patch, or reset broke an existing workflow.</p><div class="eg">Example: retesting related SAP process steps after a patch</div></div>
+      <div class="method"><h3>UAT Support</h3><p>Confirms that the system works for business users and real workflow needs.</p><div class="eg">Example: preparing checks, notes, and feedback for business sign-off</div></div>
+      <div class="method"><h3>Negative Testing</h3><p>Checks how the system behaves with invalid, missing, or unexpected input.</p><div class="eg">Example: missing required field or unauthorized access attempt</div></div>
+      <div class="method"><h3>Data / Status Validation</h3><p>Checks that records, statuses, history, and system results are accurate.</p><div class="eg">Example: validating status mismatch between list and detail pages</div></div>
+      <div class="method"><h3>Smoke / Sanity Checks</h3><p>Quick checks to confirm a build, fix, or workflow is stable enough to continue testing.</p><div class="eg">Example: confirming the main flow works after a system reset</div></div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div>&copy; 2026 Jeric Semeniego &nbsp;&middot;&nbsp; QA Portfolio &nbsp;&middot;&nbsp; Non-confidential representative samples &nbsp;&middot;&nbsp; <a href="contact.html">Contact</a></div>
+</footer>
+</body>
+</html>

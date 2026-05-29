@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="QA case studies — service filing workflow, banking QA, game patch testing, defect samples.">
+<title>Case Studies | Jeric Semeniego QA Portfolio</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand"><span class="n">JERIC SEMENIEGO</span><span class="r">QA Analyst</span></a>
+    <button class="nav-toggle" onclick="document.getElementById('nav').classList.toggle('open')">&#9776;</button>
+    <ul class="nav-links"><li><a href="index.html" class="">Home</a></li><li><a href="experience.html" class="">Experience</a></li><li><a href="testing-process.html" class="">Testing</a></li><li><a href="case-studies.html" class="active">Case Studies</a></li><li><a href="qa-documents.html" class="">QA Docs</a></li><li><a href="tools.html" class="">Tools</a></li><li><a href="education.html" class="">Education</a></li><li><a href="contact.html" class="">Contact</a></li></ul>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="container">
+    <span class="page-hero-tag">QA Samples</span>
+    <h1>Work Samples and Case Studies</h1>
+    <p>Non-confidential QA case studies kept practical to show how a workflow is analysed, what needs to be tested, how issues are documented, and how results are reported.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head"><div class="section-title">Main Case Study</div><p class="section-sub">Internal Service Filing Workflow &mdash; a realistic filing and record management module.</p></div>
+
+    <div class="card card-accent mb32">
+      <div class="card-header"><h3>Internal Service Filing Workflow</h3></div>
+      <div class="card-body">
+        <p style="font-size:14px;color:var(--text-mid);margin-bottom:16px">Manual test coverage was prepared for an internal service filing workflow. The scope covered UI behavior, navigation, form validation, record management, data integrity, end-to-end filing, document generation, and Jira issue tracking.</p>
+        <div class="grid-2">
+          <div>
+            <p style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--text-light);margin-bottom:8px">Testing Scope</p>
+            <ul style="font-size:13.5px;padding-left:18px;color:var(--text)">
+              <li style="margin-bottom:4px">Repository and list page behavior</li>
+              <li style="margin-bottom:4px">Add new filing entry and form validation</li>
+              <li style="margin-bottom:4px">View and verify record details</li>
+              <li style="margin-bottom:4px">Edit and update status and remarks</li>
+              <li style="margin-bottom:4px">Generate or download related forms</li>
+              <li style="margin-bottom:4px">Data consistency across all views</li>
+            </ul>
+          </div>
+          <div>
+            <p style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--text-light);margin-bottom:8px">What This Demonstrates</p>
+            <ul style="font-size:13.5px;padding-left:18px;color:var(--text)">
+              <li style="margin-bottom:4px">Test coverage planned and structured before execution</li>
+              <li style="margin-bottom:4px">Test cases grouped and organized by testing area</li>
+              <li style="margin-bottom:4px">Positive, negative, and end-to-end scenarios covered</li>
+              <li style="margin-bottom:4px">Failed test results connected to Jira defect reporting</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-head mt24"><div class="section-title">Sample Test Cases</div><p class="section-sub">Main test cases used to validate the filing workflow from list view to document generation.</p></div>
+    <div class="table-wrap mb32">
+      <table>
+        <thead><tr><th style="width:90px">ID</th><th>Test Case</th><th>Validation Areas</th></tr></thead>
+        <tbody>
+          <tr><td><strong>TC_001</strong></td><td>View Repository / List of Filed Entries</td><td>List page, columns, layout, search, sorting, pagination, export</td></tr>
+          <tr><td><strong>TC_002</strong></td><td>Add New Filing Entry</td><td>Add form, required fields, cancel behavior, valid submission, success message, saved record</td></tr>
+          <tr><td><strong>TC_003</strong></td><td>View and Verify Filing Entry Details</td><td>Saved details, attachments, and action buttons display correctly</td></tr>
+          <tr><td><strong>TC_004</strong></td><td>Edit / Update Filing Entry Status and Remarks</td><td>Editable fields, cancel without saving, valid update, success notification, updated details</td></tr>
+          <tr><td><strong>TC_005</strong></td><td>Generate / Download Form or Information Sheet</td><td>Generated file opens correctly and contains accurate record data</td></tr>
+          <tr><td><strong>TC_006</strong></td><td>Negative / Validation and Error Handling</td><td>Missing or invalid inputs trigger correct validation; valid data can be resubmitted</td></tr>
+          <tr><td><strong>TC_007</strong></td><td>Data Integrity and Record Consistency</td><td>Values match across form, list, details page, and generated document</td></tr>
+          <tr><td><strong>TC_008</strong></td><td>End-to-End Happy Path</td><td>Full Add &rarr; View &rarr; Edit &rarr; Generate workflow completes successfully</td></tr>
+          <tr><td><strong>TC_009</strong></td><td>Report / Issue Tracking Compliance</td><td>Failed results logged in Jira with screenshots and evidence</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section-head"><div class="section-title">Defect Sample</div><p class="section-sub">Cleaned and anonymized defect demonstrating documentation style.</p></div>
+    <div class="defect-card">
+      <div class="defect-head">
+        <h4>Back Button Navigation Redirects to Incorrect Page</h4>
+        <span class="badge badge-yellow">Medium Severity</span>
+      </div>
+      <div class="defect-body">
+        <div class="defect-row"><span class="dl">Module</span><span class="dv">Time Management Workflow &mdash; Navigation</span></div>
+        <div class="defect-row"><span class="dl">Severity</span><span class="dv">Medium</span></div>
+        <div class="defect-row"><span class="dl">Priority</span><span class="dv">High</span></div>
+        <div class="defect-row"><span class="dl">Description</span><span class="dv">During testing of a time management workflow, the Back button was observed to inconsistently return users to the most recent page or panel previously accessed. The issue appeared across multiple screens, suggesting a possible shared navigation handling concern.</span></div>
+        <div class="defect-row"><span class="dl">Steps</span><span class="dv">1. Open the time management module.<br>2. Navigate to a sub-panel or detail page.<br>3. Click the Back button.<br>4. Observe the page the system navigates to.</span></div>
+        <div class="defect-row"><span class="dl">Expected</span><span class="dv">System navigates to the most recently accessed page or panel.</span></div>
+        <div class="defect-row"><span class="dl">Actual</span><span class="dv">System navigates to an incorrect page, skipping the previous panel.</span></div>
+        <div class="defect-row"><span class="dl">Impact</span><span class="dv">Disrupts user navigation flow; increases task completion time and may lead to data loss if users navigate away unintentionally.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-head"><div class="section-title">Supporting Case Studies</div><p class="section-sub">Additional QA samples showing range across application types and testing methods.</p></div>
+    <div class="grid-3">
+      <div class="card card-body">
+        <div class="doc-cat">Banking QA</div>
+        <h4 style="font-size:14px;font-weight:700;color:var(--navy);margin-bottom:8px">SecureBank Account Balance Case</h4>
+        <p style="font-size:13px;color:var(--text-mid);margin-bottom:12px">Account overview, balance visibility, masking, session behavior, and API awareness. Covers functional, security, privacy, and accessibility checks.</p>
+        <a href="qa-documents.html" class="btn btn-outline" style="font-size:12px;padding:6px 14px">View in QA Docs</a>
+      </div>
+      <div class="card card-body">
+        <div class="doc-cat">Game QA</div>
+        <h4 style="font-size:14px;font-weight:700;color:var(--navy);margin-bottom:8px">Frostwater Lake Reward Integrity</h4>
+        <p style="font-size:13px;color:var(--text-mid);margin-bottom:12px">Patch regression, reward integrity, reconnect behavior, and evidence collection. Demonstrates live-service testing methodology and patch validation thinking.</p>
+        <a href="qa-documents.html" class="btn btn-outline" style="font-size:12px;padding:6px 14px">View in QA Docs</a>
+      </div>
+      <div class="card card-body">
+        <div class="doc-cat">Web App</div>
+        <h4 style="font-size:14px;font-weight:700;color:var(--navy);margin-bottom:8px">CSE Review Studio</h4>
+        <p style="font-size:13px;color:var(--text-mid);margin-bottom:12px">Designed, built, and manually tested a responsive exam review web app with 1,100+ questions. Validated navigation flow, data persistence, and cross-device UI behavior.</p>
+        <a href="education.html" class="btn btn-outline" style="font-size:12px;padding:6px 14px">View in Projects</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div>&copy; 2026 Jeric Semeniego &nbsp;&middot;&nbsp; QA Portfolio &nbsp;&middot;&nbsp; Non-confidential representative samples &nbsp;&middot;&nbsp; <a href="contact.html">Contact</a></div>
+</footer>
+</body>
+</html>
