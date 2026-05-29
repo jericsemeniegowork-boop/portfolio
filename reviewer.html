@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>QA Interview Reviewer | Jeric Semeniego</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--navy:#1B2D5B;--navy-mid:#243870;--navy-soft:#EEF1F8;--white:#fff;--bg:#F8FAFC;--border:#E2E8F0;--text:#1E293B;--text-mid:#475569;--text-light:#94A3B8;--radius:8px;--shadow:0 1px 3px rgba(0,0,0,.06)}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+.nav{background:var(--navy);padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between}
+.nav-brand{color:#fff;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;text-decoration:none}
+.nav-sub{color:rgba(255,255,255,.55);font-size:11px;margin-top:1px}
+.main{max-width:760px;margin:0 auto;padding:32px 24px}
+.page-title{font-size:22px;font-weight:700;color:var(--navy);margin-bottom:4px}
+.page-sub{font-size:14px;color:var(--text-mid);margin-bottom:24px}
+.rv-stats{display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap}
+.stat-pill{font-size:12px;padding:4px 12px;border-radius:20px;border:1px solid var(--border);color:var(--text-mid);background:#fff}
+.stat-pill.green{border-color:#C0DD97;color:#27500A;background:#EAF3DE}
+.stat-pill.amber{border-color:#FAC775;color:#633806;background:#FAEEDA}
+.cats{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px}
+.cat-btn{font-size:12px;padding:5px 14px;border-radius:20px;border:1px solid var(--border);background:#fff;color:var(--text-mid);cursor:pointer;transition:all .15s}
+.cat-btn:hover{border-color:#B5D4F4;color:#185FA5}
+.cat-btn.active{background:#E6F1FB;border-color:#B5D4F4;color:#185FA5;font-weight:600}
+.prog-row{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.prog-wrap{flex:1;height:4px;background:var(--border);border-radius:2px;overflow:hidden}
+.prog-bar{height:100%;background:var(--navy);border-radius:2px;transition:width .3s}
+.prog-label{font-size:12px;color:var(--text-light);min-width:44px;text-align:right}
+.card-wrap{perspective:1400px;cursor:pointer;margin-bottom:14px}
+.card-inner{position:relative;transform-style:preserve-3d;transition:transform .45s cubic-bezier(.4,0,.2,1);height:280px}
+.card-inner.flipped{transform:rotateY(180deg)}
+.card-face{position:absolute;top:0;left:0;right:0;bottom:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:24px;overflow-y:auto;display:flex;flex-direction:column;box-shadow:var(--shadow)}
+.card-back-face{transform:rotateY(180deg)}
+.card-cat{display:inline-block;font-size:11px;padding:2px 10px;background:#E6F1FB;color:#185FA5;border-radius:20px;margin-bottom:14px;flex-shrink:0}
+.card-q{font-size:17px;font-weight:600;color:var(--text);line-height:1.5;flex:1}
+.flip-hint{font-size:12px;color:var(--text-light);margin-top:12px;flex-shrink:0}
+.card-a-lbl{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--text-light);margin-bottom:10px;flex-shrink:0}
+.card-a{font-size:14px;color:var(--text);line-height:1.7;flex:1}
+.btns{display:flex;gap:8px;margin-bottom:16px}
+.btn{font-size:13px;font-weight:500;padding:9px 16px;border-radius:7px;border:1px solid var(--border);background:#fff;color:var(--text);cursor:pointer;transition:all .15s;flex:1}
+.btn:hover{background:var(--bg);border-color:#94A3B8}
+.btn.got-it{background:#EAF3DE;border-color:#C0DD97;color:#27500A}
+.btn.got-it:hover{background:#C0DD97}
+.btn.review{background:#FAEEDA;border-color:#FAC775;color:#633806}
+.btn.review:hover{background:#FAC775}
+.bottom-row{display:flex;align-items:center;justify-content:space-between}
+.text-btn{font-size:12px;color:var(--text-light);background:none;border:none;cursor:pointer;padding:4px 0;display:flex;align-items:center;gap:5px}
+.text-btn:hover{color:var(--text)}
+.footer{background:var(--navy);color:rgba(255,255,255,.5);text-align:center;padding:18px;font-size:12px;margin-top:40px}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html" class="nav-brand" style="display:flex;flex-direction:column;line-height:1.3">
+    <span>JERIC SEMENIEGO</span>
+    <span class="nav-sub">QA Analyst</span>
+  </a>
+  <a href="index.html" style="color:rgba(255,255,255,.7);font-size:13px;text-decoration:none">&larr; Back to Portfolio</a>
+</nav>
+
+<div class="main">
+  <h1 class="page-title">QA Interview Reviewer</h1>
+  <p class="page-sub">40 flashcards across 5 categories. Click a card to reveal the answer. Mark your progress as you go.</p>
+
+  <div class="rv-stats">
+    <span class="stat-pill" id="s-total">40 cards</span>
+    <span class="stat-pill green" id="s-got">0 got it</span>
+    <span class="stat-pill amber" id="s-rev">0 review</span>
+  </div>
+
+  <div class="cats" id="cats"></div>
+
+  <div class="prog-row">
+    <div class="prog-wrap"><div class="prog-bar" id="pbar" style="width:2.5%"></div></div>
+    <span class="prog-label" id="plabel">1 / 40</span>
+  </div>
+
+  <div class="card-wrap" onclick="flip()">
+    <div class="card-inner" id="card-inner">
+      <div class="card-face">
+        <span class="card-cat" id="c-cat">QA Fundamentals</span>
+        <p class="card-q" id="c-q">Loading...</p>
+        <span class="flip-hint">&#8635; Click to reveal answer</span>
+      </div>
+      <div class="card-face card-back-face">
+        <span class="card-a-lbl">Answer</span>
+        <p class="card-a" id="c-a"></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="btns">
+    <button class="btn" onclick="prev()">&larr; Prev</button>
+    <button class="btn got-it" onclick="markGot()">&#10003; Got it</button>
+    <button class="btn review" onclick="markRev()">&#9733; Review later</button>
+    <button class="btn" onclick="next()">Next &rarr;</button>
+  </div>
+
+  <div class="bottom-row">
+    <button class="text-btn" onclick="toggleShuffle()" id="shuf-btn">&#8652; <span id="shuf-lbl">Shuffle: off</span></button>
+    <button class="text-btn" onclick="resetAll()">&#8635; Reset progress</button>
+  </div>
+</div>
+
+<footer class="footer">&copy; 2026 Jeric Semeniego &nbsp;&middot;&nbsp; QA Portfolio &nbsp;&middot;&nbsp; Interview Reviewer</footer>
+
+<script>
+const CARDS=[
+{cat:"QA Fundamentals",q:"What is the difference between verification and validation?",a:"Verification checks if the product is built correctly — are the right processes being followed? Happens before the product is complete. Validation checks if the correct product was built — does it meet the user's needs? Happens during or after completion."},
+{cat:"QA Fundamentals",q:"What is the difference between severity and priority?",a:"Severity measures how much a defect impacts the system (Critical = core feature broken; Minor = cosmetic). Priority measures how urgently it needs fixing. A defect can be low severity but high priority (e.g. a logo off-color before a client demo) or high severity but low priority (e.g. a rare crash in an admin-only screen)."},
+{cat:"QA Fundamentals",q:"What is regression testing and why is it done?",a:"Regression testing re-runs existing test cases after a change, fix, patch, or update to confirm previously working functionality has not broken. Done because changes to one area of a system can unexpectedly break another."},
+{cat:"QA Fundamentals",q:"What is UAT and what is its purpose?",a:"User Acceptance Testing is the final phase where business users validate that the system works for real-world use cases. Purpose: confirm business requirements are met — not just that the system works technically, but that it works for the people who will actually use it."},
+{cat:"QA Fundamentals",q:"What is a test plan and what does it contain?",a:"A test plan defines the scope, approach, resources, and schedule for a test cycle. Typically contains: objectives, scope and out-of-scope items, test types, environment requirements, entry/exit criteria, roles and responsibilities, and sign-off requirements."},
+{cat:"QA Fundamentals",q:"What is an RTM (Requirement Traceability Matrix)?",a:"An RTM maps each requirement to its corresponding test cases to ensure complete coverage. It helps identify gaps — requirements with no test cases — before testing ends. Also shows which defects relate to which requirements."},
+{cat:"QA Fundamentals",q:"What is the difference between a test case and a test scenario?",a:"A test scenario is a high-level statement of what needs to be tested (e.g. 'Verify that a user can submit a filing entry'). A test case is the detailed step-by-step procedure — steps, expected result, test data, and pass/fail criteria."},
+{cat:"QA Fundamentals",q:"What is smoke testing vs. sanity testing?",a:"Smoke testing is a broad, quick check after a new build to confirm major features work and the build is stable enough for further testing. Sanity testing is narrow and targeted — verifying that a specific change or fix works correctly after a small update."},
+{cat:"QA Fundamentals",q:"What is the defect lifecycle?",a:"New → Assigned → Open (being investigated) → Fixed → Retest → Closed (if passed) or Reopened (if still failing). Some workflows include Deferred (postponed to a later sprint) or Rejected (not a real defect)."},
+{cat:"QA Fundamentals",q:"What is functional vs. non-functional testing?",a:"Functional testing verifies that the system does what it is supposed to do — features, workflows, and business logic. Non-functional testing checks how well it performs — covering performance, security, accessibility, usability, and compatibility."},
+{cat:"Tools & Tech",q:"How was ServiceNow used in your work?",a:"ServiceNow was the primary ticketing platform at Accenture. Used for logging and tracking issues, recording validation notes, updating ticket status, coordinating escalations, and producing close-out reports. Approximately 10 tickets were processed daily with detailed validation documentation."},
+{cat:"Tools & Tech",q:"Describe your experience testing SAP S/4HANA.",a:"At Accenture, SAP S/4HANA business process validation was a core activity — multiple modules, investigating workflow failures, validating data entries, checking access issues and process errors, and supporting patch and reset testing. Regression and UAT cycles ran approximately 3 times weekly."},
+{cat:"Tools & Tech",q:"How have you used Selenium?",a:"Used at Accenture and during HCLTech training for automation-supported regression validation. Python scripts were written to verify UI behavior, check critical workflow paths, and support regression coverage. Used at a supporting level — targeted validation scripts for key scenarios, not full automation frameworks."},
+{cat:"Tools & Tech",q:"What is Postman used for in QA testing?",a:"Postman was used for API response validation during regression testing at Accenture. Included sending API requests, checking status codes (200, 400, 401, 404, etc.), verifying response body structure and data accuracy, and confirming error handling. JavaScript validation scripts were used within Postman to automate these checks."},
+{cat:"Tools & Tech",q:"How have you used SQL in testing?",a:"SQL was used for backend data integrity checks — querying the database to verify records saved correctly, status values matched expected results, timestamps were accurate, history entries existed, and data was consistent across different views of the system."},
+{cat:"Tools & Tech",q:"What is Jira used for in a QA context?",a:"Used for defect tracking, issue management, and sprint-based QA coordination. Tracks defects through their lifecycle, links issues to test cases, manages retest assignments, and reports on open defects at the end of each sprint. Supports visibility across the Agile team."},
+{cat:"Tools & Tech",q:"What is Browser DevTools used for during testing?",a:"Used to inspect UI elements, check console errors, monitor network requests and API calls, verify responsive design, and capture evidence for defect reports. Especially useful for diagnosing intermittent issues and documenting what happens when a form or button is triggered."},
+{cat:"Tools & Tech",q:"How do you explain Python in your QA context?",a:"Python was used specifically for writing and running Selenium test scripts — automating browser interactions to verify UI behavior and workflow stability during regression cycles. Not used for standalone development. Focus was on validation scripts to support regression coverage rather than building full automation frameworks."},
+{cat:"Tools & Tech",q:"What are common HTTP status codes checked in Postman?",a:"200 OK (success), 201 Created (resource created), 400 Bad Request (invalid input), 401 Unauthorized (auth required), 403 Forbidden (no permission), 404 Not Found (resource missing), 500 Internal Server Error (server-side issue). In testing: check status code first, then response body for correct data and structure."},
+{cat:"Tools & Tech",q:"What would you do if a test case fails in SAP?",a:"1. Document the failure immediately — actual result, exact steps, evidence. 2. Check if it is a data, config, or system bug. 3. Reproduce it at least once more to confirm. 4. Log the defect in ServiceNow/Jira with clear reproduction steps, expected vs. actual, severity, and priority. 5. Notify the team and update ticket status. 6. After the fix, retest and confirm pass before closing."},
+{cat:"Your Experience",q:"Walk me through your experience at Accenture.",a:"Accenture (March 2024 to October 2025): role was Business Architect/Software Engineer, actual function was SAP QA and IT Support. Covered SAP S/4HANA process validation, ServiceNow and Jira ticket handling, regression/smoke/UI/UAT testing cycles (~3x weekly), Selenium automation validation using Python, API testing with Postman/JavaScript scripts, SQL data checks, and QA documentation across multiple business processes in an Agile environment."},
+{cat:"Your Experience",q:"What did you do at HCLTech?",a:"HCLTech (October to December 2025): Senior Analyst Training focused on Selenium with Python, API testing, and QA validation processes. Executed Selenium-based automation validation checks to support regression and release testing. Investigated workflow failures and defects, and supported incident tracking, documentation, escalation handling, and QA reporting throughout the program."},
+{cat:"Your Experience",q:"What was your freelance QA work about?",a:"October 2023 to March 2024: delivered manual functional and regression testing for multiple clients on short-term and one-time contracts covering web-based applications and workflows. Selenium, Postman, SQL, Jira, Python, and JavaScript applied depending on the client engagement. Test documentation maintained consistently across all engagements."},
+{cat:"Your Experience",q:"What did you learn at TCL Online Services?",a:"At TCL (February to October 2023), foundational QA and support habits were built: workflow mapping, process documentation, issue validation, follow-up testing, and escalation handling. About 30 hardware and software issues resolved daily, each documented with replication steps and resolution notes. Built the discipline of structured documentation that carried through all later roles."},
+{cat:"Your Experience",q:"Tell me about your capstone project.",a:"BSIT capstone at STI College San Pablo: Warehouse Inventory Monitoring System with Barcode Scanner and SMS Notification for Paring's Pharmacy (December 2022). Features: product record management, stock monitoring, expiration date tracking, warehouse dashboard, barcode scanner for product lookup, and SMS alerts for low-stock and expiration dates. Delivered by a four-person team to a real client."},
+{cat:"Your Experience",q:"What QA case studies are in your portfolio?",a:"Three non-confidential case studies: (1) Internal service filing workflow — UI validation, form testing, data integrity, end-to-end workflow with 9 test cases; (2) Banking application — SecureBank account balance case covering functional, security, privacy, accessibility, and performance; (3) Game economy patch testing — Frostwater Lake covering regression, reward integrity, reconnect behavior, and evidence collection. Each has a full artifact set."},
+{cat:"Your Experience",q:"Why do you want to be a QA Analyst?",a:"QA work combines structured analytical thinking with real impact — finding issues before they reach users, validating that systems work as intended, and maintaining clear documentation the whole team can rely on. Work at Accenture and HCLTech showed that thorough testing and clear defect reporting make a meaningful difference in system stability and release quality."},
+{cat:"Your Experience",q:"What is your greatest strength as a QA tester?",a:"Documentation discipline. Every issue is logged with clear steps to reproduce, expected vs. actual results, and enough detail for any developer or stakeholder to understand and act on. Built from handling 30 daily issues at TCL through to managing 10 daily tickets with full validation notes at Accenture — consistent, structured, and detailed every time."},
+{cat:"Scenario Q's",q:"A developer says your defect is 'not reproducible.' What do you do?",a:"1. Review reproduction steps for clarity and completeness. 2. Attempt to reproduce with the exact same steps and environment. 3. Check if issue is environment-dependent or data-dependent. 4. Gather additional evidence — screenshots, recordings, console logs, or network data. 5. If reproduced, update the defect with new evidence. 6. If genuinely not reproducible, discuss with developer and consider retesting in a different environment before closing or deferring."},
+{cat:"Scenario Q's",q:"You are given a new feature to test with no documentation. What do you do?",a:"1. Talk to the developer, BA, or project lead to understand expected behavior. 2. Review any available tickets or user stories in Jira. 3. Explore the feature manually to understand inputs, outputs, and behavior. 4. Write test scenarios based on expected business logic. 5. Design test cases covering happy path, negative scenarios, and edge cases. 6. Execute and document. 7. Flag all assumptions so they can be confirmed."},
+{cat:"Scenario Q's",q:"A critical defect is found one day before release. What do you do?",a:"1. Log immediately — severity Critical, priority High, with full impact assessment. 2. Escalate to QA lead, project manager, and dev team immediately. 3. Assess impact — does it affect core flow? Is there a workaround? 4. Determine if a hotfix can be delivered and tested in time. 5. If not, recommend delaying release — known critical defects carry more risk. 6. Document everything including the escalation chain for the release record."},
+{cat:"Scenario Q's",q:"How do you decide what to test first when time is limited?",a:"Prioritize by: (1) Critical business flows — the core happy path must work. (2) Recently changed or patched areas — highest regression risk. (3) Features with highest user impact or business value. (4) Previously defect-prone areas. (5) Smoke checks first to confirm build stability. Risk-based: put effort where the cost of failure is highest."},
+{cat:"Scenario Q's",q:"Describe how you would test a login form.",a:"Functional: valid credentials succeed; invalid show an error. Negative: empty username, empty password, both empty, very long inputs, special characters. Security: password masked; check for brute force protection; verify HTTPS. UI: error messages clear and visible; tab order works; form resets after failed attempt. Session: session created after login, destroyed after logout."},
+{cat:"Scenario Q's",q:"A defect found in production was not caught during testing. What do you do?",a:"1. Document the defect with full details immediately. 2. Review test cases to understand why it was not caught — coverage gap, untested edge case, or specific data scenario? 3. Add or update test cases to cover the scenario going forward. 4. Review related test cases for similar gaps. 5. Report the miss honestly — understanding why improves the process. 6. Use it to strengthen the test suite."},
+{cat:"Scenario Q's",q:"How do you handle testing when requirements keep changing?",a:"1. Use an RTM to track which test cases map to which requirements. 2. When a requirement changes, update the RTM and flag affected test cases for review. 3. Confirm the scope of the change with the BA or project lead before updating tests. 4. Re-run impacted test cases after the change is implemented. 5. Document what changed and when so the testing history remains accurate."},
+{cat:"Scenario Q's",q:"What is the difference between retesting and regression testing?",a:"Retesting checks that a specific defect has been fixed — verifying the exact scenario that previously failed now passes. Regression testing is broader — checking that the fix did not break any other existing functionality. Both happen after a fix is applied, but regression covers the wider system impact."},
+{cat:"Defect Management",q:"What makes a good defect report?",a:"(1) Clear, specific title summarizing the issue. (2) Steps to reproduce — numbered, precise, repeatable. (3) Expected result. (4) Actual result. (5) Severity and priority assigned correctly. (6) Environment details — browser, OS, build version. (7) Evidence — screenshot, recording, or logs. (8) Notes on frequency or conditions that trigger the issue."},
+{cat:"Defect Management",q:"What is severity vs. priority? Give an example.",a:"Severity = impact on the system. Priority = urgency to fix. Example 1: a spelling error on the homepage is low severity but high priority if a product launch is tomorrow. Example 2: a critical crash in a rarely-accessed admin screen is high severity but low priority if no users are affected. QA assigns severity; the team or product owner assigns priority."},
+{cat:"Defect Management",q:"When would you close a defect vs. defer it?",a:"Close when: the fix has been applied, the retest passed, and the functionality works as expected. Defer when: the fix is planned for a future sprint, the impact is low enough it does not block release, and the team agrees to defer. A deferred defect should be tracked with a clear reason and target fix date — not forgotten."},
+{cat:"Defect Management",q:"What is the role of evidence in defect reporting?",a:"Evidence (screenshots, recordings, console logs, network data) makes a defect report credible and actionable. It removes ambiguity — the developer can see exactly what happened without trying to reproduce it from text alone. Also helps when a developer cannot reproduce the defect in their environment. Browser DevTools is very useful for capturing this evidence."}
+];
+
+let cat='All',idx=0,flipped=false,got=new Set(),rev=new Set(),shuffleOn=false,order=[];
+function filtered(){return cat==='All'?CARDS:CARDS.filter(c=>c.cat===cat);}
+function buildOrder(){order=[...Array(filtered().length).keys()];if(shuffleOn){for(let i=order.length-1;i>0;i--){let j=Math.floor(Math.random()*(i+1));[order[i],order[j]]=[order[j],order[i]];}}}
+function card(){return filtered()[order[idx]];}
+function render(){
+  const c=card();if(!c)return;
+  const ci=document.getElementById('card-inner');
+  flipped?ci.classList.add('flipped'):ci.classList.remove('flipped');
+  document.getElementById('c-cat').textContent=c.cat;
+  document.getElementById('c-q').textContent=c.q;
+  document.getElementById('c-a').textContent=c.a;
+  const total=order.length;
+  document.getElementById('plabel').textContent=(idx+1)+' / '+total;
+  document.getElementById('pbar').style.width=Math.round(((idx+1)/total)*100)+'%';
+  document.getElementById('s-total').textContent=CARDS.length+' cards';
+  document.getElementById('s-got').textContent=got.size+' got it';
+  document.getElementById('s-rev').textContent=rev.size+' review';
+}
+function buildCats(){
+  const div=document.getElementById('cats');
+  const cats=['All',...[...new Set(CARDS.map(c=>c.cat))]];
+  div.innerHTML=cats.map(c=>'<button class="cat-btn'+(c===cat?' active':'')+'" onclick="setCat(\''+c+'\')">'+c+'</button>').join('');
+}
+function flip(){flipped=!flipped;render();}
+function next(){if(idx<order.length-1){idx++;flipped=false;render();}}
+function prev(){if(idx>0){idx--;flipped=false;render();}}
+function setCat(c){cat=c;idx=0;flipped=false;buildOrder();buildCats();render();}
+function markGot(){const c=card();if(c){got.add(c.q);rev.delete(c.q);render();}}
+function markRev(){const c=card();if(c){rev.add(c.q);got.delete(c.q);render();}}
+function toggleShuffle(){shuffleOn=!shuffleOn;idx=0;flipped=false;buildOrder();document.getElementById('shuf-lbl').textContent='Shuffle: '+(shuffleOn?'on':'off');render();}
+function resetAll(){got=new Set();rev=new Set();idx=0;flipped=false;buildOrder();render();}
+buildOrder();buildCats();render();
+</script>
+</body>
+</html>
