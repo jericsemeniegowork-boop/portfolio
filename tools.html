@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="QA tools — ServiceNow, SAP S/4HANA, Selenium, Postman, SQL, Jira, Python, JavaScript.">
+<meta name="description" content="QA tools &mdash; ServiceNow, SAP S/4HANA, Selenium, Postman, SQL, Jira, Python, JavaScript, DevTools, Excel.">
 <title>Tools | Jeric Semeniego QA Portfolio</title>
 <link rel="stylesheet" href="style.css">
 </head>
@@ -19,8 +19,8 @@
 <section class="page-hero">
   <div class="container">
     <span class="page-hero-tag">Skills &amp; Tools</span>
-    <h1>Tool Proficiency Overview</h1>
-    <p>Expert-level experience is claimed only where the work can be clearly explained. Automation and API tools are shown as supporting exposure with real usage context.</p>
+    <h1>Tools Used in QA Work</h1>
+    <p>Every tool here was used in actual work &mdash; tickets, regression cycles, defect reports, or data checks. The descriptions below say exactly what each tool was used for and how.</p>
   </div>
 </section>
 
@@ -28,57 +28,56 @@
   <div class="container">
 
     <div class="tool-group">
-      <div class="tool-group-title">Main Tools from Work</div>
+      <div class="tool-group-title">Main Tools &mdash; Used Daily at Accenture</div>
       <div class="grid-3">
-        <div class="tool-card"><h4>ServiceNow</h4><p>Used for ticket handling, issue validation, status updates, escalation tracking, resolution notes, and UAT support coordination.</p></div>
-        <div class="tool-card"><h4>SAP S/4HANA</h4><p>Used for business process validation, workflow investigation, patch and reset checks, data verification, and UAT across multiple modules.</p></div>
-        <div class="tool-card"><h4>Excel / Google Sheets</h4><p>Used for test cases, test data, execution tracking, traceability mapping, reports, and QA documentation templates.</p></div>
-        <div class="tool-card"><h4>SharePoint</h4><p>Used for documentation storage, shared references, process notes, QMS updates, and team coordination during project work.</p></div>
-        <div class="tool-card"><h4>QMS / Process Documentation</h4><p>Used for quality documentation, workflow notes, process references, compliance-related updates, and support evidence records.</p></div>
-        <div class="tool-card"><h4>Jira</h4><p>Used for defect tracking, issue status management, sprint-based task handling, and QA activity coordination in Agile environments.</p></div>
+        <div class="tool-card"><h4>ServiceNow</h4><p>The primary ticketing platform at Accenture. Used every day to log issues found in SAP testing, record validation notes, track escalations, and complete close-out documentation &mdash; around 10 tickets a day.</p></div>
+        <div class="tool-card"><h4>SAP S/4HANA</h4><p>The main system tested at Accenture. Each business process module was run step by step to find workflow failures, data mismatches, access issues, and patch-related defects before every release.</p></div>
+        <div class="tool-card"><h4>Excel / Google Sheets</h4><p>Where all test cases were written before execution, execution results were tracked, RTM documents were built, and test summary reports were prepared. Used in every role and in all portfolio case studies.</p></div>
+        <div class="tool-card"><h4>SharePoint</h4><p>Used at Accenture to store and share test documentation, QMS references, process notes, and release-related records across the team during the project.</p></div>
+        <div class="tool-card"><h4>Jira</h4><p>Used at Accenture alongside ServiceNow for sprint-based defect tracking &mdash; logging bugs from SAP and web testing, tracking them through the fix and retest cycle, and reporting open counts at sprint end.</p></div>
+        <div class="tool-card"><h4>Browser DevTools</h4><p>Opened with F12 during most testing sessions to check the Console tab for JavaScript errors and the Network tab for failed API calls. Screenshots from DevTools go directly into defect reports as evidence.</p></div>
       </div>
     </div>
 
     <div class="tool-group">
-      <div class="tool-group-title">Automation &amp; API Exposure</div>
+      <div class="tool-group-title">Automation &amp; API Tools &mdash; Used at Accenture and HCLTech</div>
       <div class="grid-3">
-        <div class="tool-card"><h4>Selenium (Python)</h4><p>Used for automation-supported regression validation, UI behavior checks, and stable smoke test candidates after manual test coverage was completed.</p></div>
-        <div class="tool-card"><h4>Postman (JavaScript)</h4><p>Used for API response validation, status code checks, response body verification, error handling confirmation, and authentication testing during regression cycles.</p></div>
-        <div class="tool-card"><h4>SQL</h4><p>Used for backend data integrity checks: verifying saved records, status values, history entries, timestamps, and data consistency after workflow execution.</p></div>
+        <div class="tool-card"><h4>Selenium + Python</h4><p>Used at Accenture and during HCLTech training to run Python scripts that checked UI elements and key workflow steps automatically during regression cycles &mdash; faster and consistent across every run compared to manual re-checking.</p></div>
+        <div class="tool-card"><h4>Postman + JavaScript</h4><p>Used at Accenture to send test requests to API endpoints, check that status codes and response data were correct, and confirm error handling worked. JavaScript scripts in the Tests tab ran the pass/fail checks automatically after each request.</p></div>
+        <div class="tool-card"><h4>SQL</h4><p>Run against the database at Accenture after SAP workflow steps to confirm the correct data was actually saved &mdash; not just that the screen said success, but that the database record matched what was expected.</p></div>
       </div>
     </div>
 
     <div class="tool-group">
-      <div class="tool-group-title">Supporting Tools</div>
+      <div class="tool-group-title">Additional Tools</div>
       <div class="grid-3">
-        <div class="tool-card"><h4>Browser DevTools</h4><p>Used for checking console errors, network behavior, UI responsiveness, screenshot capture, and gathering evidence during defect documentation.</p></div>
-        <div class="tool-card"><h4>GitHub</h4><p>Used for portfolio version control, project file management, and hosting QA case study artifacts on GitHub Pages.</p></div>
-        <div class="tool-card"><h4>Python / JavaScript</h4><p>Used in the context of Selenium test scripting and Postman validation scripts; not standalone development roles.</p></div>
+        <div class="tool-card"><h4>Python</h4><p>Used specifically for writing Selenium test scripts at Accenture and HCLTech &mdash; automating browser interactions to verify UI behavior and workflow stability during regression cycles.</p></div>
+        <div class="tool-card"><h4>JavaScript</h4><p>Used inside Postman to write the test assertions that automatically check API responses &mdash; status codes, response body fields, and error message validation.</p></div>
+        <div class="tool-card"><h4>GitHub</h4><p>Used to manage and publish the QA portfolio &mdash; all case study files are version-controlled here and served through GitHub Pages.</p></div>
       </div>
     </div>
 
-    <div class="section-head mt24"><div class="section-title">Tool Activity Mapping</div><p class="section-sub">How each tool supports specific QA activities during a test cycle.</p></div>
+    <div class="section-head mt24"><div class="section-title">Tool to Task Mapping</div><p class="section-sub">Exactly which tool was used for which QA activity.</p></div>
     <div class="table-wrap">
       <table>
-        <thead><tr><th>QA Activity</th><th>Tools Applied</th><th>Output / Evidence</th></tr></thead>
+        <thead><tr><th>QA Activity</th><th>Tool Used</th><th>What It Produced</th></tr></thead>
         <tbody>
-          <tr><td><strong>Ticket handling</strong></td><td>ServiceNow, Jira</td><td>Issue updates, validation notes, escalation status, closure notes</td></tr>
-          <tr><td><strong>Workflow validation</strong></td><td>SAP tools, ServiceNow, Excel</td><td>Passed/failed workflow checks, affected flow notes, retest results</td></tr>
-          <tr><td><strong>Regression testing</strong></td><td>Selenium (Python), SAP tools, Excel</td><td>UI behavior validation, regression pass/fail records, smoke checks</td></tr>
-          <tr><td><strong>API testing</strong></td><td>Postman (JavaScript)</td><td>Status codes, response body verification, error handling checks</td></tr>
-          <tr><td><strong>Data validation</strong></td><td>SQL, application records</td><td>Status/history checks, record consistency, saved data verification</td></tr>
-          <tr><td><strong>Test case writing</strong></td><td>Excel, Google Sheets</td><td>Test case ID, steps, expected result, test data, execution status</td></tr>
-          <tr><td><strong>Defect reporting</strong></td><td>ServiceNow, Jira, Browser DevTools</td><td>Bug title, steps to reproduce, expected vs. actual, severity, evidence</td></tr>
-          <tr><td><strong>QA documentation</strong></td><td>SharePoint, Excel, QMS references</td><td>Process notes, quality records, workflow references, support evidence</td></tr>
+          <tr><td><strong>SAP ticket handling</strong></td><td>ServiceNow, Jira</td><td>Issue updates, validation notes, escalation status, retest confirmation, close-out record</td></tr>
+          <tr><td><strong>SAP workflow validation</strong></td><td>SAP tools, SQL, ServiceNow</td><td>Workflow pass/fail results, database data checks, defect tickets for failures</td></tr>
+          <tr><td><strong>Regression testing</strong></td><td>Selenium (Python), SAP tools, Excel</td><td>Automated UI behavior checks, regression pass/fail records, execution report</td></tr>
+          <tr><td><strong>API testing</strong></td><td>Postman (JavaScript)</td><td>Status code checks, response body validation, error handling confirmation</td></tr>
+          <tr><td><strong>Back-end data validation</strong></td><td>SQL</td><td>Database record accuracy, status field values, history entry existence confirmed</td></tr>
+          <tr><td><strong>Test case writing</strong></td><td>Excel, Google Sheets</td><td>Test case sheet with IDs, steps, expected results, test data, and execution status</td></tr>
+          <tr><td><strong>Defect reporting</strong></td><td>ServiceNow, Jira, Browser DevTools</td><td>Defect ticket with replication steps, expected vs. actual, severity, priority, screenshot</td></tr>
+          <tr><td><strong>QA documentation</strong></td><td>Excel, SharePoint</td><td>Test execution report, test summary, release validation checklist, process notes</td></tr>
         </tbody>
       </table>
     </div>
-
   </div>
 </section>
 
 <footer class="footer">
-  <div>&copy; 2026 Jeric Semeniego &nbsp;&middot;&nbsp; QA Portfolio &nbsp;&middot;&nbsp; Non-confidential representative samples &nbsp;&middot;&nbsp; <a href="contact.html">Contact</a></div>
+  <div>&copy; 2026 Jeric Semeniego &nbsp;&middot;&nbsp; QA Portfolio &nbsp;&middot;&nbsp; Non-confidential samples &nbsp;&middot;&nbsp; <a href="contact.html">Contact</a></div>
 </footer>
 </body>
 </html>
