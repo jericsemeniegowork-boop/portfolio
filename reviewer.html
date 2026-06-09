@@ -61,10 +61,10 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 
 <div class="main">
   <h1 class="page-title">QA Interview Reviewer</h1>
-  <p class="page-sub">40 flashcards across 5 categories. Click a card to reveal the answer. Mark your progress as you go.</p>
+  <p class="page-sub">48 flashcards across 5 categories. Click a card to reveal the answer. Mark your progress as you go.</p>
 
   <div class="rv-stats">
-    <span class="stat-pill" id="s-total">40 cards</span>
+    <span class="stat-pill" id="s-total">48 cards</span>
     <span class="stat-pill green" id="s-got">0 got it</span>
     <span class="stat-pill amber" id="s-rev">0 review</span>
   </div>
@@ -72,8 +72,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
   <div class="cats" id="cats"></div>
 
   <div class="prog-row">
-    <div class="prog-wrap"><div class="prog-bar" id="pbar" style="width:2.5%"></div></div>
-    <span class="prog-label" id="plabel">1 / 40</span>
+    <div class="prog-wrap"><div class="prog-bar" id="pbar" style="width:2.1%"></div></div>
+    <span class="prog-label" id="plabel">1 / 48</span>
   </div>
 
   <div class="card-wrap" onclick="flip()">
@@ -146,7 +146,15 @@ const CARDS=[
 {cat:"Defect Management",q:"What makes a good defect report?",a:"(1) Clear, specific title summarizing the issue. (2) Steps to reproduce — numbered, precise, repeatable. (3) Expected result. (4) Actual result. (5) Severity and priority assigned correctly. (6) Environment details — browser, OS, build version. (7) Evidence — screenshot, recording, or logs. (8) Notes on frequency or conditions that trigger the issue."},
 {cat:"Defect Management",q:"What is severity vs. priority? Give an example.",a:"Severity = impact on the system. Priority = urgency to fix. Example 1: a spelling error on the homepage is low severity but high priority if a product launch is tomorrow. Example 2: a critical crash in a rarely-accessed admin screen is high severity but low priority if no users are affected. QA assigns severity; the team or product owner assigns priority."},
 {cat:"Defect Management",q:"When would you close a defect vs. defer it?",a:"Close when: the fix has been applied, the retest passed, and the functionality works as expected. Defer when: the fix is planned for a future sprint, the impact is low enough it does not block release, and the team agrees to defer. A deferred defect should be tracked with a clear reason and target fix date — not forgotten."},
-{cat:"Defect Management",q:"What is the role of evidence in defect reporting?",a:"Evidence (screenshots, recordings, console logs, network data) makes a defect report credible and actionable. It removes ambiguity — the developer can see exactly what happened without trying to reproduce it from text alone. Also helps when a developer cannot reproduce the defect in their environment. Browser DevTools is very useful for capturing this evidence."}
+{cat:"Defect Management",q:"What is the role of evidence in defect reporting?",a:"Evidence (screenshots, recordings, console logs, network data) makes a defect report credible and actionable. It removes ambiguity — the developer can see exactly what happened without trying to reproduce it from text alone. Also helps when a developer cannot reproduce the defect in their environment. Browser DevTools is very useful for capturing this evidence."},
+{cat:"QA Concepts",q:"What is the difference between SDLC and STLC?",a:"SDLC is the whole software lifecycle — requirements, design, coding, testing, deployment, and maintenance. STLC is just the testing part within it — requirement analysis, test planning, test case design, environment setup, execution, and closure. STLC sits inside SDLC."},
+{cat:"QA Concepts",q:"What is the difference between verification and validation?",a:"Verification is static — checking without running the code, like reviews and walkthroughs. 'Are we building it right?' Validation is dynamic — running the code and testing behavior, like functional and non-functional testing. 'Are we building the right thing?'"},
+{cat:"QA Concepts",q:"What is functional vs. non-functional testing?",a:"Functional testing checks what the system does — features, workflows, business rules. Non-functional checks how it performs — performance, load, security, usability. Be honest in interviews: strong on functional, basic on non-functional (response-time checks and basic security validation)."},
+{cat:"QA Concepts",q:"What is black box vs. white box vs. grey box testing?",a:"Black box — testing without knowing the internal code, just inputs and expected outputs (most manual QA). White box — testing with full knowledge of the code and logic. Grey box — partial knowledge of the internals, a mix of both."},
+{cat:"QA Concepts",q:"What is the V&V model (V-model)?",a:"The V-model pairs each development phase with a matching testing activity. As requirements, design, and code are built on the left side, the corresponding test cases (acceptance, system, integration, unit) are prepared on the right side. Testing starts early, from the requirement phase, not just at the end."},
+{cat:"QA Concepts",q:"Name the main test artifacts.",a:"Test plan — the overall strategy, scope, and resources. Test scenario — a high-level statement of what to test. Test case — the detailed steps, data, and expected result. RTM (Requirement Traceability Matrix) — maps requirements to test cases so nothing is missed. I have built all four."},
+{cat:"QA Concepts",q:"What are the levels of testing?",a:"Unit testing (individual code pieces, usually by developers), integration testing (components working together), system testing (the full integrated application — functional and non-functional), and acceptance testing (UAT — business users confirm it meets requirements)."},
+{cat:"QA Concepts",q:"What are some key principles of testing?",a:"Testing shows the presence of defects, not their absence. Exhaustive testing is impossible. Test early. Defects cluster (most bugs sit in a few modules). Testing is context-dependent — a banking app and a game are tested differently. An error-free product is a myth; you test against requirements."}
 ];
 
 let cat='All',idx=0,flipped=false,got=new Set(),rev=new Set(),shuffleOn=false,order=[];

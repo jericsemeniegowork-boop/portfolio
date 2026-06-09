@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>QA Tools Matrix | Jeric Semeniego QA Portfolio</title>
+<link rel="stylesheet" href="../style.css">
+<style>
+.art-wrap{max-width:1000px;margin:0 auto;padding:0 24px}
+.art-table{width:100%;border-collapse:collapse;margin:0 0 24px;font-size:13px;background:#fff;border:1px solid var(--border);border-radius:8px;overflow:hidden}
+.art-table th{background:var(--navy);color:#fff;text-align:left;padding:10px 12px;font-size:11px;text-transform:uppercase;letter-spacing:.05em;font-weight:600;vertical-align:top}
+.art-table td{padding:10px 12px;border-top:1px solid var(--border);color:var(--text);vertical-align:top;line-height:1.5}
+.art-table tr:nth-child(even) td{background:var(--bg)}
+.art-table td .step{display:block}
+.badge-pass{color:#27500A;background:#EAF3DE;padding:2px 8px;border-radius:20px;font-size:11px;font-weight:600;white-space:nowrap}
+.badge-fail{color:#991B1B;background:#FEF2F2;padding:2px 8px;border-radius:20px;font-size:11px;font-weight:600;white-space:nowrap}
+.badge-na{color:#475569;background:#F1F5F9;padding:2px 8px;border-radius:20px;font-size:11px;font-weight:600;white-space:nowrap}
+.art-md h2{color:var(--navy);font-size:18px;font-weight:700;margin:24px 0 10px;padding-bottom:6px;border-bottom:2px solid var(--border)}
+.art-md h3{color:var(--navy);font-size:15px;font-weight:700;margin:18px 0 8px}
+.art-md p{font-size:14px;line-height:1.7;color:var(--text);margin-bottom:10px}
+.art-md ul{margin:0 0 14px;padding-left:22px}
+.art-md li{font-size:14px;line-height:1.7;color:var(--text);margin-bottom:5px}
+.art-md strong{color:var(--navy)}
+.art-back{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--navy);text-decoration:none;font-weight:600;margin-bottom:8px}
+.art-back:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-brand"><span class="n">JERIC SEMENIEGO</span><span class="r">QA Analyst</span></a>
+    <button class="nav-toggle" onclick="document.getElementById('nav').classList.toggle('open')">&#9776;</button>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li><li><a href="../experience.html">Experience</a></li>
+      <li><a href="../testing-process.html">Testing</a></li><li><a href="../case-studies.html">Case Studies</a></li>
+      <li><a href="../qa-documents.html" class="active">QA Docs</a></li><li><a href="../tools.html">Tools</a></li>
+      <li><a href="../education.html">Education</a></li><li><a href="../contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+<section class="page-hero">
+  <div class="container">
+    <span class="page-hero-tag">QA Artifact</span>
+    <h1>QA Tools Matrix</h1>
+    <p>Which tools support which QA activities across planning, execution, and validation.</p>
+  </div>
+</section>
+<section class="section">
+  <div class="art-wrap">
+    <a href="../qa-documents.html" class="art-back">&larr; Back to QA Documents</a>
+    <div class="art-md"><h2>QA Tools Utilized in Test Cases</h2><p>I created this artifact to explain how manual testing tools and automation testing tools are applied inside the sample portfolio test cases. The goal is to show applied QA workflow while keeping the tool usage representative and non-confidential.</p><h2>Manual Testing Tools Utilized</h2><div style="overflow-x:auto"><table class="art-table"><thead><tr><th>Tool Category</th><th>Tools</th><th>How It Supports the Sample Test Cases</th><th>Sample Output</th></tr></thead><tbody><tr><td>Test Management</td><td>TestRail, Zephyr, Excel/Google Sheets</td><td>Created test cases, grouped them by module, assigned priority, recorded expected result, actual result, execution status, and retest result.</td><td>Test run record, pass/fail count, execution summary</td></tr><tr><td>Bug Tracking</td><td>Jira, Bugzilla, Mantis, ServiceNow-style tickets</td><td>Logged defects from failed test cases with reproduction steps, severity, priority, environment, screenshots/video, and retest notes.</td><td>Defect report, escalation ticket, retest evidence</td></tr><tr><td>API Exploration</td><td>Postman</td><td>Manually triggered API requests to compare backend responses with UI behavior before automation.</td><td>API response notes, status code validation, auth check evidence</td></tr><tr><td>Cross-Browser / Device Checks</td><td>BrowserStack</td><td>Checked UI behavior across desktop and mobile browsers, device sizes, and operating systems.</td><td>Cross-browser screenshots, compatibility checklist</td></tr></tbody></table></div><h2>Automation Testing Tools Utilized</h2><div style="overflow-x:auto"><table class="art-table"><thead><tr><th>Tool Category</th><th>Tools</th><th>How It Supports the Sample Test Cases</th><th>Best Candidate Tests</th></tr></thead><tbody><tr><td>Web Automation</td><td>Selenium, Cypress, Playwright</td><td>Identified stable UI flows that should be automated after manual validation.</td><td>Login smoke, submit request, account overview, read-only validation</td></tr><tr><td>Mobile Automation</td><td>Appium</td><td>Planned mobile regression coverage for banking app flows after requirements are stable.</td><td>Mobile login, balance display, session timeout, cross-app sync</td></tr><tr><td>Low-Code / No-Code Automation</td><td>BugBug.io, Testim-style tools</td><td>Used as an option for quick recorded smoke flows, with manual review to avoid weak assertions and flaky steps.</td><td>Login, dashboard open, balance page open</td></tr><tr><td>Performance Testing</td><td>Apache JMeter, LoadRunner</td><td>Planned baseline load and response-time checks for high-risk customer flows.</td><td>Login, account overview, balance refresh, transaction history</td></tr></tbody></table></div><h2>Tool Utilization by Sample Test Case</h2><div style="overflow-x:auto"><table class="art-table"><thead><tr><th>Sample Test Case</th><th>Tools Utilized</th><th>How the Tool Supports the Test</th><th>Output / Evidence</th></tr></thead><tbody><tr><td>TC-PR-001: Create purchase request with valid data</td><td>TestRail/Zephyr, Excel/Sheets</td><td>Documented steps, test data, expected result, actual result, and pass/fail status.</td><td>Executed test case record and test summary count</td></tr><tr><td>TC-PR-006: Approved request becomes read-only</td><td>Jira-style bug tracker, Selenium/Playwright candidate</td><td>Logged defect if approved request remained editable; marked as regression automation candidate after fix.</td><td>Bug report with severity, screenshots, and retest status</td></tr><tr><td>TC-GAME-ECO-001: Fictional reward is granted once only</td><td>Bug tracker, logs/telemetry, test harness candidate</td><td>Validated reward transaction count, inventory state, reconnect behavior, and duplicate prevention.</td><td>Incident ticket, log evidence, escalation notes</td></tr><tr><td>TC-GAME-PATCH-002: Patch regression for stable/mount behavior</td><td>Checklist, video evidence, bug tracker</td><td>Repeated stable entry, exit, and mount recall steps after patch changes.</td><td>Regression checklist and video evidence if failed</td></tr><tr><td>TC-BANK-001: Account balance displays correctly</td><td>TestRail/Zephyr, Postman, BrowserStack</td><td>Verified UI balance, compared API response, and checked consistency across desktop and mobile browsers.</td><td>Manual execution result, API response notes, cross-device screenshots</td></tr><tr><td>TC-BANK-SEC-001: Unauthorized account data is not exposed</td><td>Postman, bug tracker, security checklist</td><td>Checked that API responses only return data for the authenticated customer and do not expose other account details.</td><td>API evidence and security defect if failed</td></tr><tr><td>TC-BANK-A11Y-001: Account page supports accessibility expectations</td><td>Accessibility checklist, BrowserStack/device testing</td><td>Checked keyboard navigation, labels, focus order, contrast concerns, and screen-reader-friendly structure where available.</td><td>Accessibility notes and defects for failed items</td></tr><tr><td>TC-BANK-PERF-001: Account overview response under load</td><td>JMeter/LoadRunner</td><td>Planned response-time and load baseline for login/account overview under expected traffic.</td><td>Performance summary with response time, errors, and bottlenecks</td></tr></tbody></table></div><h2>Automation Priority</h2><div style="overflow-x:auto"><table class="art-table"><thead><tr><th>Priority</th><th>Automate</th><th>Keep Manual / Specialist-Led</th></tr></thead><tbody><tr><td>High</td><td>Login smoke, critical happy paths, API authorization checks, account/reward transaction consistency</td><td>Requirement clarification, suspected abuse investigation, business-rule interpretation</td></tr><tr><td>Medium</td><td>Cross-browser checks, basic accessibility scans, repeated form validation</td><td>Screen reader review, localization judgment, visual polish</td></tr><tr><td>Low</td><td>Stable minor checks only if valuable</td><td>One-off UI changes and unclear requirements</td></tr></tbody></table></div><h2>Professional Positioning</h2><p>Manual QA remains the foundation: understand requirements, ask the right questions, design useful tests, execute carefully, and document defects clearly. Automation is strongest when used for stable, repeatable, high-risk checks that need to run often.</p></div>
+  </div>
+</section>
+<footer class="footer"><div>&copy; 2026 Jeric Semeniego &nbsp;&middot;&nbsp; QA Portfolio &nbsp;&middot;&nbsp; Non-confidential sample</div></footer>
+</body>
+</html>

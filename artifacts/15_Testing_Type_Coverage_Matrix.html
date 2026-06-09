@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Testing Type Coverage Matrix | Jeric Semeniego QA Portfolio</title>
+<link rel="stylesheet" href="../style.css">
+<style>
+.art-wrap{max-width:1000px;margin:0 auto;padding:0 24px}
+.art-table{width:100%;border-collapse:collapse;margin:0 0 24px;font-size:13px;background:#fff;border:1px solid var(--border);border-radius:8px;overflow:hidden}
+.art-table th{background:var(--navy);color:#fff;text-align:left;padding:10px 12px;font-size:11px;text-transform:uppercase;letter-spacing:.05em;font-weight:600;vertical-align:top}
+.art-table td{padding:10px 12px;border-top:1px solid var(--border);color:var(--text);vertical-align:top;line-height:1.5}
+.art-table tr:nth-child(even) td{background:var(--bg)}
+.art-table td .step{display:block}
+.badge-pass{color:#27500A;background:#EAF3DE;padding:2px 8px;border-radius:20px;font-size:11px;font-weight:600;white-space:nowrap}
+.badge-fail{color:#991B1B;background:#FEF2F2;padding:2px 8px;border-radius:20px;font-size:11px;font-weight:600;white-space:nowrap}
+.badge-na{color:#475569;background:#F1F5F9;padding:2px 8px;border-radius:20px;font-size:11px;font-weight:600;white-space:nowrap}
+.art-md h2{color:var(--navy);font-size:18px;font-weight:700;margin:24px 0 10px;padding-bottom:6px;border-bottom:2px solid var(--border)}
+.art-md h3{color:var(--navy);font-size:15px;font-weight:700;margin:18px 0 8px}
+.art-md p{font-size:14px;line-height:1.7;color:var(--text);margin-bottom:10px}
+.art-md ul{margin:0 0 14px;padding-left:22px}
+.art-md li{font-size:14px;line-height:1.7;color:var(--text);margin-bottom:5px}
+.art-md strong{color:var(--navy)}
+.art-back{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--navy);text-decoration:none;font-weight:600;margin-bottom:8px}
+.art-back:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-brand"><span class="n">JERIC SEMENIEGO</span><span class="r">QA Analyst</span></a>
+    <button class="nav-toggle" onclick="document.getElementById('nav').classList.toggle('open')">&#9776;</button>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li><li><a href="../experience.html">Experience</a></li>
+      <li><a href="../testing-process.html">Testing</a></li><li><a href="../case-studies.html">Case Studies</a></li>
+      <li><a href="../qa-documents.html" class="active">QA Docs</a></li><li><a href="../tools.html">Tools</a></li>
+      <li><a href="../education.html">Education</a></li><li><a href="../contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+<section class="page-hero">
+  <div class="container">
+    <span class="page-hero-tag">QA Artifact</span>
+    <h1>Testing Type Coverage Matrix</h1>
+    <p>Maps functional, regression, security, and accessibility checks across testing types.</p>
+  </div>
+</section>
+<section class="section">
+  <div class="art-wrap">
+    <a href="../qa-documents.html" class="art-back">&larr; Back to QA Documents</a>
+    <div class="art-md"><h2>Testing Type Coverage Matrix Across Portfolio Case Studies</h2><p>I created this artifact to map common QA testing types across three representative case studies: Purchase Request workflow, fictional online western game patch testing, and Banking account balance validation.</p><div style="overflow-x:auto"><table class="art-table"><thead><tr><th>Testing Type</th><th>Purchase Request Case</th><th>Fictional Game Patch Case</th><th>Banking Case</th></tr></thead><tbody><tr><td>Functional</td><td>Create, submit, approve, reject, status update, read-only behavior</td><td>Treasure reward claim, Wildlife Research samples, Open-World Mission launch, stable entry, mount recall</td><td>Login, MFA, account overview, balance display, logout</td></tr><tr><td>UI / Visual</td><td>Required labels, disabled fields, confirmations, status chips</td><td>Reward screen, map marker, stable menu, public name labels, voice chat setting</td><td>Balance cards, masked account display, error messages, negative balance display</td></tr><tr><td>Security / Access Control</td><td>Requester cannot approve own request; unauthorized user blocked</td><td>Server rejects duplicate reward claims and invalid chest interactions</td><td>Unauthorized URL blocked; MFA/session/logout/token behavior</td></tr><tr><td>Privacy</td><td>Request details only visible to permitted roles</td><td>Custom crew and mount names not publicly visible after patch</td><td>Account number masking and no sensitive data in URLs/logs/errors</td></tr><tr><td>Internationalization</td><td>Currency/date questions if global</td><td>Regional/session behavior if supported</td><td>Country access rules, currency, date, decimal format, IP/risk behavior</td></tr><tr><td>Localization</td><td>Translated validation/status text if multilingual</td><td>Reward, mission, and settings strings in supported languages</td><td>Supported languages, long strings, RTL if supported, translated errors</td></tr><tr><td>Accessibility</td><td>Keyboard flow, focus order, contrast, clear errors</td><td>Menu prompts, captions/subtitles, readable reward summaries</td><td>Screen reader labels, keyboard-only flow, contrast, non-color-only errors</td></tr><tr><td>Performance</td><td>Save, submit, approve, list refresh response</td><td>Stable load, session load, long session stability, crash checks</td><td>Login/account overview load, mobile 3G/4G, memory, battery observation</td></tr><tr><td>Cross-App / Compatibility</td><td>Browser/device support</td><td>PC/console/controller/keyboard behavior</td><td>Web/mobile sync, browsers, mobile OS/device coverage</td></tr><tr><td>Negative / Boundary</td><td>Missing fields, invalid amount, reject without reason</td><td>Reconnect during reward claim, session change, area reload, multiple maps</td><td>Wrong password, locked account, negative balance, unavailable service</td></tr><tr><td>Regression</td><td>Re-run main workflow after fixes</td><td>Re-run latest patch fixes and reward integrity checks</td><td>Re-run balance, masking, logout, cross-channel checks</td></tr><tr><td>Automation</td><td>Login, create draft, submit, approve, status checks</td><td>Economy idempotency, reward multiplier, stable/mount smoke, launch smoke</td><td>API masking, authorization, account overview response, UI smoke</td></tr></tbody></table></div><h2>Portfolio Summary</h2><p>The goal is not to claim complete product knowledge. The goal is to show structured QA thinking: ask requirement questions, identify high-risk areas, define expected behavior, execute test cases, validate evidence, report defects, and recommend release readiness.</p></div>
+  </div>
+</section>
+<footer class="footer"><div>&copy; 2026 Jeric Semeniego &nbsp;&middot;&nbsp; QA Portfolio &nbsp;&middot;&nbsp; Non-confidential sample</div></footer>
+</body>
+</html>
