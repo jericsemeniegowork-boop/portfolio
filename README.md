@@ -1,123 +1,48 @@
-# Jeric Semeniego | QA Portfolio
+# Jeric Semeniego — QA Analyst Portfolio
 
-Live Portfolio: https://jericsemeniegowork-boop.github.io/portfolio/
+A portfolio of my QA work: manual testing, regression, UAT support, defect
+documentation, and self-made practice case studies. Built to show how I
+approach testing, not just that I can.
 
-A portfolio covering manual testing, UAT support, regression testing, defect reporting, ticket handling, QMS/process documentation, and workflow validation. Built to demonstrate a practical QA approach: understand the flow, identify what needs to be tested, execute the checks, document issues, retest as needed, and summarize results.
+**Live site:** https://jericsemeniegowork-boop.github.io/portfolio/
 
-## What's Included
+---
 
-- Testing process
-- Internal service filing workflow case study
-- Sample test case set
-- Back button navigation defect sample
-- QA documents with readable previews
-- Tools used and QA activity mapping
-- QMS / process documentation support
-- Banking QA and Game QA supporting samples
-- CSE Review Studio web app project
-- Resume
+## About
 
-## Main Case Study
+I'm a QA Analyst with around 2.5 years of QA-related experience across
+enterprise and web-based systems. My core experience is at Accenture doing
+SAP S/4HANA testing and IT support, plus ongoing freelance testing and AI
+evaluation work.
 
-### Internal Service Filing Workflow
+This site collects my testing process, work history, and a set of
+non-confidential QA case studies I built to demonstrate how I work.
 
-A neutral, non-confidential workflow sample focused on filing and record management.
+## What's inside
 
-Covered areas:
+- **Home** — overview and key skills
+- **Experience** — work history across QA, SAP support, and testing roles
+- **Testing Process** — how I approach testing, step by step
+- **Case Studies** — three self-made QA practice samples (service filing
+  workflow, banking app, game patch)
+- **QA Documents** — test plans, test cases, RTM, defect reports, and
+  checklists, shown as clean readable pages
+- **Tools** — the tools I use and what I use them for
+- **Education** — degree, training, and capstone project
+- **Contact** — how to reach me
 
-- UI and navigation checks
-- Forms and data entry
-- Record management
-- Data integrity
-- End-to-end workflow
-- Generated document checks
-- Jira issue tracking
+## Tools I work with
 
-## Defect Sample
-
-### Back Button Navigation Redirects to Incorrect Page
-
-A cleaned and anonymized defect sample demonstrating documentation of:
-
-- Issue description
-- Affected workflow
-- Replication steps
-- Expected result
-- Actual result
-- Impact
-- Severity
-- Possible shared navigation handling concern
-
-## QA Documents
-
-The `qa-test-artifacts/` folder includes:
-
-- Requirement Analysis
-- Test Plan
-- Test Scenarios
-- Manual Test Cases
-- Requirement Traceability Matrix
-- Test Data
-- Defect Report Samples
-- Regression Checklist
-- UAT Checklist
-- Test Execution Report
-- Test Summary Report
-- Release Validation Checklist
-- Banking QA and Game QA samples
-- Testing Type Coverage Matrix
-- QA Tools Matrix
-
-## Tools
-
-Tools and exposure shown in this portfolio:
-
-- ServiceNow
-- SAP S/4HANA / SAP tools
-- Excel / Google Sheets
-- SharePoint
-- QMS / process documentation
-- SQL checks
-- Postman / API checks
-- Selenium basics
-- Browser DevTools
-- GitHub
-- Jira-style tracking
-
-## Education
-
-Bachelor of Science in Information Technology
-STI College San Pablo | 2023
-
-## Resume
-
-Resume is included in the `resume/` folder.
-
-## Contact
-
-**Email:** jeric.semeniego.work@gmail.com
-**Phone:** +63 961 871 1368
-**Location:** Pasig City, Metro Manila, Philippines
-**GitHub:** https://github.com/jericsemeniegowork-boop
-**Portfolio:** https://jericsemeniegowork-boop.github.io/portfolio/
+ServiceNow · Jira · SAP S/4HANA · Excel / Google Sheets · Postman ·
+SQL (basic) · Selenium (basic) · Python (basic) · Browser DevTools · Git
 
 ## Note
 
-All samples are representative and non-confidential. Created to demonstrate QA process, documentation style, testing mindset, and the ability to explain work clearly.
+The case studies here are self-made practice samples built for this
+portfolio, not client work. They're meant to show my testing approach,
+documentation style, and thinking.
 
-## Portfolio Structure
+## Contact
 
-This portfolio is organized into separate pages:
-
-- Home: `index.html`
-- Testing Process: `testing-process.html`
-- Case Studies: `case-studies.html`
-- QA Documents: `qa-documents.html`
-- Tools: `tools.html`
-- Experience: `experience.html`
-- Education: `education.html`
-- Contact: `contact.html`
-
-## References
-
-Available upon request.
+- Email: jeric.semeniego.work@gmail.com
+- Portfolio: https://jericsemeniegowork-boop.github.io/portfolio/
