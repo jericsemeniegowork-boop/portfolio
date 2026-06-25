@@ -37,11 +37,6 @@ Selenium (basic) · Python (basic) · Browser DevTools · Git
 The case studies here are self-built practice samples, not client work.
 They show my testing approach, documentation style, and how I think.
 
-## Running locally
-
-It's plain HTML and CSS. Open `index.html` in any browser, or serve the folder
-with any static server. No build step.
-
 ## Contact
 
 - Email: jeric.semeniego.work@gmail.com
