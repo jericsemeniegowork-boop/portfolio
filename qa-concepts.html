@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="QA testing concepts reference with honest proficiency calibration.">
+<title>QA Concepts | Jeric Semeniego QA Portfolio</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.concept-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1rem;margin-top:1.2rem}
+.concept-card{background:#fff;border:1px solid #e8e8ec;border-radius:8px;padding:1.1rem 1.2rem;display:flex;flex-direction:column;gap:.6rem}
+.concept-card-head{display:flex;justify-content:space-between;align-items:flex-start;gap:.5rem}
+.concept-card h4{margin:0;font-size:1.05rem;font-weight:700;color:#1a1a1a}
+.concept-level{font-size:.7rem;font-weight:700;padding:.2rem .55rem;border-radius:12px;white-space:nowrap;font-family:Consolas,Menlo,monospace}
+.level-prof{background:#e3f7ee;color:#1f6b46}
+.level-work{background:#e6f1fb;color:#11568f}
+.level-basic{background:#fff4e0;color:#8a4b00}
+.concept-short{font-size:.92rem;color:#3a3a3a;margin:0;font-weight:600;line-height:1.5}
+.concept-long{font-size:.85rem;color:#555;margin:0;line-height:1.6}
+.concept-personal{font-size:.82rem;color:#444;margin:0;background:#f6f7fa;padding:.55rem .7rem;border-left:3px solid #5b6bd6;border-radius:0 4px 4px 0;line-height:1.55}
+.concept-personal strong{color:#11568f}
+.concept-examples{font-size:.82rem;color:#555;margin:0}
+.concept-examples summary{cursor:pointer;font-weight:600;color:#11568f;padding:.2rem 0}
+.concept-examples ul{margin:.4rem 0 0 1.1rem;padding:0}
+.concept-examples li{margin-bottom:.2rem;line-height:1.5}
+.concept-subtype-block{margin-top:.4rem;border-top:1px dashed #e8e8ec;padding-top:.6rem}
+.concept-subtype-title{font-size:.7rem;text-transform:uppercase;letter-spacing:.05em;color:#777;font-weight:700;margin-bottom:.45rem}
+.concept-subtype-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:.5rem}
+.concept-subtype-card{background:#fafbfc;border:1px solid #ebebef;border-radius:6px;padding:.5rem .6rem;display:flex;flex-direction:column;gap:.15rem}
+.concept-subtype-card strong{font-size:.78rem;color:#1a1a1a;font-weight:700}
+.concept-subtype-card span{font-size:.72rem;color:#555;line-height:1.4}
+.concept-summary-row{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.8rem}
+.concept-summary-chip{font-size:.78rem;font-weight:600;padding:.3rem .8rem;border-radius:14px;font-family:Consolas,Menlo,monospace}
+</style>
+</head>
+<body>
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand"><span class="n">JERIC SEMENIEGO</span><span class="r">QA Analyst</span></a>
+    <button class="nav-toggle" onclick="document.getElementById('nav').classList.toggle('open')">&#9776;</button>
+    <ul class="nav-links"><li><a href="index.html" class="">Home</a></li><li><a href="experience.html" class="">Experience</a></li><li><a href="testing-process.html" class="">Testing</a></li><li><a href="qa-concepts.html" class="active">Concepts</a></li><li><a href="case-studies.html" class="">Case Studies</a></li><li><a href="qa-documents.html" class="">QA Docs</a></li><li><a href="tools.html" class="">Tools</a></li><li><a href="education.html" class="">Education</a></li><li><a href="contact.html" class="">Contact</a></li></ul>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="container">
+    <span class="page-hero-tag">QA Reference</span>
+    <h1>Testing Concepts &amp; Proficiency</h1>
+    <p>The testing categories I work across, organized the way they actually break down in practice. Each one has an honest proficiency tag based on real work history. Items I have not done hands-on are included for completeness but left unlabeled rather than padded.</p>
+    <div class="concept-summary-row">
+      <span class="concept-summary-chip level-prof">11 Proficient</span>
+      <span class="concept-summary-chip level-work">1 Working</span>
+      <span class="concept-summary-chip level-basic">1 Basic, growing</span>
+      <span class="concept-summary-chip" style="background:#eee;color:#555">5 Reference</span>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head"><div class="section-title">By Purpose: What the Test Is Checking</div></div>
+    <div class="concept-grid">
+    <div class="concept-card">
+      <div class="concept-card-head">
+        <h4>Functional Testing</h4>
+        <span class="concept-level level-prof">Proficient</span>
+      </div>
+      <p class="concept-short">Checks the system behaves the way the requirements say it should.</p>
+      <p class="concept-long">Verifies that features produce the expected output for given inputs, against documented requirements or user stories. Does not concern itself with internal logic or performance, only correctness of behavior.</p>
+      <p class="concept-personal"><strong>In my work:</strong> Daily work at Accenture across SAP S/4HANA and web release cycles, validating fixes against acceptance criteria.</p>
+      <details class="concept-examples"><summary>Examples</summary><ul><li>Login produces a session on valid credentials</li><li>Order checkout creates a record with the expected total</li><li>A form rejects invalid email format</li></ul></details>
+    </div>
+    <div class="concept-card">
+      <div class="concept-card-head">
+        <h4>Non-Functional Testing</h4>
+        <span class="concept-level level-work">Working</span>
+      </div>
+      <p class="concept-short">Measures how well the system performs, not whether it works.</p>
+      <p class="concept-long">Covers performance, security, usability, compatibility, and reliability. Asks &#x27;how good&#x27; rather than &#x27;does it work.&#x27; Often expressed as service-level objectives (e.g., response under 2 seconds, support 1,000 concurrent users).</p>
+      <p class="concept-personal"><strong>In my work:</strong> Performance spot-checks during release windows, usability validation alongside business users, and workflow stability checks. Not formal load testing with dedicated tooling.</p>
+      <div class="concept-subtype-block"><div class="concept-subtype-title">Sub-types</div><div class="concept-subtype-grid"><div class="concept-subtype-card"><strong>Performance Testing</strong><span></span></div><div class="concept-subtype-card"><strong>Security Testing</strong><span></span></div><div class="concept-subtype-card"><strong>Usability Testing</strong><span></span></div><div class="concept-subtype-card"><strong>Compatibility Testing</strong><span></span></div><div class="concept-subtype-card"><strong>Reliability Testing</strong><span></span></div></div></div>
+    </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head"><div class="section-title">By Visibility: How Much You Know About the Code</div></div>
+    <div class="concept-grid">
+    <div class="concept-card">
+      <div class="concept-card-head">
+        <h4>Black Box Testing</h4>
+        <span class="concept-level level-prof">Proficient</span>
+      </div>
+      <p class="concept-short">No view into the code. Test purely from inputs and expected outputs.</p>
+      <p class="concept-long">The tester treats the system as a sealed box: feed in inputs, observe outputs, compare against the spec. Most QA work sits here, especially manual functional and UAT testing. Strong fit for behavior validation; blind to coverage of internal logic.</p>
+      <p class="concept-personal"><strong>In my work:</strong> Almost all QA work at Accenture falls into this category: testing against requirements and acceptance criteria, no source code access needed.</p>
+    </div>
+    <div class="concept-card">
+      <div class="concept-card-head">
+        <h4>White Box Testing</h4>
+      </div>
+      <p class="concept-short">Full view into the code. Tests internal logic, branches, paths.</p>
+      <p class="concept-long">Requires knowledge of the implementation. Includes unit tests, statement coverage, branch coverage, path coverage. Usually owned by developers, sometimes by automation engineers writing structural tests.</p>
+      <p class="concept-personal"><strong>In my work:</strong> Conceptual knowledge; not part of my day-to-day role.</p>
+    </div>
+    <div class="concept-card">
+      <div class="concept-card-head">
+        <h4>Gray Box Testing</h4>
+      </div>
+      <p class="concept-short">Partial visibility. Knowing some internal structure to guide smarter tests.</p>
+      <p class="concept-long">Combines black-box behavior validation with limited knowledge of internals (database schema, API contracts, basic architecture). Common for QA who write SQL queries to verify data integrity or check API responses against known schemas.</p>
+      <p class="concept-personal"><strong>In my work:</strong> Informally present when I use SQL queries or known SAP table structures to verify backend state during testing.</p>
+    </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head"><div class="section-title">By Level: Where in the Stack the Test Sits</div></div>
+    <div class="concept-grid">
+    <div class="concept-card">
+      <div class="concept-card-head">
+        <h4>Unit Testing</h4>
+      </div>
+      <p class="concept-short">Tests a single function, method, or component in isolation.</p>
+      <p class="concept-long">The lowest level of testing. Cheap, fast, runs in seconds. Typically written by developers as part of their normal workflow and executed automatically on every commit by a CI server. The base of the testing pyramid.</p>
+      <p class="concept-personal"><strong>In my work:</strong> Developer-owned in my workplaces; not part of my QA scope.</p>
+    </div>
+    <div class="concept-card">
+      <div class="concept-card-head">
+        <h4>Integration Testing</h4>
+        <span class="concept-level level-prof">Proficient</span>
+      </div>
+      <p class="concept-short">Tests that two or more modules or services work correctly together.</p>
+      <p class="concept-long">Verifies the wiring between components: an API talking to a database, a microservice calling another, a form submitting to a backend. More expensive than unit tests because real (or near-real) infrastructure has to be running.</p>
+      <p class="concept-personal"><strong>In my work:</strong> Cross-module business process validation at Accenture with SAP S/4HANA: testing how data flows between modules and how downstream processes react to upstream changes.</p>
+    </div>
+    <div class="concept-card">
+      <div class="concept-card-head">
+        <h4>System Testing</h4>
+      </div>
+      <p class="concept-short">Tests the entire integrated system as a whole against requirements.</p>
+      <p class="concept-long">The complete application is exercised end to end in an environment that matches production as closely as possible. Catches issues that only surface when every piece is connected.</p>
+      <p class="concept-personal"><strong>In my work:</strong> Regression and release cycles at Accenture: full SAP S/4HANA flows and connected web applications tested together before sign-off.</p>
+    </div>
+    <div class="concept-card">
+      <div class="concept-card-head">
+        <h4>End-to-End Testing</h4>
+        <span class="concept-level level-prof">Proficient</span>
+      </div>
+      <p class="concept-short">Walks through a full user journey from start to finish.</p>
+      <p class="concept-long">Replicates real user behavior across the full system: log in, navigate, perform a transaction, receive a confirmation. Can be manual or automated. Manual E2E (which is what UAT often is) catches real-world issues; automated E2E is expensive to maintain but valuable in small targeted doses.</p>
+      <p class="concept-personal"><strong>In my work:</strong> UAT coordination at Accenture: full user journeys validated with business users before go-live. Manual E2E in practice.</p>
+    </div>
+    <div class="concept-card">
+      <div class="concept-card-head">
+        <h4>Acceptance Testing</h4>
+        <span class="concept-level level-prof">Proficient</span>
+      </div>
+      <p class="concept-short">Formal verification that a system satisfies business requirements.</p>
+      <p class="concept-long">Often the gate before a release is approved. Requires the whole application to be running. Can include user acceptance testing (UAT, business users) and operational acceptance testing (does it deploy, recover, scale).</p>
+      <p class="concept-personal"><strong>In my work:</strong> UAT coordination with business users at Accenture, including sign-off cycles before go-live.</p>
+    </div>
+    <div class="concept-card">
+      <div class="concept-card-head">
+        <h4>User Acceptance Testing (UAT)</h4>
+        <span class="concept-level level-prof">Proficient</span>
+      </div>
+      <p class="concept-short">Real users (or business representatives) confirm the system meets their needs.</p>
+      <p class="concept-long">The final human check before release. Driven by people who will actually use the software, not by the QA or dev team alone. UAT scripts are usually written in business language, not technical specs.</p>
+      <p class="concept-personal"><strong>In my work:</strong> Coordinated UAT cycles at Accenture: authored checklists, walked business users through validation, captured sign-off.</p>
+    </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head"><div class="section-title">By Approach: How the Tests Are Run</div></div>
+    <div class="concept-grid">
+    <div class="concept-card">
+      <div class="concept-card-head">
+        <h4>Manual Testing</h4>
+        <span class="concept-level level-prof">Proficient</span>
+      </div>
+      <p class="concept-short">Human-driven testing. A real person executes the steps and judges the result.</p>
+      <p class="concept-long">Indispensable for exploratory, usability, and early-stage validation where automation would be premature or unable to judge nuance. Slower per run but flexible and intelligent.</p>
+      <p class="concept-personal"><strong>In my work:</strong> Primary mode of work across nearly 3 years: Accenture, HCLTech training, TCL, and portfolio projects.</p>
+    </div>
+    <div class="concept-card">
+      <div class="concept-card-head">
+        <h4>Automation Testing</h4>
+        <span class="concept-level level-basic">Basic, growing</span>
+      </div>
+      <p class="concept-short">Scripts and tools execute tests repeatedly, faster than humans can.</p>
+      <p class="concept-long">Best fit for regression, repetitive checks, and CI/CD pipelines. Expensive to write and maintain, especially at UI level, so usually concentrated at lower levels (unit, integration, API) with a few key UI scripts on top. Tooling examples: Selenium, Playwright, Cypress, Postman/Newman for API.</p>
+      <p class="concept-personal"><strong>In my work:</strong> Selenium with Python at a contributing level: ran existing scripts during regression, triaged failures, suggested adjustments under senior guidance. Postman with JavaScript for API regression. Growing toward independent ownership.</p>
+    </div>
+    <div class="concept-card">
+      <div class="concept-card-head">
+        <h4>Exploratory Testing</h4>
+        <span class="concept-level level-prof">Proficient</span>
+      </div>
+      <p class="concept-short">Unscripted testing guided by curiosity, intuition, and product knowledge.</p>
+      <p class="concept-long">The tester explores the application without a predefined script, designing and executing tests on the fly. Often surfaces issues that scripted testing misses because it&#x27;s not bound by what someone thought to write down. Pairs well with manual exploratory time-boxed sessions.</p>
+      <p class="concept-personal"><strong>In my work:</strong> Regular practice during release windows at Accenture: following hunches about likely failure modes, especially around recently changed areas.</p>
+    </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head"><div class="section-title">By Phase: When in the Release Cycle</div></div>
+    <div class="concept-grid">
+    <div class="concept-card">
+      <div class="concept-card-head">
+        <h4>Smoke Testing</h4>
+        <span class="concept-level level-prof">Proficient</span>
+      </div>
+      <p class="concept-short">Quick health check after a new build. Is it stable enough to test further?</p>
+      <p class="concept-long">A small set of critical-path checks executed immediately after a deployment or build. If smoke fails, deeper testing is not worth running yet. Fast, broad, shallow.</p>
+      <p class="concept-personal"><strong>In my work:</strong> Standard practice during Accenture release cycles: quick stability check on a fresh build before full regression.</p>
+    </div>
+    <div class="concept-card">
+      <div class="concept-card-head">
+        <h4>Sanity Testing</h4>
+        <span class="concept-level level-prof">Proficient</span>
+      </div>
+      <p class="concept-short">Focused check after a small change. Does this specific fix work?</p>
+      <p class="concept-long">Narrower than smoke. Targeted at the area touched by a recent code change to confirm the fix did what was intended and didn&#x27;t immediately break the surrounding feature.</p>
+      <p class="concept-personal"><strong>In my work:</strong> Routine after fix deployments at Accenture: spot check the touched area before opening regression.</p>
+    </div>
+    <div class="concept-card">
+      <div class="concept-card-head">
+        <h4>Regression Testing</h4>
+        <span class="concept-level level-prof">Proficient</span>
+      </div>
+      <p class="concept-short">Re-runs old tests to make sure new changes did not break existing features.</p>
+      <p class="concept-long">The biggest insurance policy in software. Every release risks breaking something that used to work; regression catches that. Heavy candidate for automation because the same checks repeat release after release.</p>
+      <p class="concept-personal"><strong>In my work:</strong> Core part of every release cycle at Accenture: scheduled regression suites across SAP and web applications, with defect triage and re-test loops.</p>
+    </div>
+    <div class="concept-card">
+      <div class="concept-card-head">
+        <h4>Alpha and Beta Testing</h4>
+      </div>
+      <p class="concept-short">Alpha = internal early testing. Beta = real-world testing with limited users before launch.</p>
+      <p class="concept-long">Alpha is done inside the team or organization while the product is still rough. Beta opens it to a small group of real users to surface issues that only show up in real environments and usage patterns.</p>
+      <p class="concept-personal"><strong>In my work:</strong> Conceptual knowledge; not part of my project work to date.</p>
+    </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Jeric Semeniego &middot; QA Analyst &middot; <a href="contact.html">Contact</a></p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="QA documents, test plan, test cases, RTM, defect reports, regression checklist, UAT checklist, release validation.">
+<title>QA Documents | Jeric Semeniego QA Portfolio</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand"><span class="n">JERIC SEMENIEGO</span><span class="r">QA Analyst</span></a>
+    <button class="nav-toggle" onclick="document.getElementById('nav').classList.toggle('open')">&#9776;</button>
+    <ul class="nav-links"><li><a href="index.html" class="">Home</a></li><li><a href="experience.html" class="">Experience</a></li><li><a href="testing-process.html" class="">Testing</a></li><li><a href="qa-concepts.html" class="">Concepts</a></li><li><a href="case-studies.html" class="">Case Studies</a></li><li><a href="qa-documents.html" class="active">QA Docs</a></li><li><a href="tools.html" class="">Tools</a></li><li><a href="education.html" class="">Education</a></li><li><a href="contact.html" class="">Contact</a></li></ul>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="container">
+    <span class="page-hero-tag">Artifacts</span>
+    <h1>QA Documents</h1>
+    <p>The full artifact set from the main case study, in order: planning, execution, validation, sign-off.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="stat-strip">
+      <div class="stat"><div class="stat-num">16</div><div class="stat-label">Artifacts</div></div>
+      <div class="stat"><div class="stat-num">3</div><div class="stat-label">Case Studies</div></div>
+      <div class="stat"><div class="stat-num">9</div><div class="stat-label">Test Cases</div></div>
+      <div class="stat"><div class="stat-num">2</div><div class="stat-label">Defect Samples</div></div>
+    </div>
+
+    <div class="section-head"><div class="section-title">Planning Documents</div><p class="section-sub">Written before execution starts, to understand what needs testing and how to cover it.</p></div>
+    <div class="grid-3 mb32">
+      <div class="doc-card"><div class="doc-cat">Planning</div><h4>Requirement Analysis</h4><p>Goes through the requirements before writing test cases, flags what is testable, what is unclear, what assumptions are being made, and what the risks are.</p><a href="artifacts/01_Requirement_Analysis.html" class="btn btn-outline mt8" style="font-size:12px;padding:5px 12px">View Sample</a></div>
+      <div class="doc-card"><div class="doc-cat">Planning</div><h4>Test Plan</h4><p>Sets the scope before testing starts, what is in scope, what is not, which test types will be run, environment requirements, entry and exit criteria, and who signs off.</p><a href="artifacts/02_Test_Plan.html" class="btn btn-outline mt8" style="font-size:12px;padding:5px 12px">View Sample</a></div>
+      <div class="doc-card"><div class="doc-cat">Design</div><h4>Test Scenarios</h4><p>High-level list of what needs to be tested, grouped by workflow area, used to make sure nothing gets missed when writing the detailed test cases in Excel.</p><a href="artifacts/03_Test_Scenarios.html" class="btn btn-outline mt8" style="font-size:12px;padding:5px 12px">View Sample</a></div>
+    </div>
+
+    <div class="section-head"><div class="section-title">Execution Documents</div><p class="section-sub">Used while testing is running, to track what was run and what the results were.</p></div>
+    <div class="grid-3 mb32">
+      <div class="doc-card"><div class="doc-cat">Execution</div><h4>Manual Test Cases</h4><p>The test case sheet built in Excel, test ID, steps, expected result, test data, and execution status for each case. Covers positive, negative, and end-to-end scenarios.</p><a href="artifacts/04_Manual_Test_Cases.html" class="btn btn-outline mt8" style="font-size:12px;padding:5px 12px">View Sample</a></div>
+      <div class="doc-card"><div class="doc-cat">Coverage</div><h4>Requirement Traceability Matrix</h4><p>Maps every requirement to its test cases so coverage gaps are visible before execution ends. If a requirement has no test case against it, it shows up here.</p><a href="artifacts/05_RTM.html" class="btn btn-outline mt8" style="font-size:12px;padding:5px 12px">View Sample</a></div>
+      <div class="doc-card"><div class="doc-cat">Preparation</div><h4>Test Data</h4><p>The data sets used during test runs, valid inputs, invalid inputs, boundary values, and edge cases prepared before execution starts so tests are consistent.</p><a href="artifacts/06_Test_Data.html" class="btn btn-outline mt8" style="font-size:12px;padding:5px 12px">View Sample</a></div>
+    </div>
+
+    <div class="section-head"><div class="section-title">Defect &amp; Validation Documents</div><p class="section-sub">Used after defects are found, to log them, retest fixes, and confirm the release is ready.</p></div>
+    <div class="grid-3 mb32">
+      <div class="doc-card"><div class="doc-cat">Defects</div><h4>Defect Report Samples</h4><p>Two anonymized defect reports showing the full format, replication steps, expected vs. actual, impact, severity, priority, and evidence attached.</p><a href="artifacts/07_Defect_Report_Samples.html" class="btn btn-outline mt8" style="font-size:12px;padding:5px 12px">View Sample</a></div>
+      <div class="doc-card"><div class="doc-cat">Retesting</div><h4>Regression Checklist</h4><p>A checklist run after a fix or patch goes in to confirm existing workflows still work correctly, same checklist used before and after each change.</p><a href="artifacts/08_Regression_Checklist.html" class="btn btn-outline mt8" style="font-size:12px;padding:5px 12px">View Sample</a></div>
+      <div class="doc-card"><div class="doc-cat">Business Sign-Off</div><h4>UAT Checklist</h4><p>Scenario-based checks for business users to confirm the system works for their real tasks, not a technical checklist but a workflow-based one written for non-technical reviewers.</p><a href="artifacts/09_UAT_Checklist.html" class="btn btn-outline mt8" style="font-size:12px;padding:5px 12px">View Sample</a></div>
+      <div class="doc-card"><div class="doc-cat">Reporting</div><h4>Test Execution Report</h4><p>Records the results of each test run, status per test case, linked defect IDs for failures, environment details, and run date. The evidence that testing actually happened.</p><a href="artifacts/10_Test_Execution_Report.html" class="btn btn-outline mt8" style="font-size:12px;padding:5px 12px">View Sample</a></div>
+      <div class="doc-card"><div class="doc-cat">Reporting</div><h4>Test Summary Report</h4><p>End-of-cycle summary with totals, passed, failed, blocked, open defects by severity, and a release recommendation based on the results.</p><a href="artifacts/11_Test_Summary_Report.html" class="btn btn-outline mt8" style="font-size:12px;padding:5px 12px">View Sample</a></div>
+      <div class="doc-card"><div class="doc-cat">Release</div><h4>Release Validation Checklist</h4><p>Pre-release and post-release smoke checks to confirm critical paths work before and after deployment. Run right before the go/no-go decision.</p><a href="artifacts/12_Release_Validation_Checklist.html" class="btn btn-outline mt8" style="font-size:12px;padding:5px 12px">View Sample</a></div>
+    </div>
+
+    <div class="section-head"><div class="section-title">Supporting Case Study Files</div></div>
+    <div class="grid-2">
+      <div class="card card-body">
+        <div class="doc-cat">Game QA</div>
+        <h4 style="font-size:14px;font-weight:700;color:var(--navy);margin:8px 0">Frostwater Lake, Patch Regression</h4>
+        <p style="font-size:13.5px;color:var(--text-mid);margin-bottom:12px">Patch regression, reward integrity checks, and reconnect behavior for a live-service update. Shows how the same regression discipline applies to a more complex multi-system patch scenario.</p>
+        <a href="artifacts/13_Game_QA_Frostwater_Lake_Case.html" class="btn btn-navy" style="font-size:12px;padding:6px 14px">View Sample</a>
+      </div>
+      <div class="card card-body">
+        <div class="doc-cat">Banking QA</div>
+        <h4 style="font-size:14px;font-weight:700;color:var(--navy);margin:8px 0">SecureBank, Account Balance Case</h4>
+        <p style="font-size:13.5px;color:var(--text-mid);margin-bottom:12px">Account overview, balance masking, session behavior, and API response checks. Goes beyond functional testing into security, privacy, and accessibility dimensions.</p>
+        <a href="artifacts/14_Banking_QA_Account_Balance_Case.html" class="btn btn-navy" style="font-size:12px;padding:6px 14px">View Sample</a>
+      </div>
+      <div class="card card-body">
+        <div class="doc-cat">Coverage Matrix</div>
+        <h4 style="font-size:14px;font-weight:700;color:var(--navy);margin:8px 0">Testing Type Coverage Matrix</h4>
+        <p style="font-size:13.5px;color:var(--text-mid);margin-bottom:12px">Maps functional, regression, security, privacy, accessibility, and automation-priority checks across testing types and application areas.</p>
+        <a href="artifacts/15_Testing_Type_Coverage_Matrix.html" class="btn btn-navy" style="font-size:12px;padding:6px 14px">View Sample</a>
+      </div>
+      <div class="card card-body">
+        <div class="doc-cat">Tools</div>
+        <h4 style="font-size:14px;font-weight:700;color:var(--navy);margin:8px 0">QA Tools Matrix</h4>
+        <p style="font-size:13.5px;color:var(--text-mid);margin-bottom:12px">Shows which tools support which QA activities, planning, execution, defect reporting, and validation, with usage context for each one.</p>
+        <a href="artifacts/16_QA_Tools_Matrix.html" class="btn btn-navy" style="font-size:12px;padding:6px 14px">View Sample</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div>&copy; 2026 Jeric Semeniego &nbsp;&middot;&nbsp; QA Portfolio &nbsp;&middot;&nbsp; Non-confidential samples &nbsp;&middot;&nbsp; <a href="contact.html">Contact</a></div>
+</footer>
+</body>
+</html>
