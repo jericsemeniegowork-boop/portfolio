@@ -1,7 +1,7 @@
 # Jeric Semeniego — QA Analyst Portfolio
 
 QA Analyst, nearly 3 years across manual, regression, and UAT testing.
-SAP S/4HANA validation at Accenture, plus API, SQL, and defect work
+SAP validation at Accenture, plus API, SQL, and defect work
 through ServiceNow and Jira.
 
 **Live site:** https://jericsemeniegowork-boop.github.io/portfolio/
